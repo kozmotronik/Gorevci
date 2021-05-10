@@ -1,0 +1,1068 @@
+Microchip MPLAB XC8 Compiler V2.31
+
+Linker command line:
+
+-W-3 --edf=/opt/microchip/xc8/v2.31/pic/dat/en_msgs.txt -cn \
+  -h+dist/default/production/ornek1-hafifkip.production.sym \
+  --cmf=dist/default/production/ornek1-hafifkip.production.cmf -z \
+  -Q18F46K22 -o/tmp/xcXCbeCjm --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/ornek1-hafifkip.production.map -E1 \
+  -ver=XC8 Compiler --acfsm=1493 -ASTACK=082h-0F37h -pstack=STACK \
+  -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
+  -AMEDIUMCONST=01000h-0FFFFh -ACOMRAM=01h-05Fh -AABS1=00h-0F37h \
+  -ABIGRAM=01h-0F37h -ARAM=060h-0FFh,0100h-01FFhx14,0F00h-0F37h \
+  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
+  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
+  -ABANK6=0600h-06FFh -ABANK7=0700h-07FFh -ABANK8=0800h-08FFh \
+  -ABANK9=0900h-09FFh -ABANK10=0A00h-0AFFh -ABANK11=0B00h-0BFFh \
+  -ABANK12=0C00h-0CFFh -ABANK13=0D00h-0DFFh -ABANK14=0E00h-0EFFh \
+  -ABANK15=0F00h-0F37h -ASFR=0F38h-0F5Fh,0F60h-0FFFh \
+  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
+  -AEEDATA=0F00000h-0F003FFh -peeprom_data=EEDATA \
+  -preset_vec=00h,intcode=08h,intcodelo,powerup,init -pramtop=01000h \
+  -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
+  -AFARRAM=00h-00h \
+  -prdata=COMRAM,nvrram=COMRAM,nvbit=COMRAM,rbss=COMRAM,rbit=COMRAM \
+  -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
+  -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
+  -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
+  /tmp/xcXHEFJNP.o dist/default/production/ornek1-hafifkip.production.o 
+
+Object code version is 3.11
+
+Machine type is 18F46K22
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+/tmp/xcXHEFJNP.o
+                idloc                            200000   200000        8        0       5
+                config                           300000   300000        E        0       4
+                init                                 B2       B2        4        4       0
+                reset_vec                             0        0        4        0       0
+dist/default/production/ornek1-hafifkip.production.o
+                intcode                               8        8       AA        4       0
+                idloc                            200000   200000        8        0       5
+                config                           300000   300000        E        0       4
+                temp                                 45       45        1        1       1
+                smallconst                         1000     1000       20      800       0
+                text14                             1692     1692        2      810       0
+                text13                             1688     1688        6      810       0
+                text12                             161A     161A       1E      810       0
+                text10                             168E     168E        4      810       0
+                text9                              1654     1654       1C      810       0
+                text8                              1488     1488       A8      810       0
+                text7                              1588     1588       52      810       0
+                text6                              13B0     13B0       D8      810       0
+                text5                              126A     126A      146      810       0
+                text4                              1020     1020      24A      810       0
+                text3                              1670     1670        E      810       0
+                text2                              167E     167E        A      810       0
+                text1                              15DA     15DA       40      810       0
+                text0                              1530     1530       58      810       0
+                cstackCOMRAM                          1        1       23        1       1
+                cstackBANK0                          60       60       20       60       1
+                bssBANK0                             80       80        2       60       1
+                bssCOMRAM                            24       24       21        1       1
+                cinit                              1638     1638       1C      810       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   STACK          
+
+        CLASS   CODE           
+                intcode                               8        8       AA         0
+                init                                 B2       B2        4         0
+                reset_vec                             0        0        4         0
+                text14                             1692     1692        2         0
+                text13                             1688     1688        6         0
+                text12                             161A     161A       1E         0
+                text10                             168E     168E        4         0
+                text9                              1654     1654       1C         0
+                text8                              1488     1488       A8         0
+                text7                              1588     1588       52         0
+                text6                              13B0     13B0       D8         0
+                text5                              126A     126A      146         0
+                text4                              1020     1020      24A         0
+                text3                              1670     1670        E         0
+                text2                              167E     167E        A         0
+                text1                              15DA     15DA       40         0
+                text0                              1530     1530       58         0
+                cinit                              1638     1638       1C         0
+
+        CLASS   CONST          
+
+        CLASS   SMALLCONST     
+                smallconst                         1000     1000       20         0
+
+        CLASS   MEDIUMCONST    
+
+        CLASS   COMRAM         
+                temp                                 45       45        1         1
+                cstackCOMRAM                          1        1       23         1
+                bssCOMRAM                            24       24       21         1
+
+        CLASS   ABS1           
+
+        CLASS   BIGRAM         
+
+        CLASS   RAM            
+
+        CLASS   BANK0          
+                cstackBANK0                          60       60       20         1
+                bssBANK0                             80       80        2         1
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   BANK4          
+
+        CLASS   BANK5          
+
+        CLASS   BANK6          
+
+        CLASS   BANK7          
+
+        CLASS   BANK8          
+
+        CLASS   BANK9          
+
+        CLASS   BANK10         
+
+        CLASS   BANK11         
+
+        CLASS   BANK12         
+
+        CLASS   BANK13         
+
+        CLASS   BANK14         
+
+        CLASS   BANK15         
+
+        CLASS   SFR            
+
+        CLASS   CONFIG         
+                config                           300000   300000        E         4
+
+        CLASS   IDLOC          
+                idloc                            200000   200000        8         5
+
+        CLASS   EEDATA         
+
+        CLASS   FARRAM         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
+
+                text4                          001020  000674  001694       810       0  CODE    
+                reset_vec                      000000  000004  000004         0       0  CODE    
+                intcode                        000008  0000AE  0000B6         4       0  CODE    
+                smallconst                     001000  000020  001020       800       0  SMALLCON
+                cstackBANK0                    000060  000022  000082        60       1  BANK0   
+                cstackCOMRAM                   000001  000045  000046         1       1  COMRAM  
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            000082-0000FF               7E
+        BANK1            000100-0001FF              100
+        BANK10           000A00-000AFF              100
+        BANK11           000B00-000BFF              100
+        BANK12           000C00-000CFF              100
+        BANK13           000D00-000DFF              100
+        BANK14           000E00-000EFF              100
+        BANK15           000F00-000F37               38
+        BANK2            000200-0002FF              100
+        BANK3            000300-0003FF              100
+        BANK4            000400-0004FF              100
+        BANK5            000500-0005FF              100
+        BANK6            000600-0006FF              100
+        BANK7            000700-0007FF              100
+        BANK8            000800-0008FF              100
+        BANK9            000900-0009FF              100
+        BIGRAM           000046-00005F               1A
+                         000082-000F37              EB6
+        CODE             000004-000007                4
+                         0000B6-000FFF              F4A
+                         001694-00FFFF             E96C
+        COMRAM           000046-00005F               1A
+        CONST            000004-000007                4
+                         0000B6-000FFF              F4A
+                         001694-00FFFF             E96C
+        EEDATA           F00000-F003FF              400
+        MEDIUMCONST      001694-00FFFF             E96C
+        RAM              000082-000F37              100
+        SFR              000F38-000FFF               28
+        SMALLCONST       001694-00FFFF              100
+        STACK            000082-000F37              EB6
+
+                                  Symbol Table
+
+?___lwdiv                            cstackCOMRAM 00000F
+?_tikSayiminiAl                      cstackCOMRAM 00000F
+_ADCON0bits                          (abs)        000FC2
+_ADCON1                              (abs)        000FC1
+_ADCON2                              (abs)        000FC0
+_ADRESH                              (abs)        000FC4
+_ADRESL                              (abs)        000FC3
+_ANSELBbits                          (abs)        000F39
+_ANSELD                              (abs)        000F3B
+_INTCON                              (abs)        000FF2
+_INTCONbits                          (abs)        000FF2
+_LATBbits                            (abs)        000F8A
+_LATD                                (abs)        000F8C
+_OSCCON                              (abs)        000FD3
+_OSCCON2                             (abs)        000FD2
+_OSCTUNE                             (abs)        000F9B
+_PIE1bits                            (abs)        000F9D
+_PIR1bits                            (abs)        000F9E
+_PORTBbits                           (abs)        000F81
+_PORTD                               (abs)        000F83
+_RCIF                                (abs)        007CF5
+_RCONbits                            (abs)        000FD0
+_T0CON                               (abs)        000FD5
+_T0CONbits                           (abs)        000FD5
+_TMR0                                (abs)        000FD6
+_TMR0IF                              (abs)        007F92
+_TRISAbits                           (abs)        000F92
+_TRISBbits                           (abs)        000F93
+_TRISD                               (abs)        000F95
+_TXIE                                (abs)        007CEC
+_TXIF                                (abs)        007CF4
+__HRAM                               (abs)        000000
+__Habs1                              abs1         000000
+__Hbank0                             bank0        000000
+__Hbank1                             bank1        000000
+__Hbank10                            bank10       000000
+__Hbank11                            bank11       000000
+__Hbank12                            bank12       000000
+__Hbank13                            bank13       000000
+__Hbank14                            bank14       000000
+__Hbank15                            bank15       000000
+__Hbank2                             bank2        000000
+__Hbank3                             bank3        000000
+__Hbank4                             bank4        000000
+__Hbank5                             bank5        000000
+__Hbank6                             bank6        000000
+__Hbank7                             bank7        000000
+__Hbank8                             bank8        000000
+__Hbank9                             bank9        000000
+__Hbigbss                            bigbss       000000
+__Hbigdata                           bigdata      000000
+__Hbigram                            bigram       000000
+__Hbss                               bss          000000
+__HbssBANK0                          bssBANK0     000000
+__HbssCOMRAM                         bssCOMRAM    000000
+__Hcinit                             cinit        000000
+__Hclrtext                           clrtext      000000
+__Hcomram                            comram       000000
+__Hconfig                            config       30000E
+__Hconst                             const        000000
+__HcstackBANK0                       cstackBANK0  000000
+__HcstackCOMRAM                      cstackCOMRAM 000000
+__Hdata                              data         000000
+__Heeprom_data                       eeprom_data  000000
+__Hfarbss                            farbss       000000
+__Hfardata                           fardata      000000
+__Hibigdata                          ibigdata     000000
+__Hidata                             idata        000000
+__Hidloc                             idloc        200008
+__Hifardata                          ifardata     000000
+__Hinit                              init         0000B6
+__Hintcode                           intcode      0000B2
+__Hintcode_body                      intcode_body 000000
+__Hintcodelo                         intcodelo    0000B2
+__Hintentry                          intentry     000000
+__Hintret                            intret       000000
+__Hintsave_regs                      intsave_regs 000000
+__Hirdata                            irdata       000000
+__Hmediumconst                       mediumconst  000000
+__HnvFARRAM                          nvFARRAM     000000
+__Hnvbit                             nvbit        000000
+__Hnvrram                            nvrram       000000
+__Hparam                             rparam       000000
+__Hpowerup                           powerup      0000B2
+__Hram                               ram          000000
+__Hramtop                            ramtop       001000
+__Hrbit                              rbit         000000
+__Hrbss                              rbss         000000
+__Hrdata                             rdata        000000
+__Hreset_vec                         reset_vec    000004
+__Hrparam                            rparam       000000
+__Hsfr                               sfr          000000
+__Hsmallconst                        smallconst   001020
+__Hspace_0                           (abs)        001694
+__Hspace_1                           (abs)        000082
+__Hspace_2                           (abs)        000000
+__Hspace_4                           (abs)        60000E
+__Hstack                             stack        000000
+__Hstruct                            struct       000000
+__Htemp                              temp         000046
+__Htext                              text         000000
+__Htext0                             text0        000000
+__Htext1                             text1        000000
+__Htext10                            text10       000000
+__Htext12                            text12       000000
+__Htext13                            text13       000000
+__Htext14                            text14       000000
+__Htext15                            text15       000000
+__Htext2                             text2        000000
+__Htext3                             text3        000000
+__Htext4                             text4        000000
+__Htext5                             text5        000000
+__Htext6                             text6        000000
+__Htext7                             text7        000000
+__Htext8                             text8        000000
+__Htext9                             text9        000000
+__LRAM                               (abs)        000001
+__Labs1                              abs1         000000
+__Lbank0                             bank0        000000
+__Lbank1                             bank1        000000
+__Lbank10                            bank10       000000
+__Lbank11                            bank11       000000
+__Lbank12                            bank12       000000
+__Lbank13                            bank13       000000
+__Lbank14                            bank14       000000
+__Lbank15                            bank15       000000
+__Lbank2                             bank2        000000
+__Lbank3                             bank3        000000
+__Lbank4                             bank4        000000
+__Lbank5                             bank5        000000
+__Lbank6                             bank6        000000
+__Lbank7                             bank7        000000
+__Lbank8                             bank8        000000
+__Lbank9                             bank9        000000
+__Lbigbss                            bigbss       000000
+__Lbigdata                           bigdata      000000
+__Lbigram                            bigram       000000
+__Lbss                               bss          000000
+__LbssBANK0                          bssBANK0     000000
+__LbssCOMRAM                         bssCOMRAM    000000
+__Lcinit                             cinit        000000
+__Lclrtext                           clrtext      000000
+__Lcomram                            comram       000000
+__Lconfig                            config       000000
+__Lconst                             const        000000
+__LcstackBANK0                       cstackBANK0  000000
+__LcstackCOMRAM                      cstackCOMRAM 000000
+__Ldata                              data         000000
+__Leeprom_data                       eeprom_data  000000
+__Lfarbss                            farbss       000000
+__Lfardata                           fardata      000000
+__Libigdata                          ibigdata     000000
+__Lidata                             idata        000000
+__Lidloc                             idloc        000000
+__Lifardata                          ifardata     000000
+__Linit                              init         0000B2
+__Lintcode                           intcode      000008
+__Lintcode_body                      intcode_body 000000
+__Lintcodelo                         intcodelo    0000B2
+__Lintentry                          intentry     000000
+__Lintret                            intret       000000
+__Lintsave_regs                      intsave_regs 000000
+__Lirdata                            irdata       000000
+__Lmediumconst                       mediumconst  000000
+__LnvFARRAM                          nvFARRAM     000000
+__Lnvbit                             nvbit        000000
+__Lnvrram                            nvrram       000000
+__Lparam                             rparam       000000
+__Lpowerup                           powerup      0000B2
+__Lram                               ram          000000
+__Lramtop                            ramtop       001000
+__Lrbit                              rbit         000000
+__Lrbss                              rbss         000000
+__Lrdata                             rdata        000000
+__Lreset_vec                         reset_vec    000000
+__Lrparam                            rparam       000000
+__Lsfr                               sfr          000000
+__Lsmallconst                        smallconst   001000
+__Lspace_0                           (abs)        000000
+__Lspace_1                           (abs)        000000
+__Lspace_2                           (abs)        000000
+__Lspace_4                           (abs)        000000
+__Lstack                             stack        000000
+__Lstruct                            struct       000000
+__Ltemp                              temp         000045
+__Ltext                              text         000000
+__Ltext0                             text0        000000
+__Ltext1                             text1        000000
+__Ltext10                            text10       000000
+__Ltext12                            text12       000000
+__Ltext13                            text13       000000
+__Ltext14                            text14       000000
+__Ltext15                            text15       000000
+__Ltext2                             text2        000000
+__Ltext3                             text3        000000
+__Ltext4                             text4        000000
+__Ltext5                             text5        000000
+__Ltext6                             text6        000000
+__Ltext7                             text7        000000
+__Ltext8                             text8        000000
+__Ltext9                             text9        000000
+__S0                                 (abs)        001694
+__S1                                 (abs)        000082
+__S2                                 (abs)        000000
+__S4                                 (abs)        000000
+__S5                                 (abs)        000000
+___inthi_sp                          stack        000000
+___intlo_sp                          stack        000000
+___lwdiv                             text7        001588
+___lwdiv@counter                     cstackCOMRAM 000015
+___lwdiv@dividend                    cstackCOMRAM 00000F
+___lwdiv@divisor                     cstackCOMRAM 000011
+___lwdiv@quotient                    cstackCOMRAM 000013
+___param_bank                        (abs)        000000
+___rparam_used                       (abs)        000001
+___sp                                stack        000000
+__accesstop                          (abs)        000060
+__activetblptr                       (abs)        000003
+__end_of___lwdiv                     text7        0015DA
+__end_of__initialization             cinit        00164A
+__end_of_interruptIlkle              text10       001692
+__end_of_interruptYonetici           intcode      0000B2
+__end_of_karaSimsek                  text8        001530
+__end_of_karaSimsekHiziOkuma         text6        001488
+__end_of_ledCakarlama1               text5        0013B0
+__end_of_ledCakarlama2               text4        00126A
+__end_of_main                        text0        001588
+__end_of_sisOsilatorIlkle            text3        00167E
+__end_of_sisTikKesmeIsleyici         text13       00168E
+__end_of_sisTimerIlkle               text1        00161A
+__end_of_sisTimerIsleyiciVarsayilan  text14       001694
+__end_of_sisTimerKesmeIsleyici       text12       001638
+__end_of_tikSayiminiAl               text9        001670
+__end_of_timer0KesmeIsleyiciKur      text2        001688
+__end_ofledCakarlama1@F6038          smallconst   00101F
+__initialization                     cinit        001638
+__mediumconst                        mediumconst  000000
+__pbssBANK0                          bssBANK0     000080
+__pbssCOMRAM                         bssCOMRAM    000024
+__pcinit                             cinit        001638
+__pcstackBANK0                       cstackBANK0  000060
+__pcstackCOMRAM                      cstackCOMRAM 000001
+__pintcode                           intcode      000008
+__psmallconst                        smallconst   001000
+__ptext0                             text0        001530
+__ptext1                             text1        0015DA
+__ptext10                            text10       00168E
+__ptext12                            text12       00161A
+__ptext13                            text13       001688
+__ptext14                            text14       001692
+__ptext15                            text15       000000
+__ptext2                             text2        00167E
+__ptext3                             text3        001670
+__ptext4                             text4        001020
+__ptext5                             text5        00126A
+__ptext6                             text6        0013B0
+__ptext7                             text7        001588
+__ptext8                             text8        001488
+__ptext9                             text9        001654
+__ramtop                             ramtop       001000
+__size_of___lwdiv                    (abs)        000000
+__size_of_interruptIlkle             (abs)        000000
+__size_of_interruptYonetici          (abs)        000000
+__size_of_karaSimsek                 (abs)        000000
+__size_of_karaSimsekHiziOkuma        (abs)        000000
+__size_of_ledCakarlama1              (abs)        000000
+__size_of_ledCakarlama2              (abs)        000000
+__size_of_main                       (abs)        000000
+__size_of_sisOsilatorIlkle           (abs)        000000
+__size_of_sisTikKesmeIsleyici        (abs)        000000
+__size_of_sisTimerIlkle              (abs)        000000
+__size_of_sisTimerIsleyiciVarsayilan (abs)        000000
+__size_of_sisTimerKesmeIsleyici      (abs)        000000
+__size_of_tikSayiminiAl              (abs)        000000
+__size_of_timer0KesmeIsleyiciKur     (abs)        000000
+__smallconst                         smallconst   001000
+_intconYedek@portmacro$F371          bssCOMRAM    000042
+_interruptIlkle                      text10       00168E
+_interruptYonetici                   intcode      000008
+_karaSimsek                          text8        001488
+_karaSimsekHizi                      bssCOMRAM    000034
+_karaSimsekHiziOkuma                 text6        0013B0
+_ledCakarlama1                       text5        00126A
+_ledCakarlama2                       text4        001020
+_main                                text0        001530
+_sisOsilatorIlkle                    text3        001670
+_sisTikKesmeIsleyici                 text13       001688
+_sisTimerDisIsleyici                 bssCOMRAM    000038
+_sisTimerIlkle                       text1        0015DA
+_sisTimerIsleyiciVarsayilan          text14       001692
+_sisTimerKesmeIsleyici               text12       00161A
+_tikSayimi                           bssCOMRAM    000036
+_tikSayiminiAl                       text9        001654
+_timer0KesmeIsleyici                 bssCOMRAM    00003C
+_timer0KesmeIsleyiciKur              text2        00167E
+_uartRxKesmeIsleyici                 bssBANK0     000080
+_uartTxKesmeIsleyici                 bssCOMRAM    00003A
+btemp                                temp         000045
+end_of_initialization                cinit        00164A
+int$flags                            temp         000045
+intlevel0                            text         000000
+intlevel1                            text         000000
+intlevel2                            text         000000
+intlevel3                            text         000000
+karaSimsek@s3                        bssCOMRAM    000028
+karaSimsek@sola                      bssCOMRAM    00003E
+karaSimsek@tutucu                    cstackCOMRAM 000013
+karaSimsekHiziOkuma@s4               bssCOMRAM    000024
+karaSimsekHiziOkuma@sonuc            cstackCOMRAM 00001A
+karaSimsekHiziOkuma@tutucu           cstackCOMRAM 000016
+ledCakarlama1@F6038                  smallconst   001001
+ledCakarlama1@artir                  bssCOMRAM    00003F
+ledCakarlama1@s1                     bssCOMRAM    000030
+ledCakarlama1@secici                 bssCOMRAM    000040
+ledCakarlama1@sonSira                cstackBANK0  00007F
+ledCakarlama1@sureler                cstackBANK0  000060
+ledCakarlama1@tutucu                 cstackCOMRAM 000013
+ledCakarlama2@s2                     bssCOMRAM    00002C
+ledCakarlama2@tutucu                 cstackCOMRAM 000013
+main@kho                             cstackCOMRAM 000020
+main@ksmsk                           cstackCOMRAM 00001C
+main@lc1                             cstackCOMRAM 00001E
+main@lc2                             cstackCOMRAM 000022
+sisTimerIlkle@isleyici               cstackCOMRAM 000011
+stackhi                              (abs)        000F37
+stacklo                              (abs)        000082
+start                                init         0000B2
+start_initialization                 cinit        001638
+tikSayiminiAl@sayim                  cstackCOMRAM 000011
+timer0KesmeIsleyiciKur@isleyici      cstackCOMRAM 00000F
+ttemp5                               temp         000046
+ttemp6                               temp         000049
+ttemp7                               temp         00004D
+wtemp8                               temp         000046
+
+
+FUNCTION INFORMATION:
+
+ *************** function _main *****************
+ Defined at:
+		line 246 in file "ornek1.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  lc2             2   33[COMRAM] struct .
+  kho             2   31[COMRAM] struct .
+  lc1             2   29[COMRAM] struct .
+  ksmsk           2   27[COMRAM] struct .
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels required when called:    5
+ This function calls:
+		_interruptIlkle
+		_karaSimsek
+		_karaSimsekHiziOkuma
+		_ledCakarlama1
+		_ledCakarlama2
+		_sisOsilatorIlkle
+		_sisTimerIlkle
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _sisTimerIlkle *****************
+ Defined at:
+		line 134 in file "sistimer.c"
+ Parameters:    Size  Location     Type
+  isleyici        2   16[COMRAM] PTR FTN()void 
+		 -> sisTikKesmeIsleyici(1), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_timer0KesmeIsleyiciKur
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _timer0KesmeIsleyiciKur *****************
+ Defined at:
+		line 38 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+  isleyici        2   14[COMRAM] PTR FTN()void 
+		 -> sisTimerKesmeIsleyici(1), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_sisTimerIlkle
+ This function uses a non-reentrant model
+
+
+ *************** function _sisOsilatorIlkle *****************
+ Defined at:
+		line 27 in file "osilator.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ledCakarlama2 *****************
+ Defined at:
+		line 111 in file "ornek1.c"
+ Parameters:    Size  Location     Type
+  tutucu          1   18[COMRAM] PTR void 
+		 -> main@lc2(2), 
+ Auto vars:     Size  Location     Type
+  VAZGECIS_BAY    1    0        unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_tikSayiminiAl
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _ledCakarlama1 *****************
+ Defined at:
+		line 45 in file "ornek1.c"
+ Parameters:    Size  Location     Type
+  tutucu          1   18[COMRAM] PTR void 
+		 -> main@lc1(2), 
+ Auto vars:     Size  Location     Type
+  sureler        30    0[BANK0 ] const unsigned int [15]
+  sonSira         1   31[BANK0 ] const unsigned char 
+  VAZGECIS_BAY    1    0        unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      32       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         3      32       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       35 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_tikSayiminiAl
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _karaSimsekHiziOkuma *****************
+ Defined at:
+		line 203 in file "ornek1.c"
+ Parameters:    Size  Location     Type
+  tutucu          1   21[COMRAM] PTR void 
+		 -> main@kho(2), 
+ Auto vars:     Size  Location     Type
+  sonuc           2   25[COMRAM] unsigned short 
+  VAZGECIS_BAY    1    0        unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		___lwdiv
+		_tikSayiminiAl
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function ___lwdiv *****************
+ Defined at:
+		line 7 in file "/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c"
+ Parameters:    Size  Location     Type
+  dividend        2   14[COMRAM] unsigned int 
+  divisor         2   16[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  quotient        2   18[COMRAM] unsigned int 
+  counter         1   20[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  2   14[COMRAM] unsigned int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_karaSimsekHiziOkuma
+ This function uses a non-reentrant model
+
+
+ *************** function _karaSimsek *****************
+ Defined at:
+		line 160 in file "ornek1.c"
+ Parameters:    Size  Location     Type
+  tutucu          1   18[COMRAM] PTR void 
+		 -> main@ksmsk(2), 
+ Auto vars:     Size  Location     Type
+  VAZGECIS_BAY    1    0        unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_tikSayiminiAl
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _tikSayiminiAl *****************
+ Defined at:
+		line 148 in file "../../../../../kaynak/gorev.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  sayim           2   16[COMRAM] unsigned int 
+ Return value:  Size  Location     Type
+                  2   14[COMRAM] unsigned int 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_ledCakarlama1
+		_ledCakarlama2
+		_karaSimsek
+		_karaSimsekHiziOkuma
+ This function uses a non-reentrant model
+
+
+ *************** function _interruptIlkle *****************
+ Defined at:
+		line 31 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _interruptYonetici *****************
+ Defined at:
+		line 50 in file "interrupt.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclath, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, btemp+12, btemp+13, btemp+14, btemp+15, btemp+16, btemp+17, btemp+18, btemp+19, btemp+20, btemp+21, btemp+22, btemp+23, btemp+24, btemp+25, btemp+26, btemp+27, btemp+28, btemp+29, btemp+30, btemp+31, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:         14       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:        14       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       14 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Absolute function
+		_sisTimerKesmeIsleyici
+ This function is called by:
+		Interrupt level 2
+ This function uses a non-reentrant model
+
+
+ *************** function _sisTimerKesmeIsleyici *****************
+ Defined at:
+		line 125 in file "sistimer.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, pclath, btemp, btemp+1, btemp+2, btemp+3, btemp+4, btemp+5, btemp+6, btemp+7, btemp+8, btemp+9, btemp+10, btemp+11, btemp+12, btemp+13, btemp+14, btemp+15, btemp+16, btemp+17, btemp+18, btemp+19, btemp+20, btemp+21, btemp+22, btemp+23, btemp+24, btemp+25, btemp+26, btemp+27, btemp+28, btemp+29, btemp+30, btemp+31, tosl, structret, tblptrl, tblptrh, tblptru, prodl, prodh, bsr, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Absolute function
+		_sisTikKesmeIsleyici
+		_sisTimerIsleyiciVarsayilan
+ This function is called by:
+		_sisTimerIlkle
+		_interruptYonetici
+ This function uses a non-reentrant model
+
+
+ *************** function _sisTikKesmeIsleyici *****************
+ Defined at:
+		line 161 in file "../../../../../kaynak/gorev.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+		_sisTimerKesmeIsleyici
+ This function uses a non-reentrant model
+
+
+ *************** function _sisTimerIsleyiciVarsayilan *****************
+ Defined at:
+		line 121 in file "sistimer.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_sisTimerIlkle
+		_sisTimerKesmeIsleyici
+ This function uses a non-reentrant model
+
+
+
+MODULE INFORMATION
+
+Module		Function		Class		Link	Load	Size
+sistimer.c
+		_sisTimerIsleyiciVarsayilan		CODE           	1692	0000	2
+		_sisTimerKesmeIsleyici		CODE           	161A	0000	30
+		_sisTimerIlkle 		CODE           	15DA	0000	64
+
+sistimer.c estimated size: 96
+
+osilator.c
+		_sisOsilatorIlkle		CODE           	1670	0000	14
+
+osilator.c estimated size: 14
+
+../../../../../kaynak/gorev.c
+		_sisTikKesmeIsleyici		CODE           	1688	0000	6
+		_tikSayiminiAl 		CODE           	1654	0000	28
+
+../../../../../kaynak/gorev.c estimated size: 34
+
+interrupt.c
+		_timer0KesmeIsleyiciKur		CODE           	167E	0000	10
+		_interruptYonetici		CODE           	0008	0000	170
+		_interruptIlkle		CODE           	168E	0000	4
+
+interrupt.c estimated size: 184
+
+shared
+		ledCakarlama1@F6038		SMALLCONST     	1001	0000	30
+		__initialization		CODE           	1638	0000	18
+
+shared estimated size: 48
+
+ornek1.c
+		_main          		CODE           	1530	0000	88
+		_karaSimsekHiziOkuma		CODE           	13B0	0000	216
+		_ledCakarlama1 		CODE           	126A	0000	326
+		_ledCakarlama2 		CODE           	1020	0000	586
+		_karaSimsek    		CODE           	1488	0000	168
+
+ornek1.c estimated size: 1384
+
+/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+		___lwdiv       		CODE           	1588	0000	82
+
+/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c estimated size: 82
+

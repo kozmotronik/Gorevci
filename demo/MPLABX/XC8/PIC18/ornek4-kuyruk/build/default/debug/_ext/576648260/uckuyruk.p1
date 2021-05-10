@@ -1,0 +1,384 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"122 ../../../../../kaynak/include/uckuyruk.h
+[; ;../../../../../kaynak/include/uckuyruk.h: 122: typedef struct {
+[s S1 `uc 1 `uc 1 `uc 1 `*uc 1 ]
+[n S1 . kapasite sayim bas veri ]
+"237
+[; ;../../../../../kaynak/include/uckuyruk.h: 237: char uckuyrukDolu(uckuyruk_t*);
+[v _uckuyrukDolu `(uc ~T0 @X0 0 ef1`*S1 ]
+"248
+[; ;../../../../../kaynak/include/uckuyruk.h: 248: unsigned char uckuyrukKalanKapasite(uckuyruk_t*);
+[v _uckuyrukKalanKapasite `(uc ~T0 @X0 0 ef1`*S1 ]
+"259
+[; ;../../../../../kaynak/include/uckuyruk.h: 259: char uckuyrukBos(uckuyruk_t*);
+[v _uckuyrukBos `(uc ~T0 @X0 0 ef1`*S1 ]
+"226
+[; ;../../../../../kaynak/include/uckuyruk.h: 226: unsigned char uckuyrukKacOgeVar(uckuyruk_t*);
+[v _uckuyrukKacOgeVar `(uc ~T0 @X0 0 ef1`*S1 ]
+"31 ../../../../../kaynak/uckuyruk.c
+[; ;../../../../../kaynak/uckuyruk.c: 31: void uckuyrukIlkle(const unsigned char kap,
+[v _uckuyrukIlkle `(v ~T0 @X0 1 ef3`Cuc`*S1`*uc ]
+"32
+[; ;../../../../../kaynak/uckuyruk.c: 32:         uckuyruk_t *kuyruk, unsigned char *veri) {
+{
+[e :U _uckuyrukIlkle ]
+"31
+[; ;../../../../../kaynak/uckuyruk.c: 31: void uckuyrukIlkle(const unsigned char kap,
+[v _kap `Cuc ~T0 @X0 1 r1 ]
+"32
+[; ;../../../../../kaynak/uckuyruk.c: 32:         uckuyruk_t *kuyruk, unsigned char *veri) {
+[v _kuyruk `*S1 ~T0 @X0 1 r2 ]
+[v _veri `*uc ~T0 @X0 1 r3 ]
+[f ]
+"33
+[; ;../../../../../kaynak/uckuyruk.c: 33:  kuyruk->kapasite = kap;
+[e = . *U _kuyruk 0 _kap ]
+"34
+[; ;../../../../../kaynak/uckuyruk.c: 34:  kuyruk->bas = 0;
+[e = . *U _kuyruk 2 -> -> 0 `i `uc ]
+"35
+[; ;../../../../../kaynak/uckuyruk.c: 35:  kuyruk->sayim = 0;
+[e = . *U _kuyruk 1 -> -> 0 `i `uc ]
+"36
+[; ;../../../../../kaynak/uckuyruk.c: 36:  kuyruk->veri = veri;
+[e = . *U _kuyruk 3 _veri ]
+"37
+[; ;../../../../../kaynak/uckuyruk.c: 37: }
+[e :UE 2 ]
+}
+"39
+[; ;../../../../../kaynak/uckuyruk.c: 39: char uckuyrukKuyrukla(uckuyruk_t *kuyruk, const unsigned char veri) {
+[v _uckuyrukKuyrukla `(uc ~T0 @X0 1 ef2`*S1`Cuc ]
+{
+[e :U _uckuyrukKuyrukla ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[v _veri `Cuc ~T0 @X0 1 r2 ]
+[f ]
+"41
+[; ;../../../../../kaynak/uckuyruk.c: 41:     if(uckuyrukDolu(kuyruk)) return 0;
+[e $ ! != -> ( _uckuyrukDolu (1 _kuyruk `i -> 0 `i 4  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 3  ]
+[e :U 4 ]
+"42
+[; ;../../../../../kaynak/uckuyruk.c: 42:     unsigned char sayim = kuyruk->sayim;
+[v _sayim `uc ~T0 @X0 1 a ]
+[e = _sayim . *U _kuyruk 1 ]
+"43
+[; ;../../../../../kaynak/uckuyruk.c: 43:     const unsigned char kap = kuyruk->kapasite;
+[v _kap `Cuc ~T0 @X0 1 a ]
+[e = _kap . *U _kuyruk 0 ]
+"45
+[; ;../../../../../kaynak/uckuyruk.c: 45:     unsigned char konum = kuyruk->bas + sayim;
+[v _konum `uc ~T0 @X0 1 a ]
+[e = _konum -> + -> . *U _kuyruk 2 `i -> _sayim `i `uc ]
+"46
+[; ;../../../../../kaynak/uckuyruk.c: 46:     if(konum >= kap) konum -= kap;
+[e $ ! >= -> _konum `i -> _kap `i 5  ]
+[e =- _konum -> _kap `uc ]
+[e :U 5 ]
+"48
+[; ;../../../../../kaynak/uckuyruk.c: 48:  *( (kuyruk->veri) + konum) = veri;
+[e = *U + . *U _kuyruk 3 * -> -> _konum `i `x -> -> # *U . *U _kuyruk 3 `i `x _veri ]
+"50
+[; ;../../../../../kaynak/uckuyruk.c: 50:     kuyruk->sayim = ++sayim;
+[e = . *U _kuyruk 1 =+ _sayim -> -> 1 `i `uc ]
+"51
+[; ;../../../../../kaynak/uckuyruk.c: 51:  return konum;
+[e ) -> _konum `uc ]
+[e $UE 3  ]
+"52
+[; ;../../../../../kaynak/uckuyruk.c: 52: }
+[e :UE 3 ]
+}
+"54
+[; ;../../../../../kaynak/uckuyruk.c: 54: char uckuyrukCokluKuyrukla(uckuyruk_t *kuyruk,
+[v _uckuyrukCokluKuyrukla `(uc ~T0 @X0 1 ef3`*S1`*Cuc`Cuc ]
+"55
+[; ;../../../../../kaynak/uckuyruk.c: 55:         const unsigned char *v, const unsigned char kac) {
+{
+[e :U _uckuyrukCokluKuyrukla ]
+"54
+[; ;../../../../../kaynak/uckuyruk.c: 54: char uckuyrukCokluKuyrukla(uckuyruk_t *kuyruk,
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+"55
+[; ;../../../../../kaynak/uckuyruk.c: 55:         const unsigned char *v, const unsigned char kac) {
+[v _v `*Cuc ~T0 @X0 1 r2 ]
+[v _kac `Cuc ~T0 @X0 1 r3 ]
+[f ]
+"56
+[; ;../../../../../kaynak/uckuyruk.c: 56:     unsigned char sayac;
+[v _sayac `uc ~T0 @X0 1 a ]
+"58
+[; ;../../../../../kaynak/uckuyruk.c: 58:     if(uckuyrukKalanKapasite(kuyruk) < kac) return 0;
+[e $ ! < -> ( _uckuyrukKalanKapasite (1 _kuyruk `i -> _kac `i 7  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 6  ]
+[e :U 7 ]
+"60
+[; ;../../../../../kaynak/uckuyruk.c: 60:  unsigned char kap = kuyruk->kapasite;
+[v _kap `uc ~T0 @X0 1 a ]
+[e = _kap . *U _kuyruk 0 ]
+"61
+[; ;../../../../../kaynak/uckuyruk.c: 61:  unsigned char *veri = kuyruk->veri;
+[v _veri `*uc ~T0 @X0 1 a ]
+[e = _veri . *U _kuyruk 3 ]
+"62
+[; ;../../../../../kaynak/uckuyruk.c: 62:  unsigned char sayim = kuyruk->sayim;
+[v _sayim `uc ~T0 @X0 1 a ]
+[e = _sayim . *U _kuyruk 1 ]
+"64
+[; ;../../../../../kaynak/uckuyruk.c: 64:     unsigned char konum = (kuyruk->bas + sayim);
+[v _konum `uc ~T0 @X0 1 a ]
+[e = _konum -> + -> . *U _kuyruk 2 `i -> _sayim `i `uc ]
+"65
+[; ;../../../../../kaynak/uckuyruk.c: 65:     if(konum >= kap) konum -= kap;
+[e $ ! >= -> _konum `i -> _kap `i 8  ]
+[e =- _konum -> _kap `uc ]
+[e :U 8 ]
+"66
+[; ;../../../../../kaynak/uckuyruk.c: 66:     const char baslangic = konum;
+[v _baslangic `Cuc ~T0 @X0 1 a ]
+[e = _baslangic -> _konum `uc ]
+"69
+[; ;../../../../../kaynak/uckuyruk.c: 69:  for(sayac = 0; sayac < kac; sayac++) {
+{
+[e = _sayac -> -> 0 `i `uc ]
+[e $ < -> _sayac `i -> _kac `i 9  ]
+[e $U 10  ]
+[e :U 9 ]
+{
+"70
+[; ;../../../../../kaynak/uckuyruk.c: 70:   *(veri + konum) = *(v + sayac);
+[e = *U + _veri * -> -> _konum `i `x -> -> # *U _veri `i `x *U + _v * -> -> _sayac `i `x -> -> # *U _v `i `x ]
+"72
+[; ;../../../../../kaynak/uckuyruk.c: 72:         konum++;
+[e ++ _konum -> -> 1 `i `uc ]
+"73
+[; ;../../../../../kaynak/uckuyruk.c: 73:         if(konum >= kap) konum -= kap;
+[e $ ! >= -> _konum `i -> _kap `i 12  ]
+[e =- _konum -> _kap `uc ]
+[e :U 12 ]
+"74
+[; ;../../../../../kaynak/uckuyruk.c: 74:         sayim++;
+[e ++ _sayim -> -> 1 `i `uc ]
+"75
+[; ;../../../../../kaynak/uckuyruk.c: 75:  }
+}
+[e ++ _sayac -> -> 1 `i `uc ]
+[e $ < -> _sayac `i -> _kac `i 9  ]
+[e :U 10 ]
+}
+"76
+[; ;../../../../../kaynak/uckuyruk.c: 76:     kuyruk->sayim = sayim;
+[e = . *U _kuyruk 1 _sayim ]
+"78
+[; ;../../../../../kaynak/uckuyruk.c: 78:  return sayac;
+[e ) -> _sayac `uc ]
+[e $UE 6  ]
+"79
+[; ;../../../../../kaynak/uckuyruk.c: 79: }
+[e :UE 6 ]
+}
+"81
+[; ;../../../../../kaynak/uckuyruk.c: 81: unsigned char uckuyrukBastakiOge(uckuyruk_t *kuyruk) {
+[v _uckuyrukBastakiOge `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _uckuyrukBastakiOge ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"82
+[; ;../../../../../kaynak/uckuyruk.c: 82:     return *( (kuyruk->veri) + (kuyruk->bas) );
+[e ) *U + . *U _kuyruk 3 * -> -> . *U _kuyruk 2 `i `x -> -> # *U . *U _kuyruk 3 `i `x ]
+[e $UE 13  ]
+"83
+[; ;../../../../../kaynak/uckuyruk.c: 83: }
+[e :UE 13 ]
+}
+"85
+[; ;../../../../../kaynak/uckuyruk.c: 85: unsigned char uckuyrukKuyruktanAl(uckuyruk_t *kuyruk) {
+[v _uckuyrukKuyruktanAl `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _uckuyrukKuyruktanAl ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"87
+[; ;../../../../../kaynak/uckuyruk.c: 87:     if(uckuyrukBos(kuyruk)) return 0;
+[e $ ! != -> ( _uckuyrukBos (1 _kuyruk `i -> 0 `i 15  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 14  ]
+[e :U 15 ]
+"88
+[; ;../../../../../kaynak/uckuyruk.c: 88:     unsigned char bas = kuyruk->bas;
+[v _bas `uc ~T0 @X0 1 a ]
+[e = _bas . *U _kuyruk 2 ]
+"89
+[; ;../../../../../kaynak/uckuyruk.c: 89:  unsigned char b;
+[v _b `uc ~T0 @X0 1 a ]
+"91
+[; ;../../../../../kaynak/uckuyruk.c: 91:  b = *( (kuyruk->veri) + bas);
+[e = _b *U + . *U _kuyruk 3 * -> -> _bas `i `x -> -> # *U . *U _kuyruk 3 `i `x ]
+"92
+[; ;../../../../../kaynak/uckuyruk.c: 92:     bas++;
+[e ++ _bas -> -> 1 `i `uc ]
+"93
+[; ;../../../../../kaynak/uckuyruk.c: 93:     kuyruk->sayim--;
+[e -- . *U _kuyruk 1 -> -> 1 `i `uc ]
+"94
+[; ;../../../../../kaynak/uckuyruk.c: 94:     if(bas >= kuyruk->kapasite) bas = 0;
+[e $ ! >= -> _bas `i -> . *U _kuyruk 0 `i 16  ]
+[e = _bas -> -> 0 `i `uc ]
+[e :U 16 ]
+"95
+[; ;../../../../../kaynak/uckuyruk.c: 95:     kuyruk->bas = bas;
+[e = . *U _kuyruk 2 _bas ]
+"97
+[; ;../../../../../kaynak/uckuyruk.c: 97:  return b;
+[e ) _b ]
+[e $UE 14  ]
+"98
+[; ;../../../../../kaynak/uckuyruk.c: 98: }
+[e :UE 14 ]
+}
+"100
+[; ;../../../../../kaynak/uckuyruk.c: 100: char uckuyrukCokluAl(uckuyruk_t *kuyruk,
+[v _uckuyrukCokluAl `(uc ~T0 @X0 1 ef3`*S1`*uc`Cuc ]
+"101
+[; ;../../../../../kaynak/uckuyruk.c: 101:         unsigned char *v, const unsigned char kac) {
+{
+[e :U _uckuyrukCokluAl ]
+"100
+[; ;../../../../../kaynak/uckuyruk.c: 100: char uckuyrukCokluAl(uckuyruk_t *kuyruk,
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+"101
+[; ;../../../../../kaynak/uckuyruk.c: 101:         unsigned char *v, const unsigned char kac) {
+[v _v `*uc ~T0 @X0 1 r2 ]
+[v _kac `Cuc ~T0 @X0 1 r3 ]
+[f ]
+"102
+[; ;../../../../../kaynak/uckuyruk.c: 102:     unsigned char sayac;
+[v _sayac `uc ~T0 @X0 1 a ]
+"104
+[; ;../../../../../kaynak/uckuyruk.c: 104:     if(uckuyrukKacOgeVar(kuyruk) < kac) return 0;
+[e $ ! < -> ( _uckuyrukKacOgeVar (1 _kuyruk `i -> _kac `i 18  ]
+[e ) -> -> 0 `i `uc ]
+[e $UE 17  ]
+[e :U 18 ]
+"106
+[; ;../../../../../kaynak/uckuyruk.c: 106:  const unsigned char kap = kuyruk->kapasite;
+[v _kap `Cuc ~T0 @X0 1 a ]
+[e = _kap . *U _kuyruk 0 ]
+"107
+[; ;../../../../../kaynak/uckuyruk.c: 107:  const unsigned char *veri = kuyruk->veri;
+[v _veri `*Cuc ~T0 @X0 1 a ]
+[e = _veri -> . *U _kuyruk 3 `*Cuc ]
+"108
+[; ;../../../../../kaynak/uckuyruk.c: 108:  unsigned char bas = kuyruk->bas;
+[v _bas `uc ~T0 @X0 1 a ]
+[e = _bas . *U _kuyruk 2 ]
+"109
+[; ;../../../../../kaynak/uckuyruk.c: 109:  unsigned char sayim = kuyruk->sayim;
+[v _sayim `uc ~T0 @X0 1 a ]
+[e = _sayim . *U _kuyruk 1 ]
+"112
+[; ;../../../../../kaynak/uckuyruk.c: 112:  for(int sayac = 0; sayac < kac; sayac++) {
+{
+[v _sayac `i ~T0 @X0 1 a ]
+[e = _sayac -> 0 `i ]
+[e $ < _sayac -> _kac `i 19  ]
+[e $U 20  ]
+[e :U 19 ]
+{
+"113
+[; ;../../../../../kaynak/uckuyruk.c: 113:   *(v+sayac) = *(veri + bas);
+[e = *U + _v * -> _sayac `x -> -> # *U _v `i `x *U + _veri * -> -> _bas `i `x -> -> # *U _veri `i `x ]
+"114
+[; ;../../../../../kaynak/uckuyruk.c: 114:         bas++; sayim--;
+[e ++ _bas -> -> 1 `i `uc ]
+[e -- _sayim -> -> 1 `i `uc ]
+"115
+[; ;../../../../../kaynak/uckuyruk.c: 115:         if(bas >= kap) bas = 0;
+[e $ ! >= -> _bas `i -> _kap `i 22  ]
+[e = _bas -> -> 0 `i `uc ]
+[e :U 22 ]
+"116
+[; ;../../../../../kaynak/uckuyruk.c: 116:  }
+}
+[e ++ _sayac -> 1 `i ]
+[e $ < _sayac -> _kac `i 19  ]
+[e :U 20 ]
+}
+"117
+[; ;../../../../../kaynak/uckuyruk.c: 117:     kuyruk->bas = bas;
+[e = . *U _kuyruk 2 _bas ]
+"118
+[; ;../../../../../kaynak/uckuyruk.c: 118:     kuyruk->sayim = sayim;
+[e = . *U _kuyruk 1 _sayim ]
+"120
+[; ;../../../../../kaynak/uckuyruk.c: 120:  return sayac;
+[e ) -> _sayac `uc ]
+[e $UE 17  ]
+"121
+[; ;../../../../../kaynak/uckuyruk.c: 121: }
+[e :UE 17 ]
+}
+"123
+[; ;../../../../../kaynak/uckuyruk.c: 123: unsigned char uckuyrukKacOgeVar(uckuyruk_t *kuyruk) {
+[v _uckuyrukKacOgeVar `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _uckuyrukKacOgeVar ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"124
+[; ;../../../../../kaynak/uckuyruk.c: 124:     return kuyruk->sayim;
+[e ) . *U _kuyruk 1 ]
+[e $UE 23  ]
+"125
+[; ;../../../../../kaynak/uckuyruk.c: 125: }
+[e :UE 23 ]
+}
+"127
+[; ;../../../../../kaynak/uckuyruk.c: 127: char uckuyrukDolu(uckuyruk_t *kuyruk) {
+[v _uckuyrukDolu `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _uckuyrukDolu ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"128
+[; ;../../../../../kaynak/uckuyruk.c: 128:  return kuyruk->sayim >= kuyruk->kapasite ? 1 : 0;
+[e ) -> ? >= -> . *U _kuyruk 1 `i -> . *U _kuyruk 0 `i : -> 1 `i -> 0 `i `uc ]
+[e $UE 24  ]
+"129
+[; ;../../../../../kaynak/uckuyruk.c: 129: }
+[e :UE 24 ]
+}
+"131
+[; ;../../../../../kaynak/uckuyruk.c: 131: char uckuyrukBos(uckuyruk_t *kuyruk) {
+[v _uckuyrukBos `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _uckuyrukBos ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"132
+[; ;../../../../../kaynak/uckuyruk.c: 132:  return kuyruk->sayim == 0;
+[e ) -> -> == -> . *U _kuyruk 1 `i -> 0 `i `i `uc ]
+[e $UE 25  ]
+"133
+[; ;../../../../../kaynak/uckuyruk.c: 133: }
+[e :UE 25 ]
+}
+"135
+[; ;../../../../../kaynak/uckuyruk.c: 135: unsigned char uckuyrukKalanKapasite(uckuyruk_t *kuyruk) {
+[v _uckuyrukKalanKapasite `(uc ~T0 @X0 1 ef1`*S1 ]
+{
+[e :U _uckuyrukKalanKapasite ]
+[v _kuyruk `*S1 ~T0 @X0 1 r1 ]
+[f ]
+"136
+[; ;../../../../../kaynak/uckuyruk.c: 136:  return kuyruk->kapasite - kuyruk->sayim;
+[e ) -> - -> . *U _kuyruk 0 `i -> . *U _kuyruk 1 `i `uc ]
+[e $UE 26  ]
+"137
+[; ;../../../../../kaynak/uckuyruk.c: 137: }
+[e :UE 26 ]
+}
