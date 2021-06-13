@@ -25,6 +25,10 @@
 #ifndef GOREV_H
 #define GOREV_H
 
+#ifndef NULL
+#define NULL ( (void*) 0 )
+#endif
+
 #include "sn.h"
 
 // Porta özel tanımlamaları içeren başlık
@@ -32,42 +36,46 @@
 #include "gorevciypl.h"
 
 // Görev yöneticisi kullanılsın?
-#ifndef CALISMA_KIPI
-#define CALISMA_KIPI 1
+#ifndef grvCALISMA_KIPI
+#define grvCALISMA_KIPI 1
 #endif
 
 // Varsayılan tik süresi 1 ms.
-#ifndef SISTEM_TIK_SURESI_uS
-#define TIK_SURESI_uS	1000u
+#ifndef grvSISTEM_TIK_SURESI_uS
+#define grvTIK_SURESI_uS	1000u
 #else
-#define TIK_SURESI_uS   SISTEM_TIK_SURESI_uS
+#define grvTIK_SURESI_uS	grvSISTEM_TIK_SURESI_uS
 #endif
 
-#define TIK_SURESI_MS   (TIK_SURESI_uS / 1000u)
+#define grvTIK_SURESI_MS	(grvTIK_SURESI_uS / 1000u)
 
 // Süre - tik - süre dönüşümleri
-#define uS_TIK_CEVIR(us) (us / TIK_SURESI_uS)
-#define MS_TIK_CEVIR(ms) (ms / TIK_SURESI_MS)
-#define TIK_uS_CEVIR(tik) (tik * TIK_SURESI_uS)
-#define TIK_MS_CEVIR(tik) (tik * TIK_SURESI_MS)
+#define grvuS_TIK_CEVIR(us)		(us / grvTIK_SURESI_uS)
+#define grvMS_TIK_CEVIR(ms)		(ms / grvTIK_SURESI_MS)
+#define grvTIK_uS_CEVIR(tik)	(tik * grvTIK_SURESI_uS)
+#define grvTIK_MS_CEVIR(tik)	(tik * grvTIK_SURESI_MS)
 
 // Görev durumları.
-#define	BEKLIYOR	0
-#define	CIKTI		1
-#define	BITTI		2
-#define	VAZGECTI	3
+#define	grvBEKLIYOR	0
+#define	grvCIKTI	1
+#define	grvBITTI	2
+#define	grvVAZGECTI	3
 
 typedef void *gorevTutucu_t;
 typedef char (*is_t)(gorevTutucu_t);
 
 /**
  * Görev Kontrol Bloğu.
- * @sn  Görevin bir sonraki çalışmasında kaldığı yerden sürmesini sağlamak için
- *      sürdürme noktası tutucu.
- * @is  Görevin/işlevin referansını tutan işlev gösterici (function pointer).
+ * @kimlik	Görevi yönetmek için bir kimlik bilgisi tutar.
+ * @durum	Görevin çalışma durumu bilgisini tutar.
+ * @sn	Görevin bir sonraki çalışmasında kaldığı yerden sürmesini sağlamak için
+ *		sürdürme noktası tutucu.
+ * @is	Görevin/işlevin referansını tutan işlev gösterici (function pointer).
  */
-#if CALISMA_KIPI == 1
+#if grvCALISMA_KIPI == 1
 typedef struct{
+	unsigned char kimlik;
+	char durum;
 	sn_t sn;
     is_t is;
 } gorev_t;
@@ -77,11 +85,13 @@ typedef struct{
 } gorev_t;
 #endif
 
+typedef gorev_t *pgkb_t;
+
 /**
  * Görevleri geciktirmek için süre tutucu yapısı.
- * @baslangic   Gecikme istendiği anki sistem tiki sayımını tutar.
- * @kacTik      #GOREV_GECIK_MS makrosuna parametre olarak verilen milisaniye
- *              türnden süre değerinin sistem tiki türünden karşılığını tutar.
+ * @baslangic	Gecikme istendiği anki sistem tiki sayımını tutar.
+ * @kacTik		@GOREV_GECIK_MS makrosuna parametre olarak verilen milisaniye
+ *				türnden süre değerinin sistem tiki türünden karşılığını tutar.
  */
 typedef struct{
 	unsigned int baslangic;
@@ -94,13 +104,13 @@ typedef struct{
  * içinden de anlık sistem tiki sayımını almak için kullanılabilir.
  * Sistem tiki sayımını atomik olarak okuyup döndürür. Sistem tiki geçen sürenin
  * milisaniye türünden değeri değil, gorevciypl.h dosyasında tanımlanan
- * @SISTEM_TIK_SURESI_us süre değerinin kaç kez oluştuğunu sayan bir birimdir.
+ * @SISTEM_TIK_SURESI_uS süre değerinin kaç kez oluştuğunu sayan bir birimdir.
  * Diğer bir deyişle sistemin kalp atışının sayısıdır. Ancak mikrosaniye ve 
  * milisaniye birimlerine kolayca dönüştürülebilir. 
  * 
  * @return Anlık sistem tiki sayımı
  */
-unsigned int tikSayiminiAl(void);
+unsigned int grvTikSayiminiAl(void);
 
 
 /****************** Görev yönetim ve organizasyon makroları. ******************/
@@ -110,46 +120,47 @@ unsigned int tikSayiminiAl(void);
  * görevler beklendiği gibi çalışmayabilir. Dahili olarak Görevci tarafından
  * kullanılır. Uygulama katmanından direk çağrılmamalıdır.
  * 
- * @param   Parametre olarak @gorevTutucu_t türünde bir tutucu (handle) alır.
- *          Bu, görev kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır.
+ *				Bu, görev kontrol bloğuna bir başvurudur.
  */
-#define GOREV_ILKLE(g)	SN_ILKLE(( (gorev_t*) g )->sn)
+#define grvILKLE(g)	SN_ILKLE(( (gorev_t*) g )->sn)
 
 
 /**
  * Görevlerin içinde sonsuz döngüye girmeden önce çağrılmalıdır. Bu yapılmazsa
  * derleme hatalarıyla karşılaşılabilir veya görev çalışmaz.
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi verilerek
- *              çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi verilerek
+ *				çağrılır:
  *              
- *              GOREV_BASLA(tutucu);
+ *				GOREV_BASLA(tutucu);
  * 
- * @param  Parametre olarak @gorevTutucu_t türünde bir tutucu (handle) alır.
- *          Bu, görev kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır.
+ *				Bu, görev kontrol bloğuna bir başvurudur.
  */
-#define	GOREV_BASLA(g)                                      \
-        char VAZGECIS_BAYRAGI = 1;                          \
-        SN_BASLAT(( (gorev_t*) g )->sn)
+#define	grvBASLA(g)	\
+		char VAZGECIS_BAYRAGI = 1;	\
+		SN_BASLAT(( (gorev_t*) g )->sn)
 
 
 /**
  * Görevlerin içinde sonsuz döngünün bitiminden sonra çağrılmalıdır. Bu yapılmazsa
  * derleme hatalarıyla karşılaşılabilir veya görev çalışmaz.
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi verilerek
- *              çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi verilerek
+ *				çağrılır:
  *              
- *              GOREV_BITIR(tutucu);
+ *				GOREV_BITIR(tutucu);
  * 
- * @param  Parametre olarak @gorevTutucu_t türünde bir tutucu (handle) alır.
- *          Bu, görev kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır.
+ *				Bu, görev kontrol bloğuna bir başvurudur.
  */
-#define	GOREV_BITIR(g)	VAZGECIS_BAYRAGI = 0;               \
-        SN_KUR(( (gorev_t*) g )->sn)                        \
-        return BITTI;                                       \
-        SN_BITIR(( (gorev_t*) g )->sn)                      \
-        return CIKTI
+#define	grvBITIR(g)	VAZGECIS_BAYRAGI = 0;	\
+		SN_KUR(( (gorev_t*) g )->sn)	\
+		return grvBITTI;	\
+		default: grvSIFIRLA(g);	\
+		SN_BITIR(( (gorev_t*) g )->sn)	\
+		return grvCIKTI
 
 
 /**
@@ -157,138 +168,176 @@ unsigned int tikSayiminiAl(void);
  * sonra çalıştırılması gereken durumlarda çağrılır. Bu makro çağrıldığında
  * görev, verilen süre kadar bloklanır (artık çalışmaz).
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi, süre
- *              takibini yapmak için kullanılacak @sure_t türünden değişkenin
- *              başvurusu ve milisaniye türünden gecikme süresi verilerek
- *              çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi, süre
+ *				takibini yapmak için kullanılacak @sure_t türünden değişkenin
+ *				başvurusu ve milisaniye türünden gecikme süresi verilerek
+ *				çağrılır:
  * 
- *              static sure_t sureTutucu;
- *              ...
- *              GOREV_GECIK_MS(tutucu, &sureTutucu, 1000);
+ *				static sure_t sureTutucu;
+ *				...
+ *				GOREV_GECIK_MS(tutucu, &sureTutucu, 1000);
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
- * @param s:    @sure_t türünde bir süre tutucu değişkene başvuru.
- * @param gecikme:  Milisaniye türünden gecikme süresi.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
+ * @param s:	@sure_t türünde bir süre tutucu değişkene başvuru.
+ * @param gecikme:	Milisaniye türünden gecikme süresi.
  */
-#define GOREV_GECIK_MS(g, s, gecikme)						\
-		( (sure_t*) s )->kacTik = MS_TIK_CEVIR(gecikme);	\
-		( (sure_t*) s )->baslangic = tikSayiminiAl();		\
-		KOSUL_BEKLE( g, ( (tikSayiminiAl() - ( (sure_t*) s )->baslangic) >= ( (sure_t*) s )->kacTik ) )
+#define grvGECIK_MS(g, s, gecikme)	\
+		( (sure_t*) s )->kacTik = grvMS_TIK_CEVIR(gecikme);	\
+		( (sure_t*) s )->baslangic = grvTikSayiminiAl();	\
+		grvKOSUL_BEKLE( g, ( (grvTikSayiminiAl() - ((sure_t*) s )->baslangic)	\
+		>= ( (sure_t*) s )->kacTik ) )
 
+
+/**
+ * Görevlerin içinde bir koşula bağlı olarak görevin ertelenmesi, geciktirilmesi
+ * veya belli bir süre sonra çalıştırılması gereken durumlarda çağrılır.
+ * Bu makro çağrıldığında belirtilen koşul sağlandıkça görev, verilen süre 
+ * kadar bloklanır (artık çalışmaz). Herhangi bir gecikme aşamasında koşulun
+ * sağlanmadığı saptanır saptanmaz gecikme iptal edilir ve görev kaldığı
+ * yerden çalışmayı sürdürür.
+ * 
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi, süre
+ *				takibini yapmak için kullanılacak @sure_t türünden değişkenin
+ *				başvurusu, milisaniye türünden gecikme süresi ve son olarak
+ *				gecikmenin bağlı çalışacağı koşul verilerek çağrılır:
+ * 
+ *				static sure_t sureTutucu;
+ *				static int a;
+ *				...
+ * 				// a değişkeni 0'dan farklı bir değer aldığında gecikme hangi
+ * 				// aşamada olursa olsun görev, bekleme durumundan çıkıp
+ * 				// çalışma durumuna geçecek ve kaldığı yerden devam edecektir.
+ *				GOREV_KOSULLU_GECIK_MS(tutucu, &sureTutucu, 1000, a == 0);
+ * 
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
+ * @param s:	@sure_t türünde bir süre tutucu değişkene başvuru.
+ * @param gecikme:	Milisaniye türünden gecikme süresi.
+ * @param kosul:	Gecikmenin bağlı çalışacağı koşul.
+ */
+#define grvKOSULLU_GECIK_MS(g, s, gecikme, kosul)	\
+		( (sure_t*) s )->kacTik = grvMS_TIK_CEVIR(gecikme);	\
+		( (sure_t*) s )->baslangic = grvTikSayiminiAl();	\
+		grvKOSUL_BEKLE( g, ( (grvTikSayiminiAl() - ( (sure_t*) s )->baslangic)	\
+		>= ( (sure_t*) s )->kacTik ) || !(kosul))
 
 /**
  * Koşul gerçekleşene dek görevi bloklar.
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi ve
- *              koşul ifadesi verilerek çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi ve
+ *				koşul ifadesi verilerek çağrılır:
  * 
- *              GOREV_SIFIRLA(tutucu);
+ *				KOSUL_BEKLE(tutucu, miktar > 0);
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
- * @param kosul:    Gerçekleşmesi beklenecek bir koşul belirten ifade.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
+ * @param kosul:	Gerçekleşmesi beklenecek bir koşul belirten ifade.
  */
-#define KOSUL_BEKLE(g, kosul)								\
-		SN_KUR(( (gorev_t*) g )->sn);						\
-		if(!(kosul)){										\
-			return BEKLIYOR;								\
+#define grvKOSUL_BEKLE(g, kosul)	\
+		SN_KUR(( (gorev_t*) g )->sn);	\
+		if(!(kosul)){	\
+			return grvBEKLIYOR;	\
 		}
 
 
 /**
  * Koşul sağlanıyorken görevi bloklar.
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi ve
- *              koşul ifadesi verilerek çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi ve
+ *				koşul ifadesi verilerek çağrılır:
  * 
- *              * Örneğin bir kuyruk API'si olduğunu varsayalım ve aşağıdaki
- *              işlev prototipi basitçe kuyruk doluysa @true değilse @false
- *              döndürüyor.
- *              bool kuyrukDolumu(void)
- *              ...
- *              * Bu durumda kuyrukDolumu() işlevi @false döndürene dek, yani
- *              kuyruk boşalana dek görev bloklanacaktır.
- *              BU_KOSULDA_BEKLE(tutucu, kuyrukDolumu());
+ *				* Örneğin bir kuyruk API'si olduğunu varsayalım ve aşağıdaki
+ *				işlev prototipi basitçe kuyruk doluysa @true değilse @false
+ *				döndürüyor.
+ *				bool kuyrukDolumu(void)
+ *				...
+ *				* Bu durumda kuyrukDolumu() işlevi @false döndürene dek, yani
+ *				kuyruk boşalana dek görev bloklanacaktır.
+ *				BU_KOSULDA_BEKLE(tutucu, kuyrukDolumu());
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
- * @param kosul:    O anda sağlanan ve sağlanmaması için beklenecek bir 
- *                  koşul belirten ifade.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
+ * @param kosul:	O anda sağlanan ve sağlanmaması için beklenecek bir 
+ *				koşul belirten ifade.
  */
-#define	BU_KOSULDA_BEKLE(g, kosul)	KOSUL_BEKLE((g), !(kosul))
+#define	grvBU_KOSULDA_BEKLE(g, kosul)	\
+		SN_KUR(( (gorev_t*) g )->sn);	\
+		if((kosul)){	\
+			return grvBEKLIYOR;	\
+		}
 
 
 /**
  * Görevi sıfırlar (yeniden başlatır). Dolayısıyla görev bir sonraki çalışmada
  * kaldığı yerden değil, en baştan çalışmaya başlar.
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi ve
- *              koşul ifadesi verilerek çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi ve
+ *				koşul ifadesi verilerek çağrılır:
  * 
- *              GOREV_SIFIRLA(tutucu);
+ *				GOREV_SIFIRLA(tutucu);
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
  */
-#define GOREV_SIFIRLA(g)									\
-        GOREV_ILKLE((g));									\
-		return BEKLIYOR
+#define grvSIFIRLA(g)	\
+		grvILKLE((g));	\
+		return grvBEKLIYOR
 
 /**
  * Görevden çıkar. Bir kez çıkış yapıldı mı artık bu görev çalıştırılmak için
  * çağrılmaz. Yenden çağrılması için görevin @gorevOlustur() API'si ile
  * yeniden çalışacak görevler listesine eklenmesi gerekir.
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi ve
- *              koşul ifadesi verilerek çağrılır:
+ * @kullanim 	Her görevin parametresi olan @gorevTutucu_t parametresi ve
+ *				koşul ifadesi verilerek çağrılır:
  * 
- *              GOREV_CIK(tutucu);
+ *				GOREV_CIK(tutucu);
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
  */
-#define	GOREV_CIK(g)										\
-        GOREV_ILKLE((g));									\
-		return CIKTI
+#define	grvCIK(g)	\
+		grvILKLE((g));	\
+		return grvCIKTI
 
 
 /**
  * Görevden vazgeçer (yield).
  * 
- * @kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi ve
- *              koşul ifadesi verilerek çağrılır:
+ * @kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi ve
+ *				koşul ifadesi verilerek çağrılır:
  * 
- *              GOREV_VAZGEC(tutucu);
+ *				GOREV_VAZGEC(tutucu);
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
  */
-#define GOREV_VAZGEC(g)										\
-        VAZGECIS_BAYRAGI = 0;								\
-		SN_KUR(( (gorev_t*) g )->sn);						\
-		if(VAZGECIS_BAYRAGI == 0){							\
-			return VAZGECTI;								\
+#define grvVAZGEC(g)	\
+		VAZGECIS_BAYRAGI = 0;	\
+		SN_KUR(( (gorev_t*) g )->sn);	\
+		if(VAZGECIS_BAYRAGI == 0){	\
+			return grvVAZGECTI;	\
 		}
 
 /**
  * Belirtilen koşul sağlanana dek görevden vazgeçer.
  * 
- * \kullanim    Her görevin parametresi olan @gorevTutucu_t parametresi ve
- *              koşul ifadesi verilerek çağrılır:
+ * \kullanim	Her görevin parametresi olan @gorevTutucu_t parametresi ve
+ *				koşul ifadesi verilerek çağrılır:
  * 
- *              bool mesajAlindi; // Global bir değişken
- *              ...
- *              GOREV_VAZGEC(tutucu, mesajAlindi);
+ *				bool mesajAlindi; // Global bir değişken
+ *				...
+ *				GOREV_VAZGEC(tutucu, mesajAlindi);
  * 
- * @param g:    @gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
- *              kontrol bloğuna bir başvurudur.
+ * @param g:	@gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev
+ *				kontrol bloğuna bir başvurudur.
  */
-#define	KOSULA_DEK_VAZGEC(g, kosul)							\
-        VAZGECIS_BAYRAGI = 0;								\
-		SN_KUR(( (gorev_t*) g )->sn)						\
-		if((VAZGECIS_BAYRAGI) == 0 || !(kosul)){			\
-			return VAZGECTI;								\
+#define	grvKOSULA_DEK_VAZGEC(g, kosul)	\
+		VAZGECIS_BAYRAGI = 0;	\
+		SN_KUR(( (gorev_t*) g )->sn)	\
+		if((VAZGECIS_BAYRAGI) == 0 || !(kosul)){	\
+			return grvVAZGECTI;	\
 		}
 
 
@@ -296,9 +345,9 @@ unsigned int tikSayiminiAl(void);
  * Görevlerin süre takibi yapabilmesi için bu işlevin bir sistem timerı
  * tarafından çağrılması gereklidir.
  */
-void sisTikKesmeIsleyici(void);
+void grvTikKesmeIsleyici(void);
 
-#if CALISMA_KIPI == 1
+#if grvCALISMA_KIPI == 1
 /**
  * Görev olarak tanımlanmış işlev referansını alıp yeni bir görev olarak
  * görevler listesine ekler. Görevler uygulamanın main bölümünde bu
@@ -307,21 +356,37 @@ void sisTikKesmeIsleyici(void);
  * @param	is_t işi yapacak görev kodu bloğu (bir function pointer)
  * @return	gorev_t türünde görev kontrol bloğuna referans, yoksa NULL
  */
-gorev_t *gorevOlustur(is_t);
+pgkb_t grvOlustur(is_t is);
 
 /**
  * Görevlerin çalışacağı sonsuz döngüyü başlatır. Listedeki herbir görev
  * sırasıyla çalıştırılır. Görevler işbirlikçi (cooperative) olarak çalışırlar,
  * çalışan göreve, kendisi kontrolü teslim edinceye dek müdahale edilmez.
  */
-void gorevciyiBaslat(void);
+void grvGorevciyiBaslat(void);
 
 /**
- * İş referansı verilen işe sahip görev kontrol bloğuna referans döndürür.
- * @param	is_t türünde iş bloğuna referans
+ * Kimliği verilen görev kontrol bloğuna referans döndürür.
+ * @param	kimlik GKB kimliği.
  * @return	gorev_t türünde görev kontrol bloğuna referans, yoksa NULL
  */
-gorev_t *gorevBlogunuAl(is_t);
+pgkb_t grvKimlikIleGorevBlogunuAl(const unsigned char kimlik);
+
+/**
+ * Kimliği verilen görevi uyandırır / çalıştırır.
+ * @param	kimlik GKB kimliği.
+ * @return	gorev_t türünde görev kontrol bloğuna referans, yoksa NULL
+ */
+void grvBaslat(const unsigned char kimlik);
+
+/**
+ * Kimliği verilen görevi uyutur / durdurur.
+ * @param	kimlik GKB kimliği.
+ * @return	gorev_t türünde görev kontrol bloğuna referans, yoksa NULL
+ */
+void grvDurdur(const unsigned char kimlik);
+
+
 #endif
 
 #endif

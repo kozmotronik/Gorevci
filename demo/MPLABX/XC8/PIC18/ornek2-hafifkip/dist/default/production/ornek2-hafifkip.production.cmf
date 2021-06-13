@@ -12,26 +12,26 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production/ornek2-hafifkip.production.o
-cinit CODE 0 1894 1894 28 1
+cinit CODE 0 1920 1920 28 1
 idloc IDLOC 5 200000 200000 8 1
-text0 CODE 0 16F0 16F0 8A 1
-text1 CODE 0 1854 1854 40 1
-text2 CODE 0 1904 1904 A 1
-text3 CODE 0 18F6 18F6 E 1
-text4 CODE 0 1022 1022 24A 1
-text5 CODE 0 126C 126C 13A 1
-text6 CODE 0 13A6 13A6 E8 1
-text7 CODE 0 162E 162E C2 1
-text8 CODE 0 1914 1914 4 1
-text9 CODE 0 148E 148E D6 1
-text10 CODE 0 1564 1564 CA 1
-text11 CODE 0 18DA 18DA 1C 1
-text12 CODE 0 177A 177A 88 1
-text13 CODE 0 1802 1802 52 1
-text15 CODE 0 18BC 18BC 1E 1
-text16 CODE 0 190E 190E 6 1
-text17 CODE 0 1918 1918 2 1
-idataCOMRAM CODE 0 191A 191A 1 1
+text0 CODE 0 1804 1804 8A 1
+text1 CODE 0 18E0 18E0 40 1
+text2 CODE 0 1990 1990 A 1
+text3 CODE 0 1982 1982 E 1
+text4 CODE 0 1022 1022 25E 1
+text5 CODE 0 1280 1280 14E 1
+text6 CODE 0 13CE 13CE FC 1
+text7 CODE 0 1692 1692 D6 1
+text8 CODE 0 19A0 19A0 4 1
+text9 CODE 0 14CA 14CA EA 1
+text10 CODE 0 15B4 15B4 DE 1
+text11 CODE 0 1966 1966 1C 1
+text12 CODE 0 1768 1768 9C 1
+text13 CODE 0 188E 188E 52 1
+text15 CODE 0 1948 1948 1E 1
+text16 CODE 0 199A 199A 6 1
+text17 CODE 0 19A4 19A4 2 1
+idataCOMRAM CODE 0 19A6 19A6 1 1
 cstackCOMRAM COMRAM 1 30 30 1B 1
 cstackBANK0 BANK0 1 60 60 E 1
 temp COMRAM 1 4C 4C 1 1
@@ -40,7 +40,7 @@ smallconst SMALLCONST 0 1000 1000 22 1
 dataCOMRAM COMRAM 1 4B 4B 1 1
 bssCOMRAM COMRAM 1 1 1 2F 1
 config CONFIG 4 300000 300000 E 1
-$/tmp/xcXkdjEjm.o
+$/tmp/xcXcooENL.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 B2 B2 4 1
 reset_vec CODE 0 0 0 4 1
@@ -65,12 +65,12 @@ BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
 CONST B6-FFF 1
-CONST 191B-FFFF 1
+CONST 19A7-FFFF 1
 STACK 6E-F37 1
-SMALLCONST 191B-FFFF 1
+SMALLCONST 19A7-FFFF 1
 CODE 4-7 1
 CODE B6-FFF 1
-CODE 191B-FFFF 1
+CODE 19A7-FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -81,7 +81,7 @@ BIGRAM 4D-5F 1
 BIGRAM 6E-F37 1
 COMRAM 4D-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 191B-FFFF 1
+MEDIUMCONST 19A7-FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -96,7 +96,7 @@ MEDIUMCONST 191B-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/ornek2-hafifkip.production.o
-8 intcode CODE >6869:/tmp/xcXboAeEb.s
+8 intcode CODE >6939:/tmp/xcXcdMEHi.s
 8 intcode CODE >50:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
 42 intcode CODE >52:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
 48 intcode CODE >53:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
@@ -109,217 +109,231 @@ $dist/default/production/ornek2-hafifkip.production.o
 74 intcode CODE >61:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
 76 intcode CODE >69:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
 76 intcode CODE >70:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-1918 text17 CODE >121:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1918 text17 CODE >123:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-190E text16 CODE >161:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-190E text16 CODE >162:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-1912 text16 CODE >163:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-18BC text15 CODE >125:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-18BC text15 CODE >127:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-18C4 text15 CODE >131:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1802 text13 CODE >7:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1802 text13 CODE >13:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-180A text13 CODE >14:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1812 text13 CODE >15:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1816 text13 CODE >16:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1818 text13 CODE >17:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-181E text13 CODE >18:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1820 text13 CODE >16:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1824 text13 CODE >21:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-182A text13 CODE >22:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1836 text13 CODE >23:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-183E text13 CODE >24:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1840 text13 CODE >26:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1846 text13 CODE >27:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-184A text13 CODE >28:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-184A text13 CODE >29:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-1852 text13 CODE >30:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-177A text12 CODE >248:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-177A text12 CODE >249:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-177C text12 CODE >252:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1792 text12 CODE >253:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-17A6 text12 CODE >254:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-17AA text12 CODE >255:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-17C2 text12 CODE >256:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-17C8 text12 CODE >258:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-18DA text11 CODE >148:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-18DA text11 CODE >151:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-18E0 text11 CODE >152:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-18E8 text11 CODE >154:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-18EC text11 CODE >155:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-18F4 text11 CODE >156:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-1564 text10 CODE >301:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1564 text10 CODE >304:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1566 text10 CODE >307:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-156A text10 CODE >308:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-156C text10 CODE >309:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-156E text10 CODE >312:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1580 text10 CODE >313:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-15BA text10 CODE >315:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-15BE text10 CODE >320:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-15DA text10 CODE >323:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-15EE text10 CODE >326:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-148E text9 CODE >261:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-148E text9 CODE >271:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1490 text9 CODE >274:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1494 text9 CODE >275:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-149A text9 CODE >276:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-149E text9 CODE >277:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14A2 text9 CODE >280:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14B6 text9 CODE >281:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14BA text9 CODE >282:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14C2 text9 CODE >283:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14C6 text9 CODE >284:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14D2 text9 CODE >286:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14D6 text9 CODE >287:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14DA text9 CODE >288:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14DE text9 CODE >289:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14E2 text9 CODE >290:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14E6 text9 CODE >291:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14EA text9 CODE >292:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-14EE text9 CODE >294:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-152E text9 CODE >295:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1530 text9 CODE >298:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1914 text8 CODE >31:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-1914 text8 CODE >34:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-1916 text8 CODE >35:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-162E text7 CODE >170:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-162E text7 CODE >172:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1630 text7 CODE >177:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1634 text7 CODE >178:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1638 text7 CODE >179:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1640 text7 CODE >183:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1656 text7 CODE >184:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-165C text7 CODE >185:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1660 text7 CODE >187:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1668 text7 CODE >188:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-166C text7 CODE >191:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1670 text7 CODE >193:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1676 text7 CODE >194:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-167A text7 CODE >196:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1686 text7 CODE >198:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-16C2 text7 CODE >201:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13A6 text6 CODE >207:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13A6 text6 CODE >209:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13A8 text6 CODE >214:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13AA text6 CODE >215:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13AC text6 CODE >216:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13B0 text6 CODE >217:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13B4 text6 CODE >218:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13B6 text6 CODE >219:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13B8 text6 CODE >223:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13BA text6 CODE >225:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13CC text6 CODE >228:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13D4 text6 CODE >229:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13E2 text6 CODE >230:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13E6 text6 CODE >231:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13EE text6 CODE >234:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-13FA text6 CODE >236:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1402 text6 CODE >237:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1404 text6 CODE >238:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1420 text6 CODE >240:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1424 text6 CODE >242:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1460 text6 CODE >245:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-126C text5 CODE >62:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-126C text5 CODE >64:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-126E text5 CODE >83:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1270 text5 CODE >84:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1274 text5 CODE >85:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1276 text5 CODE >86:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-127A text5 CODE >87:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-127E text5 CODE >89:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-127E text5 CODE >91:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1284 text5 CODE >92:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-128C text5 CODE >93:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1290 text5 CODE >95:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1294 text5 CODE >98:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-129A text5 CODE >99:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-129E text5 CODE >100:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-12A0 text5 CODE >101:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-12A2 text5 CODE >105:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-12BA text5 CODE >107:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-130C text5 CODE >109:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1324 text5 CODE >111:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1378 text5 CODE >115:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1022 text4 CODE >123:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1022 text4 CODE >125:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1024 text4 CODE >129:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1026 text4 CODE >130:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-102A text4 CODE >131:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-102C text4 CODE >135:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1046 text4 CODE >137:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1080 text4 CODE >139:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-109A text4 CODE >141:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-10D4 text4 CODE >143:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-10EE text4 CODE >145:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1128 text4 CODE >147:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1142 text4 CODE >149:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-117C text4 CODE >151:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1196 text4 CODE >153:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-11D0 text4 CODE >155:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-11EA text4 CODE >157:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1226 text4 CODE >160:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-18F6 text3 CODE >27:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
-18F6 text3 CODE >29:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
-18FA text3 CODE >31:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
-18FE text3 CODE >33:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
-1902 text3 CODE >34:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
-1904 text2 CODE >38:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-1904 text2 CODE >39:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-190C text2 CODE >40:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
-1854 text1 CODE >134:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1854 text1 CODE >135:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1858 text1 CODE >137:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-185A text1 CODE >142:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-185C text1 CODE >145:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-185E text1 CODE >154:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1866 text1 CODE >160:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1880 text1 CODE >162:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-188C text1 CODE >165:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-188E text1 CODE >166:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1890 text1 CODE >169:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-1892 text1 CODE >170:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
-16F0 text0 CODE >330:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-16F0 text0 CODE >332:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-16F4 text0 CODE >335:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-16F8 text0 CODE >338:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1704 text0 CODE >341:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1706 text0 CODE >346:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1710 text0 CODE >347:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1718 text0 CODE >348:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1720 text0 CODE >349:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1728 text0 CODE >350:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1730 text0 CODE >351:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1738 text0 CODE >352:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1740 text0 CODE >356:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1748 text0 CODE >357:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1750 text0 CODE >358:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1758 text0 CODE >359:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1760 text0 CODE >360:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1768 text0 CODE >361:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1770 text0 CODE >362:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
-1894 cinit CODE >3334:/tmp/xcXboAeEb.s
-1894 cinit CODE >3336:/tmp/xcXboAeEb.s
-1894 cinit CODE >3339:/tmp/xcXboAeEb.s
-1894 cinit CODE >3421:/tmp/xcXboAeEb.s
-1896 cinit CODE >3422:/tmp/xcXboAeEb.s
-1898 cinit CODE >3423:/tmp/xcXboAeEb.s
-189A cinit CODE >3424:/tmp/xcXboAeEb.s
-189C cinit CODE >3425:/tmp/xcXboAeEb.s
-189E cinit CODE >3426:/tmp/xcXboAeEb.s
-18A0 cinit CODE >3427:/tmp/xcXboAeEb.s
-18A2 cinit CODE >3428:/tmp/xcXboAeEb.s
-18A6 cinit CODE >3432:/tmp/xcXboAeEb.s
-18AA cinit CODE >3433:/tmp/xcXboAeEb.s
-18AC cinit CODE >3434:/tmp/xcXboAeEb.s
-18AC cinit CODE >3435:/tmp/xcXboAeEb.s
-18AE cinit CODE >3436:/tmp/xcXboAeEb.s
-18B0 cinit CODE >3437:/tmp/xcXboAeEb.s
-18B2 cinit CODE >3443:/tmp/xcXboAeEb.s
-18B2 cinit CODE >3445:/tmp/xcXboAeEb.s
-18B4 cinit CODE >3446:/tmp/xcXboAeEb.s
-18B6 cinit CODE >3447:/tmp/xcXboAeEb.s
-18B8 cinit CODE >3448:/tmp/xcXboAeEb.s
+19A4 text17 CODE >121:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+19A4 text17 CODE >123:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+199A text16 CODE >122:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+199A text16 CODE >123:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+199E text16 CODE >124:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+1948 text15 CODE >125:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+1948 text15 CODE >127:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+1950 text15 CODE >131:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+188E text13 CODE >7:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+188E text13 CODE >13:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+1896 text13 CODE >14:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+189E text13 CODE >15:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18A2 text13 CODE >16:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18A4 text13 CODE >17:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18AA text13 CODE >18:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18AC text13 CODE >16:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18B0 text13 CODE >21:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18B6 text13 CODE >22:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18C2 text13 CODE >23:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18CA text13 CODE >24:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18CC text13 CODE >26:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18D2 text13 CODE >27:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18D6 text13 CODE >28:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18D6 text13 CODE >29:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+18DE text13 CODE >30:/opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
+1768 text12 CODE >247:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1768 text12 CODE >248:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+176A text12 CODE >251:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1780 text12 CODE >252:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1794 text12 CODE >253:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1798 text12 CODE >254:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+17B0 text12 CODE >255:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+17B6 text12 CODE >257:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1800 text12 CODE >258:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1802 text12 CODE >257:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1966 text11 CODE >109:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+1966 text11 CODE >112:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+196C text11 CODE >113:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+1974 text11 CODE >115:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+1978 text11 CODE >116:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+1980 text11 CODE >117:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+15B4 text10 CODE >300:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15B4 text10 CODE >303:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15B6 text10 CODE >306:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15BA text10 CODE >307:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15BC text10 CODE >308:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15BE text10 CODE >311:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15D0 text10 CODE >312:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+160A text10 CODE >314:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+160E text10 CODE >319:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+162A text10 CODE >322:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+163E text10 CODE >325:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+168E text10 CODE >326:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1690 text10 CODE >325:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14CA text9 CODE >260:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14CA text9 CODE >270:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14CC text9 CODE >273:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14D0 text9 CODE >274:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14D6 text9 CODE >275:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14DA text9 CODE >276:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14DE text9 CODE >279:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14F2 text9 CODE >280:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14F6 text9 CODE >281:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14FE text9 CODE >282:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1502 text9 CODE >283:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+150E text9 CODE >285:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1512 text9 CODE >286:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1516 text9 CODE >287:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+151A text9 CODE >288:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+151E text9 CODE >289:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1522 text9 CODE >290:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1526 text9 CODE >291:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+152A text9 CODE >293:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+156A text9 CODE >294:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+156C text9 CODE >297:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15B0 text9 CODE >298:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+15B2 text9 CODE >297:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+19A0 text8 CODE >31:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
+19A0 text8 CODE >34:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
+19A2 text8 CODE >35:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
+1692 text7 CODE >169:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1692 text7 CODE >171:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1694 text7 CODE >176:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1698 text7 CODE >177:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+169C text7 CODE >178:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16A4 text7 CODE >182:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16BA text7 CODE >183:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16C0 text7 CODE >184:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16C4 text7 CODE >186:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16CC text7 CODE >187:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16D0 text7 CODE >190:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16D4 text7 CODE >192:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16DA text7 CODE >193:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16DE text7 CODE >195:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+16EA text7 CODE >197:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1726 text7 CODE >200:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1764 text7 CODE >201:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1766 text7 CODE >200:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13CE text6 CODE >206:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13CE text6 CODE >208:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13D0 text6 CODE >213:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13D2 text6 CODE >214:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13D4 text6 CODE >215:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13D8 text6 CODE >216:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13DC text6 CODE >217:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13DE text6 CODE >218:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13E0 text6 CODE >222:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13E2 text6 CODE >224:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13F4 text6 CODE >227:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13FC text6 CODE >228:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+140A text6 CODE >229:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+140E text6 CODE >230:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1416 text6 CODE >233:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1422 text6 CODE >235:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+142A text6 CODE >236:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+142C text6 CODE >237:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1448 text6 CODE >239:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+144C text6 CODE >241:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1488 text6 CODE >244:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14C6 text6 CODE >245:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+14C8 text6 CODE >244:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1280 text5 CODE >61:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1280 text5 CODE >63:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1282 text5 CODE >82:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1284 text5 CODE >83:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1288 text5 CODE >84:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+128A text5 CODE >85:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+128E text5 CODE >86:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1292 text5 CODE >88:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1292 text5 CODE >90:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1298 text5 CODE >91:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12A0 text5 CODE >92:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12A4 text5 CODE >94:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12A8 text5 CODE >97:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12AE text5 CODE >98:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12B2 text5 CODE >99:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12B4 text5 CODE >100:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12B6 text5 CODE >104:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+12CE text5 CODE >106:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1320 text5 CODE >108:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1338 text5 CODE >110:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+138C text5 CODE >114:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13CA text5 CODE >115:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+13CC text5 CODE >114:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1022 text4 CODE >122:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1022 text4 CODE >124:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1024 text4 CODE >128:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1026 text4 CODE >129:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+102A text4 CODE >130:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+102C text4 CODE >134:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1046 text4 CODE >136:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1080 text4 CODE >138:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+109A text4 CODE >140:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+10D4 text4 CODE >142:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+10EE text4 CODE >144:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1128 text4 CODE >146:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1142 text4 CODE >148:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+117C text4 CODE >150:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1196 text4 CODE >152:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+11D0 text4 CODE >154:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+11EA text4 CODE >156:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1226 text4 CODE >159:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+127C text4 CODE >160:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+127E text4 CODE >159:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1982 text3 CODE >27:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
+1982 text3 CODE >29:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
+1986 text3 CODE >31:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
+198A text3 CODE >33:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
+198E text3 CODE >34:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/osilator.c
+1990 text2 CODE >38:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
+1990 text2 CODE >39:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
+1998 text2 CODE >40:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/interrupt.c
+18E0 text1 CODE >134:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+18E0 text1 CODE >135:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+18E4 text1 CODE >137:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+18E6 text1 CODE >142:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+18E8 text1 CODE >145:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+18EA text1 CODE >154:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+18F2 text1 CODE >160:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+190C text1 CODE >162:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+1918 text1 CODE >165:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+191A text1 CODE >166:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+191C text1 CODE >169:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+191E text1 CODE >170:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/sistimer.c
+1804 text0 CODE >329:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1804 text0 CODE >331:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1808 text0 CODE >334:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+180C text0 CODE >337:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1818 text0 CODE >340:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+181A text0 CODE >345:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1824 text0 CODE >346:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+182C text0 CODE >347:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1834 text0 CODE >348:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+183C text0 CODE >349:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1844 text0 CODE >350:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+184C text0 CODE >351:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1854 text0 CODE >355:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+185C text0 CODE >356:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1864 text0 CODE >357:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+186C text0 CODE >358:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1874 text0 CODE >359:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+187C text0 CODE >360:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1884 text0 CODE >361:/home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek2-hafifkip/ornek2.c
+1920 cinit CODE >3334:/tmp/xcXcdMEHi.s
+1920 cinit CODE >3336:/tmp/xcXcdMEHi.s
+1920 cinit CODE >3339:/tmp/xcXcdMEHi.s
+1920 cinit CODE >3421:/tmp/xcXcdMEHi.s
+1922 cinit CODE >3422:/tmp/xcXcdMEHi.s
+1924 cinit CODE >3423:/tmp/xcXcdMEHi.s
+1926 cinit CODE >3424:/tmp/xcXcdMEHi.s
+1928 cinit CODE >3425:/tmp/xcXcdMEHi.s
+192A cinit CODE >3426:/tmp/xcXcdMEHi.s
+192C cinit CODE >3427:/tmp/xcXcdMEHi.s
+192E cinit CODE >3428:/tmp/xcXcdMEHi.s
+1932 cinit CODE >3432:/tmp/xcXcdMEHi.s
+1936 cinit CODE >3433:/tmp/xcXcdMEHi.s
+1938 cinit CODE >3434:/tmp/xcXcdMEHi.s
+1938 cinit CODE >3435:/tmp/xcXcdMEHi.s
+193A cinit CODE >3436:/tmp/xcXcdMEHi.s
+193C cinit CODE >3437:/tmp/xcXcdMEHi.s
+193E cinit CODE >3443:/tmp/xcXcdMEHi.s
+193E cinit CODE >3445:/tmp/xcXcdMEHi.s
+1940 cinit CODE >3446:/tmp/xcXcdMEHi.s
+1942 cinit CODE >3447:/tmp/xcXcdMEHi.s
+1944 cinit CODE >3448:/tmp/xcXcdMEHi.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -334,12 +348,13 @@ $dist/default/production/ornek2-hafifkip.production.o
 %SYMTAB
 __size_of_sisTimerIlkle 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/ornek2-hafifkip.production.o
-__Hspace_0 191B 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
+__Hspace_0 19A7 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Hspace_1 6E 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
+__size_of_grvTikKesmeIsleyici 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/ornek2-hafifkip.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXkdjEjm.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXcooENL.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/ornek2-hafifkip.production.o
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/ornek2-hafifkip.production.o
 _LATD F8C 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
@@ -347,18 +362,18 @@ _RCIF 7CF5 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _TMR0 FD6 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _TXIE 7CEC 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _TXIF 7CF4 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXkdjEjm.o
-_main 16F0 0 CODE 0 text0 dist/default/production/ornek2-hafifkip.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXcooENL.o
+_main 1804 0 CODE 0 text0 dist/default/production/ornek2-hafifkip.production.o
 btemp 4C 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama1@artir 24 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-start B2 0 CODE 0 init /tmp/xcXkdjEjm.o
+start B2 0 CODE 0 init /tmp/xcXcooENL.o
 __size_of_main 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__end_of_sisTimerIlkle 1894 0 CODE 0 text1 dist/default/production/ornek2-hafifkip.production.o
+__end_of_sisTimerIlkle 1920 0 CODE 0 text1 dist/default/production/ornek2-hafifkip.production.o
 karaSimsek@tutucu 42 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Hpowerup B2 0 CODE 0 powerup dist/default/production/ornek2-hafifkip.production.o
-_ledCakarlama1 126C 0 CODE 0 text5 dist/default/production/ornek2-hafifkip.production.o
+_ledCakarlama1 1280 0 CODE 0 text5 dist/default/production/ornek2-hafifkip.production.o
 _ledCakarlama2 1022 0 CODE 0 text4 dist/default/production/ornek2-hafifkip.production.o
 __size_of_karaSimsekHiziOkuma 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _T0CONbits FD5 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
@@ -366,11 +381,12 @@ ttemp5 4D 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
 ttemp6 50 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
 ttemp7 54 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__accesstop 60 0 ABS 0 - /tmp/xcXkdjEjm.o
-intlevel0 0 0 CODE 0 text /tmp/xcXkdjEjm.o
-intlevel1 0 0 CODE 0 text /tmp/xcXkdjEjm.o
-intlevel2 0 0 CODE 0 text /tmp/xcXkdjEjm.o
-intlevel3 0 0 CODE 0 text /tmp/xcXkdjEjm.o
+_grvTikKesmeIsleyici 199A 0 CODE 0 text16 dist/default/production/ornek2-hafifkip.production.o
+__accesstop 60 0 ABS 0 - /tmp/xcXcooENL.o
+intlevel0 0 0 CODE 0 text /tmp/xcXcooENL.o
+intlevel1 0 0 CODE 0 text /tmp/xcXcooENL.o
+intlevel2 0 0 CODE 0 text /tmp/xcXcooENL.o
+intlevel3 0 0 CODE 0 text /tmp/xcXcooENL.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/ornek2-hafifkip.production.o
 wtemp8 4D 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
@@ -379,47 +395,46 @@ _sisTimerDisIsleyici 1B 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafi
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama2@tutucu 42 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 karaSimsek@sola 23 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__pidataCOMRAM 191A 0 CODE 0 idataCOMRAM dist/default/production/ornek2-hafifkip.production.o
+__pidataCOMRAM 19A6 0 CODE 0 idataCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _icerikDegistirici$907 46 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _ADCON1 FC1 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _ADCON2 FC0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _ADRESH FC4 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _ADRESL FC3 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _ANSELD F3B 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
-__end_of_icerikGuncelleyici 1564 0 CODE 0 text9 dist/default/production/ornek2-hafifkip.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXkdjEjm.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXkdjEjm.o
+__end_of_icerikGuncelleyici 15B4 0 CODE 0 text9 dist/default/production/ornek2-hafifkip.production.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXcooENL.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXcooENL.o
 __size_of_gostergeDegeriHesapla 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _karasimsekGostergeDegeri 28 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-_karaSimsekHiziOkuma 13A6 0 CODE 0 text6 dist/default/production/ornek2-hafifkip.production.o
+_karaSimsekHiziOkuma 13CE 0 CODE 0 text6 dist/default/production/ornek2-hafifkip.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/ornek2-hafifkip.production.o
-__size_of_sisTikKesmeIsleyici 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
+grvTikSayiminiAl@sayim 40 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/ornek2-hafifkip.production.o
 main@gdh 68 0 BANK0 1 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 main@kho 66 0 BANK0 1 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 main@lc1 62 0 BANK0 1 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 main@lc2 6C 0 BANK0 1 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama1@secici 25 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-_timer0KesmeIsleyiciKur 1904 0 CODE 0 text2 dist/default/production/ornek2-hafifkip.production.o
+_timer0KesmeIsleyiciKur 1990 0 CODE 0 text2 dist/default/production/ornek2-hafifkip.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/ornek2-hafifkip.production.o
 __Hintcodelo B2 0 CODE 0 intcodelo dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama1@tutucu 42 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__end_of___lwdiv 1854 0 CODE 0 text13 dist/default/production/ornek2-hafifkip.production.o
-__end_of_sisTimerIsleyiciVarsayilan 191A 0 CODE 0 text17 dist/default/production/ornek2-hafifkip.production.o
-?_tikSayiminiAl 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
+__end_of___lwdiv 18E0 0 CODE 0 text13 dist/default/production/ornek2-hafifkip.production.o
+__end_of_sisTimerIsleyiciVarsayilan 19A6 0 CODE 0 text17 dist/default/production/ornek2-hafifkip.production.o
 _INTCON FF2 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _intconYedek@portmacro$F371 2D 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-_icerikGuncelleyici 148E 0 CODE 0 text9 dist/default/production/ornek2-hafifkip.production.o
+_icerikGuncelleyici 14CA 0 CODE 0 text9 dist/default/production/ornek2-hafifkip.production.o
 ___lwdiv@quotient 43 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __size_of_ledCakarlama1 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __size_of_ledCakarlama2 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Lintcodelo B2 0 CODE 0 intcodelo dist/default/production/ornek2-hafifkip.production.o
-start_initialization 1894 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
+start_initialization 1920 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
 _OSCCON FD3 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/ornek2-hafifkip.production.o
-_sisTikKesmeIsleyici 190E 0 CODE 0 text16 dist/default/production/ornek2-hafifkip.production.o
+__end_of_grvTikKesmeIsleyici 19A0 0 CODE 0 text16 dist/default/production/ornek2-hafifkip.production.o
 _TRISAbits F92 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _TRISBbits F93 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __size_of_sisTimerKesmeIsleyici 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
@@ -430,9 +445,9 @@ _tikSayimi 19 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.produ
 __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 _gercekDeger 17 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _TMR0IF 7F92 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
-__end_of_ledCakarlama1 13A6 0 CODE 0 text5 dist/default/production/ornek2-hafifkip.production.o
-__end_of_ledCakarlama2 126C 0 CODE 0 text4 dist/default/production/ornek2-hafifkip.production.o
-_karaSimsek 162E 0 CODE 0 text7 dist/default/production/ornek2-hafifkip.production.o
+__end_of_ledCakarlama1 13CE 0 CODE 0 text5 dist/default/production/ornek2-hafifkip.production.o
+__end_of_ledCakarlama2 1280 0 CODE 0 text4 dist/default/production/ornek2-hafifkip.production.o
+_karaSimsek 1692 0 CODE 0 text7 dist/default/production/ornek2-hafifkip.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production/ornek2-hafifkip.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production/ornek2-hafifkip.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production/ornek2-hafifkip.production.o
@@ -463,7 +478,7 @@ __Htext7 0 0 ABS 0 text7 dist/default/production/ornek2-hafifkip.production.o
 __Htext8 0 0 ABS 0 text8 dist/default/production/ornek2-hafifkip.production.o
 __Htext9 0 0 ABS 0 text9 dist/default/production/ornek2-hafifkip.production.o
 ___lwdiv@counter 42 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__end_of_karaSimsekHiziOkuma 148E 0 CODE 0 text6 dist/default/production/ornek2-hafifkip.production.o
+__end_of_karaSimsekHiziOkuma 14CA 0 CODE 0 text6 dist/default/production/ornek2-hafifkip.production.o
 __Hbank10 0 0 ABS 0 bank10 dist/default/production/ornek2-hafifkip.production.o
 __Hbank11 0 0 ABS 0 bank11 dist/default/production/ornek2-hafifkip.production.o
 __Hbank12 0 0 ABS 0 bank12 dist/default/production/ornek2-hafifkip.production.o
@@ -472,7 +487,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production/ornek2-hafifkip.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production/ornek2-hafifkip.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/ornek2-hafifkip.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production/ornek2-hafifkip.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/xcXkdjEjm.o
+__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/xcXcooENL.o
 __Hcomram 0 0 ABS 0 comram dist/default/production/ornek2-hafifkip.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production/ornek2-hafifkip.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production/ornek2-hafifkip.production.o
@@ -522,13 +537,14 @@ __Lrbit 0 0 COMRAM 1 rbit dist/default/production/ornek2-hafifkip.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production/ornek2-hafifkip.production.o
 __Ltemp 4C 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
 __Ltext 0 0 ABS 0 text dist/default/production/ornek2-hafifkip.production.o
+_grvTikSayiminiAl 1966 0 CODE 0 text11 dist/default/production/ornek2-hafifkip.production.o
 _timer0KesmeIsleyici 21 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 int$flags 4C 0 COMRAM 1 temp dist/default/production/ornek2-hafifkip.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Hintret 0 0 ABS 0 intret dist/default/production/ornek2-hafifkip.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production/ornek2-hafifkip.production.o
-__S0 191B 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
+__S0 19A7 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __S1 6E 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __S2 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __S4 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
@@ -536,14 +552,12 @@ __S5 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 timer0KesmeIsleyiciKur@isleyici 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/ornek2-hafifkip.production.o
-__end_of_sisTikKesmeIsleyici 1914 0 CODE 0 text16 dist/default/production/ornek2-hafifkip.production.o
-__end_of_karaSimsek 16F0 0 CODE 0 text7 dist/default/production/ornek2-hafifkip.production.o
-_tikSayiminiAl 18DA 0 CODE 0 text11 dist/default/production/ornek2-hafifkip.production.o
+__end_of_karaSimsek 1768 0 CODE 0 text7 dist/default/production/ornek2-hafifkip.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/ornek2-hafifkip.production.o
 __size_of_sisTimerIsleyiciVarsayilan 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __size_of_icerikDegistirici 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
-__end_of_timer0KesmeIsleyiciKur 190E 0 CODE 0 text2 dist/default/production/ornek2-hafifkip.production.o
-_sisOsilatorIlkle 18F6 0 CODE 0 text3 dist/default/production/ornek2-hafifkip.production.o
+__end_of_timer0KesmeIsleyiciKur 199A 0 CODE 0 text2 dist/default/production/ornek2-hafifkip.production.o
+_sisOsilatorIlkle 1982 0 CODE 0 text3 dist/default/production/ornek2-hafifkip.production.o
 __Lintentry 0 0 ABS 0 intentry dist/default/production/ornek2-hafifkip.production.o
 __Hramtop 1000 0 RAM 0 ramtop dist/default/production/ornek2-hafifkip.production.o
 _uartRxKesmeIsleyici 1D 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
@@ -565,15 +579,15 @@ __Htext18 0 0 ABS 0 text18 dist/default/production/ornek2-hafifkip.production.o
 karaSimsek@s3 9 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 karaSimsekHiziOkuma@sonuc 49 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _PIE1bits F9D 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
-__ptext10 1564 0 CODE 0 text10 dist/default/production/ornek2-hafifkip.production.o
-__ptext11 18DA 0 CODE 0 text11 dist/default/production/ornek2-hafifkip.production.o
-__ptext12 177A 0 CODE 0 text12 dist/default/production/ornek2-hafifkip.production.o
-__ptext13 1802 0 CODE 0 text13 dist/default/production/ornek2-hafifkip.production.o
-__ptext15 18BC 0 CODE 0 text15 dist/default/production/ornek2-hafifkip.production.o
-__ptext16 190E 0 CODE 0 text16 dist/default/production/ornek2-hafifkip.production.o
-__ptext17 1918 0 CODE 0 text17 dist/default/production/ornek2-hafifkip.production.o
+__ptext10 15B4 0 CODE 0 text10 dist/default/production/ornek2-hafifkip.production.o
+__ptext11 1966 0 CODE 0 text11 dist/default/production/ornek2-hafifkip.production.o
+__ptext12 1768 0 CODE 0 text12 dist/default/production/ornek2-hafifkip.production.o
+__ptext13 188E 0 CODE 0 text13 dist/default/production/ornek2-hafifkip.production.o
+__ptext15 1948 0 CODE 0 text15 dist/default/production/ornek2-hafifkip.production.o
+__ptext16 199A 0 CODE 0 text16 dist/default/production/ornek2-hafifkip.production.o
+__ptext17 19A4 0 CODE 0 text17 dist/default/production/ornek2-hafifkip.production.o
 __ptext18 0 0 CODE 0 text18 dist/default/production/ornek2-hafifkip.production.o
-___lwdiv 1802 0 CODE 0 text13 dist/default/production/ornek2-hafifkip.production.o
+___lwdiv 188E 0 CODE 0 text13 dist/default/production/ornek2-hafifkip.production.o
 __Lbank10 0 0 ABS 0 bank10 dist/default/production/ornek2-hafifkip.production.o
 __Lbank11 0 0 ABS 0 bank11 dist/default/production/ornek2-hafifkip.production.o
 __Lbank12 0 0 ABS 0 bank12 dist/default/production/ornek2-hafifkip.production.o
@@ -584,17 +598,19 @@ __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/ornek2-hafifkip.production
 __Lbigram 0 0 ABS 0 bigram dist/default/production/ornek2-hafifkip.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production/ornek2-hafifkip.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production/ornek2-hafifkip.production.o
-_sisTimerIsleyiciVarsayilan 1918 0 CODE 0 text17 dist/default/production/ornek2-hafifkip.production.o
+_sisTimerIsleyiciVarsayilan 19A4 0 CODE 0 text17 dist/default/production/ornek2-hafifkip.production.o
 _LATBbits F8A 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
+__end_of_grvTikSayiminiAl 1982 0 CODE 0 text11 dist/default/production/ornek2-hafifkip.production.o
 __size_of_icerikGuncelleyici 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/ornek2-hafifkip.production.o
 ___lwdiv@divisor 40 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 main@ksmsk 64 0 BANK0 1 cstackBANK0 dist/default/production/ornek2-hafifkip.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/ornek2-hafifkip.production.o
+__size_of_grvTikSayiminiAl 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 karaSimsekHiziOkuma@tutucu 45 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _karasimsekHiziOkundu 27 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-stackhi F37 0 ABS 0 - /tmp/xcXkdjEjm.o
-stacklo 6E 0 ABS 0 - /tmp/xcXkdjEjm.o
+stackhi F37 0 ABS 0 - /tmp/xcXcooENL.o
+stacklo 6E 0 ABS 0 - /tmp/xcXcooENL.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production/ornek2-hafifkip.production.o
 icerikDegistirici@tutucu 42 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _OSCCON2 FD2 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
@@ -614,33 +630,32 @@ __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/ornek2-hafifkip.pro
 _gostergeDegeriHesaplandi 26 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _PIR1bits F9E 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__end_of_sisOsilatorIlkle 1904 0 CODE 0 text3 dist/default/production/ornek2-hafifkip.production.o
-end_of_initialization 18B2 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
-__size_of_tikSayiminiAl 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
+__end_of_sisOsilatorIlkle 1990 0 CODE 0 text3 dist/default/production/ornek2-hafifkip.production.o
+end_of_initialization 193E 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/ornek2-hafifkip.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production/ornek2-hafifkip.production.o
 _RCONbits FD0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
-__end_of_gostergeDegeriHesapla 1802 0 CODE 0 text12 dist/default/production/ornek2-hafifkip.production.o
+__end_of_gostergeDegeriHesapla 1804 0 CODE 0 text12 dist/default/production/ornek2-hafifkip.production.o
 karaSimsekHiziOkuma@s4 5 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 ___lwdiv@dividend 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __size_of_sisOsilatorIlkle 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 ?___lwdiv 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 _interruptYonetici 8 0 CODE 0 intcode dist/default/production/ornek2-hafifkip.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/ornek2-hafifkip.production.o
-__end_of_icerikDegistirici 162E 0 CODE 0 text10 dist/default/production/ornek2-hafifkip.production.o
+__end_of_icerikDegistirici 1692 0 CODE 0 text10 dist/default/production/ornek2-hafifkip.production.o
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production/ornek2-hafifkip.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production/ornek2-hafifkip.production.o
-__pcinit 1894 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
-__ptext0 16F0 0 CODE 0 text0 dist/default/production/ornek2-hafifkip.production.o
-__ptext1 1854 0 CODE 0 text1 dist/default/production/ornek2-hafifkip.production.o
-__ptext2 1904 0 CODE 0 text2 dist/default/production/ornek2-hafifkip.production.o
-__ptext3 18F6 0 CODE 0 text3 dist/default/production/ornek2-hafifkip.production.o
+__pcinit 1920 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
+__ptext0 1804 0 CODE 0 text0 dist/default/production/ornek2-hafifkip.production.o
+__ptext1 18E0 0 CODE 0 text1 dist/default/production/ornek2-hafifkip.production.o
+__ptext2 1990 0 CODE 0 text2 dist/default/production/ornek2-hafifkip.production.o
+__ptext3 1982 0 CODE 0 text3 dist/default/production/ornek2-hafifkip.production.o
 __ptext4 1022 0 CODE 0 text4 dist/default/production/ornek2-hafifkip.production.o
-__ptext5 126C 0 CODE 0 text5 dist/default/production/ornek2-hafifkip.production.o
-__ptext6 13A6 0 CODE 0 text6 dist/default/production/ornek2-hafifkip.production.o
-__ptext7 162E 0 CODE 0 text7 dist/default/production/ornek2-hafifkip.production.o
-__ptext8 1914 0 CODE 0 text8 dist/default/production/ornek2-hafifkip.production.o
-__ptext9 148E 0 CODE 0 text9 dist/default/production/ornek2-hafifkip.production.o
+__ptext5 1280 0 CODE 0 text5 dist/default/production/ornek2-hafifkip.production.o
+__ptext6 13CE 0 CODE 0 text6 dist/default/production/ornek2-hafifkip.production.o
+__ptext7 1692 0 CODE 0 text7 dist/default/production/ornek2-hafifkip.production.o
+__ptext8 19A0 0 CODE 0 text8 dist/default/production/ornek2-hafifkip.production.o
+__ptext9 14CA 0 CODE 0 text9 dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama1@s1 11 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama2@s2 D 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production/ornek2-hafifkip.production.o
@@ -652,33 +667,31 @@ __Ltext15 0 0 ABS 0 text15 dist/default/production/ornek2-hafifkip.production.o
 __Ltext16 0 0 ABS 0 text16 dist/default/production/ornek2-hafifkip.production.o
 __Ltext17 0 0 ABS 0 text17 dist/default/production/ornek2-hafifkip.production.o
 __Ltext18 0 0 ABS 0 text18 dist/default/production/ornek2-hafifkip.production.o
-__ramtop 1000 0 RAM 0 ramtop /tmp/xcXkdjEjm.o
-_gostergeDegeriHesapla 177A 0 CODE 0 text12 dist/default/production/ornek2-hafifkip.production.o
-_interruptIlkle 1914 0 CODE 0 text8 dist/default/production/ornek2-hafifkip.production.o
+__ramtop 1000 0 RAM 0 ramtop /tmp/xcXcooENL.o
+_gostergeDegeriHesapla 1768 0 CODE 0 text12 dist/default/production/ornek2-hafifkip.production.o
+_interruptIlkle 19A0 0 CODE 0 text8 dist/default/production/ornek2-hafifkip.production.o
 __Lpowerup B2 0 CODE 0 powerup dist/default/production/ornek2-hafifkip.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/ornek2-hafifkip.production.o
-_sisTimerIlkle 1854 0 CODE 0 text1 dist/default/production/ornek2-hafifkip.production.o
-__end_of_tikSayiminiAl 18F6 0 CODE 0 text11 dist/default/production/ornek2-hafifkip.production.o
+_sisTimerIlkle 18E0 0 CODE 0 text1 dist/default/production/ornek2-hafifkip.production.o
 __psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/ornek2-hafifkip.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/ornek2-hafifkip.production.o
 sisTimerIlkle@isleyici 40 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/ornek2-hafifkip.production.o
 _uartTxKesmeIsleyici 1F 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__end_of__initialization 18B2 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
+__end_of__initialization 193E 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
 __size_of_karaSimsek 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production/ornek2-hafifkip.production.o
 __size_of_timer0KesmeIsleyiciKur 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _icerikDegisti 2B 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production/ornek2-hafifkip.production.o
 icerikGuncelleyici@tutucu 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__end_of_sisTimerKesmeIsleyici 18DA 0 CODE 0 text15 dist/default/production/ornek2-hafifkip.production.o
+__end_of_sisTimerKesmeIsleyici 1966 0 CODE 0 text15 dist/default/production/ornek2-hafifkip.production.o
 __pcstackCOMRAM 30 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
-tikSayiminiAl@sayim 40 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 ledCakarlama1@sureler 1002 0 SMALLCONST 0 smallconst dist/default/production/ornek2-hafifkip.production.o
-__end_of_main 177A 0 CODE 0 text0 dist/default/production/ornek2-hafifkip.production.o
+__end_of_main 188E 0 CODE 0 text0 dist/default/production/ornek2-hafifkip.production.o
 __pintcode 8 0 CODE 0 intcode dist/default/production/ornek2-hafifkip.production.o
-__end_of_interruptIlkle 1918 0 CODE 0 text8 dist/default/production/ornek2-hafifkip.production.o
+__end_of_interruptIlkle 19A4 0 CODE 0 text8 dist/default/production/ornek2-hafifkip.production.o
 _T0CON FD5 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 _TRISD F95 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __HRAM 0 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
@@ -689,12 +702,13 @@ __LRAM 1 0 ABS 0 - dist/default/production/ornek2-hafifkip.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production/ornek2-hafifkip.production.o
 __Lram 0 0 ABS 0 ram dist/default/production/ornek2-hafifkip.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production/ornek2-hafifkip.production.o
-_sisTimerKesmeIsleyici 18BC 0 CODE 0 text15 dist/default/production/ornek2-hafifkip.production.o
+_sisTimerKesmeIsleyici 1948 0 CODE 0 text15 dist/default/production/ornek2-hafifkip.production.o
 gostergeDegeriHesapla@tutucu 45 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
-_icerikDegistirici 1564 0 CODE 0 text10 dist/default/production/ornek2-hafifkip.production.o
+_icerikDegistirici 15B4 0 CODE 0 text10 dist/default/production/ornek2-hafifkip.production.o
 _tamponD 29 0 COMRAM 1 bssCOMRAM dist/default/production/ornek2-hafifkip.production.o
-__initialization 1894 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
+__initialization 1920 0 CODE 0 cinit dist/default/production/ornek2-hafifkip.production.o
 __pdataCOMRAM 4B 0 COMRAM 1 dataCOMRAM dist/default/production/ornek2-hafifkip.production.o
+?_grvTikSayiminiAl 3E 0 COMRAM 1 cstackCOMRAM dist/default/production/ornek2-hafifkip.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production/ornek2-hafifkip.production.o
 __Hsmallconst 1022 0 SMALLCONST 0 smallconst dist/default/production/ornek2-hafifkip.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production/ornek2-hafifkip.production.o
@@ -725,7 +739,7 @@ __Hintcode B2 0 CODE 0 intcode dist/default/production/ornek2-hafifkip.productio
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text4 0 1022 1022 8F9 1
+text4 0 1022 1022 985 1
 cstackBANK0 1 60 60 E 1
 reset_vec 0 0 0 4 1
 intcode 0 8 8 AE 1

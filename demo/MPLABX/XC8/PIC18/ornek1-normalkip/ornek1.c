@@ -26,13 +26,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <xc.h>
-#include "devcfg.h"
-
-#include "sistimer.h"
-#include "interrupt.h"
-#include "port.h"
-#include "gorev.h"
 #include "osilator.h"
+#include "devcfg.h"
+#include "gorev.h"
+#include "port.h"
 
 
 // Bu değişkene birden fazla görev erişeceği için global kapsamda tanımlandı.
@@ -44,7 +41,7 @@ unsigned int karaSimsekHizi;
  */
 char ledCakarlama1(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     /* Sistem gecikmesi kullanılacak her görevde @sure_t türünde bir süre
      * tutucu değişken tanımlanmalıdır. Görevci bu değişkeni süre takibini
@@ -91,16 +88,16 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
         PORTBbits.RB1 = !PORTBbits.RB1;
 
         /* Süre dolana dek bloklanır */
-        GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+        grvGECIK_MS(tutucu, &s1, sureler[secici]);
 
         PORTBbits.RB1 = !PORTBbits.RB1;
 
         /* Süre dolana dek bloklanır */
-        GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+        grvGECIK_MS(tutucu, &s1, sureler[secici]);
         
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -110,7 +107,7 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
  */
 char ledCakarlama2(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     /* Görevdeki gecikmeler için süre tutucu */
     static sure_t s2;
@@ -124,30 +121,30 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 1000u);
+		grvGECIK_MS(tutucu, &s2, 1000u);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -159,7 +156,7 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
  */
 char karaSimsek(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     static sure_t s3;
     static bool sola;
@@ -190,10 +187,10 @@ char karaSimsek(gorevTutucu_t tutucu) {
         /* Bu görev burada karasimsekHizi içerisindeki milisaniye süre değeri
          * kadar sure bloklanacaktır.
          */
-		GOREV_GECIK_MS(tutucu, &s3, karaSimsekHizi);
+		grvGECIK_MS(tutucu, &s3, karaSimsekHizi);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -202,7 +199,7 @@ char karaSimsek(gorevTutucu_t tutucu) {
  */
 char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
     
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     static sure_t s4;
     
@@ -220,7 +217,7 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
         /* Dönüşüm bitene dek (GO/DONE biti sıfır olana dek) görev bloklanır
          * Alternatif olarak ADIF bayrağı da yoklanabilir. Bu yapılırsa ADIF
          * bayrağı, yoklandıktan ve koşulu geçtikten sonra temizlenmelidir. */
-        BU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
+        grvBU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
         
         /* Dönüşüm bitti, dönüşüm değeriyle yeni animasyon hızını hesapla */
         uint16_t sonuc;
@@ -236,10 +233,10 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
         /* Bir sonraki dönüştürme ve hesaplama 350ms sonra yapılacak. O zamana
          * dek görev bloklanır.
          */
-        GOREV_GECIK_MS(tutucu, &s4, 350);
+        grvGECIK_MS(tutucu, &s4, 350);
     }
     
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 
@@ -253,10 +250,10 @@ void main(void) {
      * takdirde görevci katmanı varsayılan olarak 8 görev tutacak bir görev
      * sayısı tanımlayacaktır.
      */
-    gorevOlustur(ledCakarlama1);
-    gorevOlustur(ledCakarlama2);
-    gorevOlustur(karaSimsek);
-    gorevOlustur(karaSimsekHiziOkuma);
+    grvOlustur(ledCakarlama1);
+    grvOlustur(ledCakarlama2);
+    grvOlustur(karaSimsek);
+    grvOlustur(karaSimsekHiziOkuma);
     
     // Görevciyi çalıştır, bu çağrıdan geri dönmemeli.
     portGorevciyiBaslat();

@@ -28,11 +28,10 @@
 #include <xc.h>
 #include "devcfg.h"
 #include "osilator.h"
-
-#include "sistimer.h"
 #include "interrupt.h"
-#include "port.h"
+#include "sistimer.h"
 #include "gorev.h"
+#include "port.h"
 
 // Değişkenler birden çok görevin erişebilmesi için global olarak tanımlandı.
 uint16_t gercekDeger;
@@ -46,7 +45,7 @@ unsigned int karaSimsekHizi;
  */
 char ledCakarlama1(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     /*
      * Bir görev aynı anda yalnızca tek bir gecikme işleyebileceğinden tüm
@@ -89,15 +88,15 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
       
         PORTEbits.RE1 = !PORTEbits.RE1;
 
-        GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+        grvGECIK_MS(tutucu, &s1, sureler[secici]);
 
         PORTEbits.RE1 = !PORTEbits.RE1;
 
-        GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+        grvGECIK_MS(tutucu, &s1, sureler[secici]);
         
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -107,7 +106,7 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
  */
 char ledCakarlama2(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     static sure_t s2;
     
     // RE2 ilkle
@@ -119,30 +118,30 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
        
         PORTEbits.RE2 = !PORTEbits.RE2;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTEbits.RE2 = !PORTEbits.RE2;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTEbits.RE2 = !PORTEbits.RE2;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTEbits.RE2 = !PORTEbits.RE2;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTEbits.RE2 = !PORTEbits.RE2;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTEbits.RE2 = !PORTEbits.RE2;
             
-		GOREV_GECIK_MS(tutucu, &s2, 1000u);
+		grvGECIK_MS(tutucu, &s2, 1000u);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -152,7 +151,7 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
  */
 char karaSimsek(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     static sure_t s3;
     static bool sola;
@@ -180,10 +179,10 @@ char karaSimsek(gorevTutucu_t tutucu) {
                 sola = true;
         }
         
-		GOREV_GECIK_MS(tutucu, &s3, karaSimsekHizi);
+		grvGECIK_MS(tutucu, &s3, karaSimsekHizi);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -191,7 +190,7 @@ char karaSimsek(gorevTutucu_t tutucu) {
  */
 char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
     
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     static sure_t s4;
     static uint16_t oncekiSonuc = 0;
@@ -208,7 +207,7 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
         
         ADCON0bits.GO = 1; // Dönüşümü başlat
         // Dönüşümün bitmesini bekle (GO/DONE biti sıfır olana dek)
-        BU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
+        grvBU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
 //        while(ADCON0bits.GO); 
         uint16_t sonuc;
         sonuc = 0;
@@ -227,10 +226,10 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
             karasimsekHiziOkundu = 1; // Hesaplama için sinyal ver
             oncekiSonuc = sonuc; // Son sonucu sakla
         }
-        GOREV_GECIK_MS(tutucu, &s4, 300u);
+        grvGECIK_MS(tutucu, &s4, 300u);
     }
     
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 /**
@@ -251,10 +250,10 @@ char gostergeDegeriGuncelle(gorevTutucu_t tutucu){
 #define O_ENUST         (ODEGER_ENUST - ODEGER_ENALT)
 #define OLCEKLEME_ORANI (G_ENUST / O_ENUST)
 
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     while(1){
-        KOSUL_BEKLE(tutucu, karasimsekHiziOkundu == 1);
+        grvKOSUL_BEKLE(tutucu, karasimsekHiziOkundu == 1);
         karasimsekHiziOkundu = 0;
         // Önce ölçekli değeri hesapla
         uint16_t olcekliDeger = (uint16_t) (gercekDeger / (uint8_t) OLCEKLEME_ORANI);
@@ -280,7 +279,7 @@ char gostergeDegeriGuncelle(gorevTutucu_t tutucu){
         gosterge[0] = (char)(olcekliDeger &0xFF);
     }
     
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 /**
@@ -303,7 +302,7 @@ char gostergeGuncelle(gorevTutucu_t tutucu){
     
     static sure_t s5;
     
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     // PORTC ilkle
     LATC = 0;
@@ -321,14 +320,14 @@ char gostergeGuncelle(gorevTutucu_t tutucu){
         LATB &= 0xF0; // Denetim bitlerini sıfırla
         LATC = BCDdenOrtakAnoda[gosterge[0]];
         LATBbits.LATB0 = 1;
-        GOREV_GECIK_MS(tutucu, &s5, 5u);
+        grvGECIK_MS(tutucu, &s5, 5u);
         
         // Onlar hanesini güncelle
         if( (gosterge[3] != 0 || gosterge[2] != 0) || gosterge[1] != 0){
             LATB &= 0xF0; // Denetim bitlerini sıfırla
             LATC = BCDdenOrtakAnoda[gosterge[1]];
             LATBbits.LATB1 = 1;
-            GOREV_GECIK_MS(tutucu, &s5, 5u);
+            grvGECIK_MS(tutucu, &s5, 5u);
         }
         
         // Yüzler hanesini güncelle
@@ -336,7 +335,7 @@ char gostergeGuncelle(gorevTutucu_t tutucu){
             LATB &= 0xF0; // Denetim bitlerini sıfırla
             LATC = BCDdenOrtakAnoda[gosterge[2]];
             LATBbits.LATB2 = 1;
-            GOREV_GECIK_MS(tutucu, &s5, 5u);
+            grvGECIK_MS(tutucu, &s5, 5u);
         }
         
         // Binler hanesini güncelle
@@ -344,12 +343,12 @@ char gostergeGuncelle(gorevTutucu_t tutucu){
             LATB &= 0xF0; // Denetim bitlerini sıfırla
             LATC = BCDdenOrtakAnoda[gosterge[3]];
             LATBbits.LATB3 = 1;
-            GOREV_GECIK_MS(tutucu, &s5, 5u);
+            grvGECIK_MS(tutucu, &s5, 5u);
         }
         
     }
     
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 
@@ -361,7 +360,7 @@ void main(void) {
 	interruptIlkle();
 	
 	/* sysTikKesmeIsleyici gorev.h içerisinde tanımlıdır. */
-	sisTimerIlkle(sisTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
+	sisTimerIlkle(grvTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
 	
 	/* Kesmeleri etkinleştir */
 	portKESMELERI_ETKINLESTIR();
@@ -369,12 +368,12 @@ void main(void) {
     /* Çalışacak görevler için görev tutucuları oluştur ve görevleri ilkle */
     gorev_t lc1, lc2, ksmsk, kho, gdg, gg;
     
-    GOREV_ILKLE(&lc1);
-    GOREV_ILKLE(&lc2);
-    GOREV_ILKLE(&ksmsk);
-    GOREV_ILKLE(&kho);
-    GOREV_ILKLE(&gdg);
-    GOREV_ILKLE(&gg);
+    grvILKLE(&lc1);
+    grvILKLE(&lc2);
+    grvILKLE(&ksmsk);
+    grvILKLE(&kho);
+    grvILKLE(&gdg);
+    grvILKLE(&gg);
     
     // Görevleri çalıştır.
     while(1) {

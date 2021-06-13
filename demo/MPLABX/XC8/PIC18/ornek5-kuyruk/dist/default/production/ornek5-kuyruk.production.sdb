@@ -3,37 +3,37 @@
 [d edition pro ]
 [d chip 18F46K22 ]
 [d frameptr 4065 ]
-"68 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _listeyeEkle listeyeEkle `(v  1 s 1 listeyeEkle ]
-"80
-[v _listedenSil listedenSil `(v  1 s 1 listedenSil ]
-"70 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _gorevOlustur gorevOlustur `(*.39S388  1 e 2 0 ]
-"120
-[v _gorevciyiBaslat gorevciyiBaslat `(v  1 e 1 0 ]
-"148
-[v _tikSayiminiAl tikSayiminiAl `(ui  1 e 2 0 ]
-"161
-[v _sisTikKesmeIsleyici sisTikKesmeIsleyici `(v  1 e 1 0 ]
+"76 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvOlustur grvOlustur `(*.39S388  1 e 2 0 ]
+"79
+[v _grvGorevciyiBaslat grvGorevciyiBaslat `(v  1 e 1 0 ]
+"76 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"100 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvKimlikIleGorevBlogunuAl grvKimlikIleGorevBlogunuAl `(*.39S388  1 e 2 0 ]
+"109
+[v _grvTikSayiminiAl grvTikSayiminiAl `(ui  1 e 2 0 ]
+"122
+[v _grvTikKesmeIsleyici grvTikKesmeIsleyici `(v  1 e 1 0 ]
 "47 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/portlar/mplabx/xc8/pic18/port.c
 [v _portGorevciyiBaslat portGorevciyiBaslat `(v  1 e 1 0 ]
 "31 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/uckuyruk.c
 [v _uckuyrukIlkle uckuyrukIlkle `(v  1 e 1 0 ]
-"54
+"55
 [v _uckuyrukCokluKuyrukla uckuyrukCokluKuyrukla `(uc  1 e 1 0 ]
-"85
+"87
 [v _uckuyrukKuyruktanAl uckuyrukKuyruktanAl `(uc  1 e 1 0 ]
-"100
+"102
 [v _uckuyrukCokluAl uckuyrukCokluAl `(uc  1 e 1 0 ]
-"123
+"126
 [v _uckuyrukKacOgeVar uckuyrukKacOgeVar `(uc  1 e 1 0 ]
-"127
+"130
 [v _uckuyrukDolu uckuyrukDolu `(uc  1 e 1 0 ]
-"131
+"134
 [v _uckuyrukBos uckuyrukBos `(uc  1 e 1 0 ]
-"135
+"138
 [v _uckuyrukKalanKapasite uckuyrukKalanKapasite `(uc  1 e 1 0 ]
 "4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -65,15 +65,15 @@
 [v _timer0KesmeIsleyiciKur timer0KesmeIsleyiciKur `(v  1 e 1 0 ]
 "50
 [v _interruptYonetici interruptYonetici `IIH(v  1 e 1 0 ]
-"56 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
+"53 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
 [v _uretici1 uretici1 `(uc  1 e 1 0 ]
-"94
+"91
 [v _uretici2 uretici2 `(uc  1 e 1 0 ]
-"133
+"130
 [v _gostergeDegerleriGuncelle gostergeDegerleriGuncelle `(uc  1 e 1 0 ]
-"171
+"168
 [v _gostergeTara gostergeTara `(uc  1 e 1 0 ]
-"237
+"234
 [v _main main `(v  1 e 1 0 ]
 "27 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/osilator.c
 [v _sisOsilatorIlkle sisOsilatorIlkle `(v  1 e 1 0 ]
@@ -85,26 +85,20 @@
 [v _sisTimerIlkle sisTimerIlkle `(v  1 e 1 0 ]
 "29 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
 [v _tikSayimi tikSayimi `ui  1 s 2 tikSayimi ]
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"41
-[v _gorevHeap gorevHeap `[6]S388  1 s 24 gorevHeap ]
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"40
+[v _gorevHavuzu gorevHavuzu `[6]S388  1 s 36 gorevHavuzu ]
 "42
-[v _calisanListesi calisanListesi `[6]*.39S388  1 s 12 calisanListesi ]
-"62
-[v _cikanListesi cikanListesi `[2]*.39S388  1 s 4 cikanListesi ]
-"64
 [v _gorevSayimi gorevSayimi `uc  1 s 1 gorevSayimi ]
-[v _calisanSayimi calisanSayimi `uc  1 s 1 calisanSayimi ]
-[v _cikanSayimi cikanSayimi `uc  1 s 1 cikanSayimi ]
 "45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/portlar/mplabx/xc8/pic18/portmacro.h
-[v _intconYedek@portmacro$F427 intconYedek `uc  1 s 1 intconYedek ]
-"97 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8/pic/include/proc/pic18f46k22.h
+[v _intconYedek@portmacro$F434 intconYedek `uc  1 s 1 intconYedek ]
+"97 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8/pic/include/proc/pic18f46k22.h
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
 "147
 [v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
 "7672
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S628 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S638 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -114,7 +108,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "7699
-[s S637 . 1 `uc 1 LB0 1 0 :1:0 
+[s S647 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -123,8 +117,8 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S646 . 1 `S628 1 . 1 0 `S637 1 . 1 0 ]
-[v _LATBbits LATBbits `VES646  1 e 1 @3978 ]
+[u S656 . 1 `S638 1 . 1 0 `S647 1 . 1 0 ]
+[v _LATBbits LATBbits `VES656  1 e 1 @3978 ]
 "7784
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "8282
@@ -256,38 +250,38 @@
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
 "29 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/interrupt.c
 [v _timer0KesmeIsleyici timer0KesmeIsleyici `*.37(v  1 e 2 0 ]
-"39 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
+"36 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
 [v _k1 k1 `[8]uc  1 e 8 0 ]
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-"40
-[v _kuyruk1 kuyruk1 `S489  1 e 4 0 ]
-"42
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+"37
+[v _kuyruk1 kuyruk1 `S493  1 e 4 0 ]
+"39
 [v _k2 k2 `[8]uc  1 e 8 0 ]
-"43
-[v _kuyruk2 kuyruk2 `S489  1 e 4 0 ]
-"45
+"40
+[v _kuyruk2 kuyruk2 `S493  1 e 4 0 ]
+"42
 [v _gosterge gosterge `[4]uc  1 e 4 0 ]
-[s S603 . 1 `uc 1 sayim 1 0 ]
-"47
-[v _kuyruk2Erisim kuyruk2Erisim `S603  1 e 1 0 ]
+[s S611 . 1 `uc 1 sayim 1 0 ]
+"44
+[v _kuyruk2Erisim kuyruk2Erisim `S611  1 e 1 0 ]
 "117 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/sistimer.c
 [v _sisTimerDisIsleyici sisTimerDisIsleyici `*.37(v  1 e 2 0 ]
-"237 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
+"234 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
 [v _main main `(v  1 e 1 0 ]
 {
-"263
+"260
 } 0
 "31 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/uckuyruk.c
 [v _uckuyrukIlkle uckuyrukIlkle `(v  1 e 1 0 ]
 {
 [v uckuyrukIlkle@kap kap `Cuc  1 a 1 wreg ]
 [v uckuyrukIlkle@kap kap `Cuc  1 a 1 wreg ]
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
 "32
-[v uckuyrukIlkle@kuyruk kuyruk `*.30S489  1 p 1 14 ]
+[v uckuyrukIlkle@kuyruk kuyruk `*.30S493  1 p 1 14 ]
 [v uckuyrukIlkle@veri veri `*.30uc  1 p 1 15 ]
 [v uckuyrukIlkle@kap kap `Cuc  1 a 1 16 ]
-"37
+"38
 } 0
 "27 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/osilator.c
 [v _sisOsilatorIlkle sisOsilatorIlkle `(v  1 e 1 0 ]
@@ -316,196 +310,169 @@
 {
 "35
 } 0
-"120 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _gorevciyiBaslat gorevciyiBaslat `(v  1 e 1 0 ]
+"79 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvGorevciyiBaslat grvGorevciyiBaslat `(v  1 e 1 0 ]
 {
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"128
-[v gorevciyiBaslat@glo glo `*.39S388  1 a 2 9 ]
-"123
-[v gorevciyiBaslat@donus donus `uc  1 a 1 11 ]
-"122
-[v gorevciyiBaslat@s s `uc  1 a 1 12 ]
-"138
-} 0
-"171 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
-[v _gostergeTara gostergeTara `(uc  1 e 1 0 ]
-{
-[v gostergeTara@tutucu tutucu `*.39v  1 p 2 28 ]
-"175
-[v gostergeTara@BCDdenOrtakAnoda BCDdenOrtakAnoda `C[17]uc  1 s 17 BCDdenOrtakAnoda ]
-[s S617 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
-"186
-[v gostergeTara@s5 s5 `S617  1 s 4 s5 ]
-"234
-} 0
-"133
-[v _gostergeDegerleriGuncelle gostergeDegerleriGuncelle `(uc  1 e 1 0 ]
-{
-"141
-[v gostergeDegerleriGuncelle@b b `ui  1 a 2 33 ]
-"133
-[v gostergeDegerleriGuncelle@tutucu tutucu `*.39v  1 p 2 28 ]
-[s S617 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
-"137
-[v gostergeDegerleriGuncelle@s2 s2 `S617  1 s 4 s2 ]
-"163
-} 0
-"56
-[v _uretici1 uretici1 `(uc  1 e 1 0 ]
-{
-"58
-[v uretici1@veri1 veri1 `C[4]uc  1 a 4 32 ]
-"60
-[v uretici1@VAZGECIS_BAYRAGI VAZGECIS_BAYRAGI `uc  1 a 1 36 ]
-"56
-[v uretici1@tutucu tutucu `*.39v  1 p 2 28 ]
-[v uretici1@F6092 F6092 `C[4]uc  1 s 4 F6092 ]
+"87
+[v grvGorevciyiBaslat@is is `*.37(uc  1 a 2 7 ]
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
 "83
-} 0
-"94
-[v _uretici2 uretici2 `(uc  1 e 1 0 ]
-{
-"105
-[v uretici2@s s `i  1 a 2 5 ]
-"96
-[v uretici2@veri2 veri2 `[4]uc  1 a 4 0 ]
-"97
-[v uretici2@VAZGECIS_BAYRAGI VAZGECIS_BAYRAGI `uc  1 a 1 4 ]
-"94
-[v uretici2@tutucu tutucu `*.39v  1 p 2 28 ]
-"124
-} 0
-"100 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/uckuyruk.c
-[v _uckuyrukCokluAl uckuyrukCokluAl `(uc  1 e 1 0 ]
-{
-"112
-[v uckuyrukCokluAl@sayac_573 sayac `i  1 a 2 25 ]
-"108
-[v uckuyrukCokluAl@bas bas `uc  1 a 1 27 ]
-"109
-[v uckuyrukCokluAl@sayim sayim `uc  1 a 1 24 ]
-"107
-[v uckuyrukCokluAl@veri veri `*.30Cuc  1 a 1 23 ]
-"106
-[v uckuyrukCokluAl@kap kap `Cuc  1 a 1 22 ]
-"102
-[v uckuyrukCokluAl@sayac sayac `uc  1 a 1 21 ]
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-"100
-[v uckuyrukCokluAl@kuyruk kuyruk `*.30S489  1 p 1 15 ]
-"101
-[v uckuyrukCokluAl@v v `*.30uc  1 p 1 16 ]
-[v uckuyrukCokluAl@kac kac `Cuc  1 p 1 17 ]
-"121
-} 0
-"123
-[v _uckuyrukKacOgeVar uckuyrukKacOgeVar `(uc  1 e 1 0 ]
-{
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-[v uckuyrukKacOgeVar@kuyruk kuyruk `*.30S489  1 p 1 14 ]
-"125
-} 0
-"127
-[v _uckuyrukDolu uckuyrukDolu `(uc  1 e 1 0 ]
-{
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-[v uckuyrukDolu@kuyruk kuyruk `*.30S489  1 p 1 14 ]
-"129
-} 0
-"54
-[v _uckuyrukCokluKuyrukla uckuyrukCokluKuyrukla `(uc  1 e 1 0 ]
-{
-"64
-[v uckuyrukCokluKuyrukla@konum konum `uc  1 a 1 26 ]
-"56
-[v uckuyrukCokluKuyrukla@sayac sayac `uc  1 a 1 25 ]
-"60
-[v uckuyrukCokluKuyrukla@kap kap `uc  1 a 1 24 ]
-"62
-[v uckuyrukCokluKuyrukla@sayim sayim `uc  1 a 1 23 ]
-"61
-[v uckuyrukCokluKuyrukla@veri veri `*.30uc  1 a 1 22 ]
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-"54
-[v uckuyrukCokluKuyrukla@kuyruk kuyruk `*.30S489  1 p 1 17 ]
-"55
-[v uckuyrukCokluKuyrukla@v v `*.30Cuc  1 p 1 18 ]
-[v uckuyrukCokluKuyrukla@kac kac `Cuc  1 p 1 19 ]
-"79
-} 0
-"135
-[v _uckuyrukKalanKapasite uckuyrukKalanKapasite `(uc  1 e 1 0 ]
-{
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-[v uckuyrukKalanKapasite@kuyruk kuyruk `*.30S489  1 p 1 14 ]
-"137
-} 0
-"80 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _listedenSil listedenSil `(v  1 s 1 listedenSil ]
-{
-"97
-[v listedenSil@k k `uc  1 a 1 24 ]
-"83
-[v listedenSil@cSayim cSayim `Cuc  1 a 1 23 ]
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"80
-[v listedenSil@liste liste `*.30*.39S388  1 p 1 14 ]
+[v grvGorevciyiBaslat@gkb gkb `*.30S388  1 a 1 11 ]
+"91
+[v grvGorevciyiBaslat@durum durum `uc  1 a 1 10 ]
 "81
-[v listedenSil@sayim sayim `*.30uc  1 p 1 15 ]
-[v listedenSil@konum konum `Cuc  1 p 1 16 ]
-"106
-} 0
-"85 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/uckuyruk.c
-[v _uckuyrukKuyruktanAl uckuyrukKuyruktanAl `(uc  1 e 1 0 ]
-{
-"88
-[v uckuyrukKuyruktanAl@bas bas `uc  1 a 1 18 ]
-"89
-[v uckuyrukKuyruktanAl@b b `uc  1 a 1 17 ]
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-"85
-[v uckuyrukKuyruktanAl@kuyruk kuyruk `*.30S489  1 p 1 15 ]
+[v grvGorevciyiBaslat@s s `uc  1 a 1 9 ]
 "98
 } 0
-"131
+"168 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/ornek5.c
+[v _gostergeTara gostergeTara `(uc  1 e 1 0 ]
+{
+[v gostergeTara@tutucu tutucu `*.30v  1 p 1 29 ]
+"172
+[v gostergeTara@BCDdenOrtakAnoda BCDdenOrtakAnoda `C[17]uc  1 s 17 BCDdenOrtakAnoda ]
+[s S627 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+"183
+[v gostergeTara@s5 s5 `S627  1 s 4 s5 ]
+"231
+} 0
+"130
+[v _gostergeDegerleriGuncelle gostergeDegerleriGuncelle `(uc  1 e 1 0 ]
+{
+"138
+[v gostergeDegerleriGuncelle@b b `ui  1 a 2 33 ]
+"130
+[v gostergeDegerleriGuncelle@tutucu tutucu `*.30v  1 p 1 29 ]
+[s S627 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+"134
+[v gostergeDegerleriGuncelle@s2 s2 `S627  1 s 4 s2 ]
+"160
+} 0
+"53
+[v _uretici1 uretici1 `(uc  1 e 1 0 ]
+{
+"55
+[v uretici1@veri1 veri1 `C[4]uc  1 a 4 0 ]
+"57
+[v uretici1@VAZGECIS_BAYRAGI VAZGECIS_BAYRAGI `uc  1 a 1 4 ]
+"53
+[v uretici1@tutucu tutucu `*.30v  1 p 1 29 ]
+[v uretici1@F6076 F6076 `C[4]uc  1 s 4 F6076 ]
+"80
+} 0
+"91
+[v _uretici2 uretici2 `(uc  1 e 1 0 ]
+{
+"102
+[v uretici2@s s `i  1 a 2 5 ]
+"93
+[v uretici2@veri2 veri2 `[4]uc  1 a 4 0 ]
+"94
+[v uretici2@VAZGECIS_BAYRAGI VAZGECIS_BAYRAGI `uc  1 a 1 4 ]
+"91
+[v uretici2@tutucu tutucu `*.30v  1 p 1 29 ]
+"121
+} 0
+"102 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/uckuyruk.c
+[v _uckuyrukCokluAl uckuyrukCokluAl `(uc  1 e 1 0 ]
+{
+"104
+[v uckuyrukCokluAl@sayac sayac `uc  1 a 1 26 ]
+"111
+[v uckuyrukCokluAl@bas bas `uc  1 a 1 25 ]
+"112
+[v uckuyrukCokluAl@sayim sayim `uc  1 a 1 24 ]
+"110
+[v uckuyrukCokluAl@veri veri `*.30Cuc  1 a 1 23 ]
+"109
+[v uckuyrukCokluAl@kap kap `Cuc  1 a 1 22 ]
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+"102
+[v uckuyrukCokluAl@kuyruk kuyruk `*.30S493  1 p 1 18 ]
+"103
+[v uckuyrukCokluAl@v v `*.30uc  1 p 1 19 ]
+[v uckuyrukCokluAl@kac kac `Cuc  1 p 1 20 ]
+"124
+} 0
+"126
+[v _uckuyrukKacOgeVar uckuyrukKacOgeVar `(uc  1 e 1 0 ]
+{
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+[v uckuyrukKacOgeVar@kuyruk kuyruk `*.30S493  1 p 1 14 ]
+"128
+} 0
+"130
+[v _uckuyrukDolu uckuyrukDolu `(uc  1 e 1 0 ]
+{
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+[v uckuyrukDolu@kuyruk kuyruk `*.30S493  1 p 1 14 ]
+"132
+} 0
+"55
+[v _uckuyrukCokluKuyrukla uckuyrukCokluKuyrukla `(uc  1 e 1 0 ]
+{
+"66
+[v uckuyrukCokluKuyrukla@konum konum `uc  1 a 1 28 ]
+"57
+[v uckuyrukCokluKuyrukla@sayac sayac `uc  1 a 1 27 ]
+"62
+[v uckuyrukCokluKuyrukla@kap kap `uc  1 a 1 26 ]
+"64
+[v uckuyrukCokluKuyrukla@sayim sayim `uc  1 a 1 25 ]
+"63
+[v uckuyrukCokluKuyrukla@veri veri `*.30uc  1 a 1 24 ]
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+"55
+[v uckuyrukCokluKuyrukla@kuyruk kuyruk `*.30S493  1 p 1 19 ]
+"56
+[v uckuyrukCokluKuyrukla@v v `*.30Cuc  1 p 1 20 ]
+[v uckuyrukCokluKuyrukla@kac kac `Cuc  1 p 1 21 ]
+"81
+} 0
+"138
+[v _uckuyrukKalanKapasite uckuyrukKalanKapasite `(uc  1 e 1 0 ]
+{
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+[v uckuyrukKalanKapasite@kuyruk kuyruk `*.30S493  1 p 1 14 ]
+"140
+} 0
+"87
+[v _uckuyrukKuyruktanAl uckuyrukKuyruktanAl `(uc  1 e 1 0 ]
+{
+"90
+[v uckuyrukKuyruktanAl@bas bas `uc  1 a 1 20 ]
+"91
+[v uckuyrukKuyruktanAl@b b `uc  1 a 1 19 ]
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+"87
+[v uckuyrukKuyruktanAl@kuyruk kuyruk `*.30S493  1 p 1 17 ]
+"100
+} 0
+"134
 [v _uckuyrukBos uckuyrukBos `(uc  1 e 1 0 ]
 {
-[s S489 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
-[v uckuyrukBos@kuyruk kuyruk `*.30S489  1 p 1 14 ]
-"133
+[s S493 . 4 `uc 1 kapasite 1 0 `uc 1 sayim 1 1 `uc 1 bas 1 2 `*.30uc 1 veri 1 3 ]
+[v uckuyrukBos@kuyruk kuyruk `*.30S493  1 p 1 14 ]
+"136
 } 0
-"148 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _tikSayiminiAl tikSayiminiAl `(ui  1 e 2 0 ]
-{
-"149
-[v tikSayiminiAl@sayim sayim `ui  1 a 2 16 ]
-"156
-} 0
-"70 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
 "109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _gorevOlustur gorevOlustur `(*.39S388  1 e 2 0 ]
+[v _grvTikSayiminiAl grvTikSayiminiAl `(ui  1 e 2 0 ]
 {
 "110
-[v gorevOlustur@gkb gkb `*.30S388  1 a 1 22 ]
-"109
-[v gorevOlustur@is is `*.37(uc  1 p 2 20 ]
-"118
+[v grvTikSayiminiAl@sayim sayim `ui  1 a 2 16 ]
+"117
 } 0
-"68
-[v _listeyeEkle listeyeEkle `(v  1 s 1 listeyeEkle ]
+"76 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvOlustur grvOlustur `(*.39S388  1 e 2 0 ]
 {
-"71
-[v listeyeEkle@cSayim cSayim `Cuc  1 a 1 19 ]
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"68
-[v listeyeEkle@liste liste `*.30*.39S388  1 p 1 14 ]
-"69
-[v listeyeEkle@sayim sayim `*.30uc  1 p 1 15 ]
-[v listeyeEkle@max max `uc  1 p 1 16 ]
-[v listeyeEkle@glo glo `*.39S388  1 p 2 17 ]
-"78
+"50
+[v grvOlustur@s s `uc  1 a 1 18 ]
+"46
+[v grvOlustur@gkb gkb `*.30S388  1 a 1 19 ]
+"45
+[v grvOlustur@is is `*.37(uc  1 p 2 14 ]
+"64
 } 0
 "50 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/interrupt.c
 [v _interruptYonetici interruptYonetici `IIH(v  1 e 1 0 ]
@@ -517,10 +484,10 @@
 {
 "132
 } 0
-"161 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _sisTikKesmeIsleyici sisTikKesmeIsleyici `(v  1 e 1 0 ]
+"122 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvTikKesmeIsleyici grvTikKesmeIsleyici `(v  1 e 1 0 ]
 {
-"163
+"124
 } 0
 "121 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek5-kuyruk/sistimer.c
 [v _sisTimerIsleyiciVarsayilan sisTimerIsleyiciVarsayilan `(v  1 e 1 0 ]

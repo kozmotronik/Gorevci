@@ -28,7 +28,7 @@
 #include "gorevciypl.h"
 #include "gorev.h"
 
-#if CALISMA_KIPI == 1
+#if grvCALISMA_KIPI == 1
 void portGorevciyiBaslat(void);
 #endif
 

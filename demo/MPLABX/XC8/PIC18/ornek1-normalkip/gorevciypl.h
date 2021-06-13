@@ -39,11 +39,11 @@ extern "C" {
  * #define CALISMA_KIPI 0 // Hafif kip
  * #define CALISMA_KIPI 1 // Normal kip
  */
-#define CALISMA_KIPI 1
+#define grvCALISMA_KIPI 1
 
 
 /* Mikrosaniye türünden sistem tiki süresi. */
-#define SISTEM_TIK_SURESI_uS    1000u
+#define grvSISTEM_TIK_SURESI_uS    1000u
     
 /*
  * Uygulamada çalışacak maksimum görev sayısı.
@@ -52,7 +52,7 @@ extern "C" {
  * sayısıdır. Alternatif olarak oluşturulan görev sayısından bir fazla
  * olacak şekilde belirlenebilir.
  */
-#define MAX_GOREV_SAYISI        5
+#define grvMAX_GOREV_SAYISI        5
 
 
 

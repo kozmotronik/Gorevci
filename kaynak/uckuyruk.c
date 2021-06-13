@@ -30,6 +30,7 @@
 
 void uckuyrukIlkle(const unsigned char kap,
         uckuyruk_t *kuyruk, unsigned char *veri) {
+	if(kuyruk == NULL || veri == NULL) return;
 	kuyruk->kapasite = kap;
 	kuyruk->bas = 0; // Kuyruk başını ilkle
 	kuyruk->sayim = 0; // Kuyruk boş
@@ -38,70 +39,72 @@ void uckuyrukIlkle(const unsigned char kap,
 
 char uckuyrukKuyrukla(uckuyruk_t *kuyruk, const unsigned char veri) {
     // Kuyruk doluysa işlem yapma
-    if(uckuyrukDolu(kuyruk)) return 0;
-    unsigned char sayim = kuyruk->sayim;
-    const unsigned char kap = kuyruk->kapasite;
-    /* Verinin saklanacağı sıradaki konumu hesapla */
-    unsigned char konum = kuyruk->bas + sayim;
-    if(konum >= kap) konum -= kap;
-    /* Veriyi kuyruğa al */
+	if(kuyruk == NULL || uckuyrukDolu(kuyruk)) return 0;
+	unsigned char sayim = kuyruk->sayim;
+	const unsigned char kap = kuyruk->kapasite;
+	/* Verinin saklanacağı sıradaki konumu hesapla */
+	unsigned char konum = kuyruk->bas + sayim;
+	if(konum >= kap) konum -= kap;
+	/* Veriyi kuyruğa al */
 	*( (kuyruk->veri) + konum) = veri;
-    /* Sayımı artır ve kuyruğun sayım değişkenine geri sakla */
-    kuyruk->sayim = ++sayim;
+	/* Sayımı artır ve kuyruğun sayım değişkenine geri sakla */
+	kuyruk->sayim = ++sayim;
 	return 1; // Öğe kuyruklandı
 }
 
 char uckuyrukCokluKuyrukla(uckuyruk_t *kuyruk,
         const unsigned char *v, const unsigned char kac) {
-    unsigned char sayac;
-    /* Kuyrukta yeterince yer var mı? */
-    if(uckuyrukKalanKapasite(kuyruk) < kac) return 0;
+	unsigned char sayac;
+	if(kuyruk == NULL || v == NULL) return 0;
+	/* Kuyrukta yeterince yer var mı? */
+	if(uckuyrukKalanKapasite(kuyruk) < kac) return 0;
     
 	unsigned char kap = kuyruk->kapasite;
 	unsigned char *veri = kuyruk->veri;
 	unsigned char sayim = kuyruk->sayim;
-    /* Verinin saklanacağı sıradaki konumu hesapla */
-    unsigned char konum = (kuyruk->bas + sayim);
-    if(konum >= kap) konum -= kap;
-    const char baslangic = konum; // Başlangıç konumunu sakla
+	/* Verinin saklanacağı sıradaki konumu hesapla */
+	unsigned char konum = (kuyruk->bas + sayim);
+	if(konum >= kap) konum -= kap;
+	const char baslangic = konum; // Başlangıç konumunu sakla
     
 	/* Eklenmek istenen öğeleri kuyruğa çoğalt */
 	for(sayac = 0; sayac < kac; sayac++) {
 		*(veri + konum) = *(v + sayac);
-        /* Sonraki sıraya geç */
-        konum++;
-        if(konum >= kap) konum -= kap;
-        sayim++;
+		/* Sonraki sıraya geç */
+		konum++;
+		if(konum >= kap) konum -= kap;
+		sayim++;
 	}
-    kuyruk->sayim = sayim;
+	kuyruk->sayim = sayim;
 	
 	return sayac; // Öğeler kuyruklandı
 }
 
 unsigned char uckuyrukBastakiOge(uckuyruk_t *kuyruk) {
-    return *( (kuyruk->veri) + (kuyruk->bas) );
+	return kuyruk == NULL ? 0 : *( (kuyruk->veri) + (kuyruk->bas) );
 }
 
 unsigned char uckuyrukKuyruktanAl(uckuyruk_t *kuyruk) {
-    /* Kuyrukta hiç öğe var mı? */
-    if(uckuyrukBos(kuyruk)) return 0;
-    unsigned char bas = kuyruk->bas;
+	/* Kuyrukta hiç öğe var mı? */
+	if(kuyruk == NULL || uckuyrukBos(kuyruk)) return 0;
+	unsigned char bas = kuyruk->bas;
 	unsigned char b;
 	
 	b = *( (kuyruk->veri) + bas);
-    bas++;
-    kuyruk->sayim--;
-    if(bas >= kuyruk->kapasite) bas = 0;
-    kuyruk->bas = bas;
+	bas++;
+	kuyruk->sayim--;
+	if(bas >= kuyruk->kapasite) bas = 0;
+	kuyruk->bas = bas;
 	
 	return b;
 }
 
 char uckuyrukCokluAl(uckuyruk_t *kuyruk,
         unsigned char *v, const unsigned char kac) {
-    unsigned char sayac;
-    /* Kuyrukta @kac kadar öğe var mı? */
-    if(uckuyrukKacOgeVar(kuyruk) < kac) return 0;
+	unsigned char sayac;
+	if(kuyruk == NULL || v == NULL) return 0;
+	/* Kuyrukta @kac kadar öğe var mı? */
+	if(uckuyrukKacOgeVar(kuyruk) < kac) return 0;
     
 	const unsigned char kap = kuyruk->kapasite;
 	const unsigned char *veri = kuyruk->veri;
@@ -109,29 +112,29 @@ char uckuyrukCokluAl(uckuyruk_t *kuyruk,
 	unsigned char sayim = kuyruk->sayim;
 	
 	/* Önce verileri referansı verilen diziye çoğalt */
-	for(int sayac = 0; sayac < kac; sayac++) {
+	for(sayac = 0; sayac < kac; sayac++) {
 		*(v+sayac) = *(veri + bas);
-        bas++; sayim--;
-        if(bas >= kap) bas = 0;
+		bas++; sayim--;
+		if(bas >= kap) bas = 0;
 	}
-    kuyruk->bas = bas;
-    kuyruk->sayim = sayim;
+	kuyruk->bas = bas;
+	kuyruk->sayim = sayim;
 	
 	return sayac;
 }
 
 unsigned char uckuyrukKacOgeVar(uckuyruk_t *kuyruk) {
-    return kuyruk->sayim;
+	return kuyruk == NULL ? 0 : kuyruk->sayim;
 }
 
 char uckuyrukDolu(uckuyruk_t *kuyruk) {
-	return kuyruk->sayim >= kuyruk->kapasite ? 1 : 0;
+	return kuyruk == NULL ? 1 : (kuyruk->sayim >= kuyruk->kapasite ? 1 : 0);
 }
 
 char uckuyrukBos(uckuyruk_t *kuyruk) {
-	return kuyruk->sayim == 0;
+	return kuyruk == NULL ? 1 : kuyruk->sayim == 0;
 }
 
 unsigned char uckuyrukKalanKapasite(uckuyruk_t *kuyruk) {
-	return kuyruk->kapasite - kuyruk->sayim;
+	return kuyruk == NULL ? 0 : kuyruk->kapasite - kuyruk->sayim;
 }

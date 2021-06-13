@@ -29,123 +29,84 @@
 static unsigned int tikSayimi=0;
 
 // Görev yönetici kullanılmak isteniyorsa derlemeye ekle
-#if CALISMA_KIPI == 1
+#if grvCALISMA_KIPI == 1
 
-#ifndef MAX_GOREV_SAYISI
+#ifndef grvMAX_GOREV_SAYISI
 #warning Maksimum gorev sayisi MAX_GOREV_SAYISI tanimlanmamis. Varsayilan 8 olacak.
-#define MAX_GOREV_SAYISI 8
+#define grvMAX_GOREV_SAYISI 8
 #endif
 
-typedef gorev_t *gorevListeOgesi_t;
 
-static gorev_t gorevHeap[MAX_GOREV_SAYISI];
-static gorevListeOgesi_t calisanListesi[MAX_GOREV_SAYISI];
+static gorev_t gorevHavuzu[grvMAX_GOREV_SAYISI];
 
-/* Maksimum görev sayısının 1/3 ü kadar CIKTI durumuna geçen görev listesi */
-#if MAX_GOREV_SAYISI >= 24
-#define MAX_CIKAN_GOREV_SAYISI 6
-#elif MAX_GOREV_SAYISI >= 16
-#define MAX_CIKAN_GOREV_SAYISI 5
-#elif MAX_GOREV_SAYISI >= 12
-#define MAX_CIKAN_GOREV_SAYISI 4
-#elif MAX_GOREV_SAYISI >= 8
-#define MAX_CIKAN_GOREV_SAYISI 3
-#elif MAX_GOREV_SAYISI >= 4
-#define MAX_CIKAN_GOREV_SAYISI 2
-#elif MAX_GOREV_SAYISI >= 2
-#define MAX_CIKAN_GOREV_SAYISI 1
-#elif MAX_GOREV_SAYISI < 2 
-#warning Yalnizca bir gorev icin Gorevciyi kullanmaya degmez. En az iki gorev olmali.
-#define MAX_CIKAN_GOREV_SAYISI 1
-#endif
-
-static gorevListeOgesi_t cikanListesi[MAX_CIKAN_GOREV_SAYISI];
-
-static char gorevSayimi = 0, calisanSayimi = 0, cikanSayimi = 0;
+static unsigned char gorevSayimi = 0;
 
 
-/* Görev listelerini yönetmek için basit liste işlevsellikleri */
-static void listeyeEkle(gorevListeOgesi_t liste[], 
-        char *sayim, char max, gorevListeOgesi_t glo) {
-    
-    const char cSayim = *sayim;
-    
-    // Liste dolu işlem yapma.
-    if(cSayim >= max) return;
-    
-    liste[cSayim] = glo;
-    (*sayim)++;
-}
-
-static void listedenSil(gorevListeOgesi_t liste[], 
-        char *sayim, const char konum) {
-    
-    const char cSayim = *sayim;
-    
-    // Sınır kontrolü yap.
-    if(konum >= cSayim || konum == 0) return;
-    
-    if(konum == (cSayim - 1)) {
-        /* Silinmek istenen öğe listenin son öğesi, öyleyse yalnızca sil ve 
-         * sayımı azalt */
-        liste[konum] = NULL;
-        (*sayim)--;
-        return;
-    }
-    // Arada bir öğeyse, sildikten sonra başa doğru hizala
-    gorevListeOgesi_t sonrakiOge;
-    char k = konum;
-    liste[konum] = NULL;
-    while(k < cSayim) {
-        // Sonraki öğeyi bir önceye al
-        liste[k] = liste[k+1];
-        k++; // Sonraki satıra geç
-    }
-    // Hizalama bitince sayımı bir azalt
-    (*sayim)--;
-}
-
-
-gorev_t *gorevOlustur(is_t is) {
-    gorev_t *gkb;
+pgkb_t grvOlustur(is_t is) {
+	pgkb_t gkb;
 	// Görev listesi dolu, NULL döndür.
-	if(gorevSayimi >= MAX_GOREV_SAYISI) return NULL;
-    gkb = &gorevHeap[gorevSayimi++];
+	if(gorevSayimi >= grvMAX_GOREV_SAYISI) return NULL;
+	/* Aynı iş parçasına sahip bir görev oluşturulmuş mu? */
+	for(char s = 0; s < gorevSayimi; s++) {
+		if(is == gorevHavuzu[s].is) {
+			/* Aynı iş parçasına sahip bir görev zaten var */
+			return NULL;
+		}
+	}
+	/* Her şey tamam, yeni görevi oluştur ve ilkle */
+	gkb = &gorevHavuzu[gorevSayimi];
+	gkb->kimlik = gorevSayimi;
+	gkb->durum = grvBEKLIYOR;
 	gkb->is = is;
-	GOREV_ILKLE(gkb);
-    listeyeEkle(calisanListesi, &calisanSayimi, MAX_GOREV_SAYISI, gkb);
+	grvILKLE(gkb);
+	gorevSayimi++;
 	return gkb;
 }
 
-void gorevciyiBaslat() {
+void grvBaslat(const unsigned char kimlik) {
+	pgkb_t gkb = grvKimlikIleGorevBlogunuAl(kimlik);
+	if(gkb == NULL) return;
+	grvILKLE(gkb);
+	gkb->durum = grvBEKLIYOR;
+}
+
+void grvDurdur(const unsigned char kimlik) {
+	pgkb_t gkb = grvKimlikIleGorevBlogunuAl(kimlik);
+	if(gkb == NULL) return;
+	gkb->durum = grvBITTI;
+}
+
+void grvGorevciyiBaslat() {
 	while(1) {
-		for(char s = 0; s < gorevSayimi; s++) {
-			char donus = calisanListesi[s]->is(calisanListesi[s]); // Sıradaki görevi çalıştır.
-            if(donus == CIKTI) {
-                // Görevi çalışma listesinden çıkar
-                
-                /* Görev kontrol bloğuna başvuruyu al */
-                gorevListeOgesi_t glo = calisanListesi[s];
-                
-                /* GKB'nu çalışma listesinden sil */
-                listedenSil(calisanListesi, &calisanSayimi, s);
-                
-                /* GKB'nu çıkan listesine ekle */
-                listeyeEkle(cikanListesi, &cikanSayimi, MAX_CIKAN_GOREV_SAYISI, glo);
-            }
+		for(unsigned char s = 0; s < gorevSayimi; s++) {
+			/* Sıradaki Görev Kontrol Bloğunu al */
+			pgkb_t gkb = &gorevHavuzu[s];
+			/* Bir şekilde NULL olmuş görev kontrol bloğu, sonrakine geç */
+			if(gkb == NULL) continue;
+			/* Görevin iş parçasını al */
+			is_t is = gkb->is;
+			/* Bir şekilde NULL olmuş iş parçası, sonrakine geç */
+			if(is == NULL) continue;
+			/* Görev etkin mi? Değilse sonrakini başlat */
+			char durum = gkb->durum;
+			if(durum == grvBITTI || durum == grvCIKTI) continue;
+			durum = is(gkb); // Sıradaki görevi çalıştır.
+			/* Görevin durumunu sakla */
+			gkb->durum = durum;
 		}
 	}
 }
 
-gorev_t *gorevBlogunuAl(is_t is) {
-    for(int s = 0; s < gorevSayimi; s++) {
-        if(gorevHeap[s].is == is) return &gorevHeap[s];
-    }
-    return NULL;
+pgkb_t grvKimlikIleGorevBlogunuAl(const unsigned char kimlik) {
+	if(kimlik >= grvMAX_GOREV_SAYISI) return NULL;
+	/* Blok havuzda var öyleyse GKB'na başvuru döndür */
+	return &gorevHavuzu[kimlik];
 }
+
+
 #endif
 
-unsigned int tikSayiminiAl() {
+unsigned int grvTikSayiminiAl() {
 	unsigned int sayim;
 	// Atomik bölge giriş
 	portKRITIK_BOLUM_GIRISI();
@@ -158,7 +119,7 @@ unsigned int tikSayiminiAl() {
 /**
  * Bu işlev sistem sürevcisi kesmesinden çağrılır.
  */
-void sisTikKesmeIsleyici() {
+void grvTikKesmeIsleyici() {
 	tikSayimi++;
 }
 

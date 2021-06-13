@@ -3,20 +3,20 @@
 [d edition pro ]
 [d chip 18F46K22 ]
 [d frameptr 4065 ]
-"68 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _listeyeEkle listeyeEkle `(v  1 s 1 listeyeEkle ]
-"80
-[v _listedenSil listedenSil `(v  1 s 1 listedenSil ]
-"70 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _gorevOlustur gorevOlustur `(*.39S388  1 e 2 0 ]
-"120
-[v _gorevciyiBaslat gorevciyiBaslat `(v  1 e 1 0 ]
-"148
-[v _tikSayiminiAl tikSayiminiAl `(ui  1 e 2 0 ]
-"161
-[v _sisTikKesmeIsleyici sisTikKesmeIsleyici `(v  1 e 1 0 ]
+"76 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvOlustur grvOlustur `(*.39S388  1 e 2 0 ]
+"79
+[v _grvGorevciyiBaslat grvGorevciyiBaslat `(v  1 e 1 0 ]
+"76 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"100 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvKimlikIleGorevBlogunuAl grvKimlikIleGorevBlogunuAl `(*.39S388  1 e 2 0 ]
+"109
+[v _grvTikSayiminiAl grvTikSayiminiAl `(ui  1 e 2 0 ]
+"122
+[v _grvTikKesmeIsleyici grvTikKesmeIsleyici `(v  1 e 1 0 ]
 "47 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/portlar/mplabx/xc8/pic18/port.c
 [v _portGorevciyiBaslat portGorevciyiBaslat `(v  1 e 1 0 ]
 "4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/fleq.c
@@ -75,75 +75,69 @@
 [v _sisTimerIlkle sisTimerIlkle `(v  1 e 1 0 ]
 "29 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
 [v _tikSayimi tikSayimi `ui  1 s 2 tikSayimi ]
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"41
-[v _gorevHeap gorevHeap `[8]S388  1 s 32 gorevHeap ]
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"40
+[v _gorevHavuzu gorevHavuzu `[8]S388  1 s 48 gorevHavuzu ]
 "42
-[v _calisanListesi calisanListesi `[8]*.39S388  1 s 16 calisanListesi ]
-"62
-[v _cikanListesi cikanListesi `[3]*.39S388  1 s 6 cikanListesi ]
-"64
 [v _gorevSayimi gorevSayimi `uc  1 s 1 gorevSayimi ]
-[v _calisanSayimi calisanSayimi `uc  1 s 1 calisanSayimi ]
-[v _cikanSayimi cikanSayimi `uc  1 s 1 cikanSayimi ]
 "45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/portlar/mplabx/xc8/pic18/portmacro.h
-[v _intconYedek@portmacro$F427 intconYedek `uc  1 s 1 intconYedek ]
-"97 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8/pic/include/proc/pic18f46k22.h
+[v _intconYedek@portmacro$F434 intconYedek `uc  1 s 1 intconYedek ]
+"97 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8/pic/include/proc/pic18f46k22.h
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
 "147
 [v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
 "198
 [v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
-[s S512 . 1 `uc 1 ANSE0 1 0 :1:0 
+[s S516 . 1 `uc 1 ANSE0 1 0 :1:0 
 `uc 1 ANSE1 1 0 :1:1 
 `uc 1 ANSE2 1 0 :1:2 
 ]
 "272
-[u S516 . 1 `S512 1 . 1 0 ]
-[v _ANSELEbits ANSELEbits `VES516  1 e 1 @3900 ]
+[u S520 . 1 `S516 1 . 1 0 ]
+[v _ANSELEbits ANSELEbits `VES520  1 e 1 @3900 ]
 "7142
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
-[s S547 . 1 `uc 1 RE0 1 0 :1:0 
+[s S551 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "7435
-[s S552 . 1 `uc 1 AN5 1 0 :1:0 
+[s S556 . 1 `uc 1 AN5 1 0 :1:0 
 `uc 1 AN6 1 0 :1:1 
 `uc 1 AN7 1 0 :1:2 
 `uc 1 MCLR 1 0 :1:3 
 ]
-[s S557 . 1 `uc 1 . 1 0 :3:0 
+[s S561 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_MCLR 1 0 :1:3 
 ]
-[s S560 . 1 `uc 1 P3A 1 0 :1:0 
+[s S564 . 1 `uc 1 P3A 1 0 :1:0 
 `uc 1 P3B 1 0 :1:1 
 `uc 1 CCP5 1 0 :1:2 
 `uc 1 nMCLR 1 0 :1:3 
 ]
-[s S565 . 1 `uc 1 CCP3 1 0 :1:0 
+[s S569 . 1 `uc 1 CCP3 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 VPP 1 0 :1:3 
 ]
-[s S569 . 1 `uc 1 PD2 1 0 :1:0 
+[s S573 . 1 `uc 1 PD2 1 0 :1:0 
 `uc 1 PC2 1 0 :1:1 
 `uc 1 CCP10 1 0 :1:2 
 `uc 1 CCP9E 1 0 :1:3 
 ]
-[s S574 . 1 `uc 1 RDE 1 0 :1:0 
+[s S578 . 1 `uc 1 RDE 1 0 :1:0 
 `uc 1 WRE 1 0 :1:1 
 `uc 1 CS 1 0 :1:2 
 `uc 1 PC3E 1 0 :1:3 
 ]
-[s S579 . 1 `uc 1 . 1 0 :2:0 
+[s S583 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PB2 1 0 :1:2 
 ]
-[u S582 . 1 `S547 1 . 1 0 `S552 1 . 1 0 `S557 1 . 1 0 `S560 1 . 1 0 `S565 1 . 1 0 `S569 1 . 1 0 `S574 1 . 1 0 `S579 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES582  1 e 1 @3972 ]
+[u S586 . 1 `S551 1 . 1 0 `S556 1 . 1 0 `S561 1 . 1 0 `S564 1 . 1 0 `S569 1 . 1 0 `S573 1 . 1 0 `S578 1 . 1 0 `S583 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES586  1 e 1 @3972 ]
 "7672
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S794 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S800 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -153,7 +147,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "7699
-[s S803 . 1 `uc 1 LB0 1 0 :1:0 
+[s S809 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -162,24 +156,24 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S812 . 1 `S794 1 . 1 0 `S803 1 . 1 0 ]
-[v _LATBbits LATBbits `VES812  1 e 1 @3978 ]
+[u S818 . 1 `S800 1 . 1 0 `S809 1 . 1 0 ]
+[v _LATBbits LATBbits `VES818  1 e 1 @3978 ]
 "7784
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7896
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S492 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S496 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 ]
 "8025
-[s S496 . 1 `uc 1 LE0 1 0 :1:0 
+[s S500 . 1 `uc 1 LE0 1 0 :1:0 
 `uc 1 LE1 1 0 :1:1 
 `uc 1 LE2 1 0 :1:2 
 ]
-[u S500 . 1 `S492 1 . 1 0 `S496 1 . 1 0 ]
-[v _LATEbits LATEbits `VES500  1 e 1 @3981 ]
-[s S676 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S504 . 1 `S496 1 . 1 0 `S500 1 . 1 0 ]
+[v _LATEbits LATEbits `VES504  1 e 1 @3981 ]
+[s S682 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -189,7 +183,7 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "8092
-[s S685 . 1 `uc 1 RA0 1 0 :1:0 
+[s S691 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -198,27 +192,27 @@
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-[u S694 . 1 `S676 1 . 1 0 `S685 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES694  1 e 1 @3986 ]
+[u S700 . 1 `S682 1 . 1 0 `S691 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES700  1 e 1 @3986 ]
 "8282
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "8504
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8726
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S523 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S527 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 WPUE3 1 0 :1:7 
 ]
 "8972
-[s S529 . 1 `uc 1 RE0 1 0 :1:0 
+[s S533 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 ]
-[u S533 . 1 `S523 1 . 1 0 `S529 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES533  1 e 1 @3990 ]
+[u S537 . 1 `S527 1 . 1 0 `S533 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES537  1 e 1 @3990 ]
 "9064
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
 [s S150 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -257,15 +251,15 @@
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
 "13543
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-[s S716 . 1 `uc 1 . 1 0 :1:0 
+[s S722 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "13656
-[s S719 . 1 `uc 1 ADON 1 0 :1:0 
+[s S725 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-[s S723 . 1 `uc 1 . 1 0 :1:0 
+[s S729 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -273,23 +267,23 @@
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S731 . 1 `uc 1 . 1 0 :1:0 
+[s S737 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S734 . 1 `uc 1 . 1 0 :1:0 
+[s S740 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S737 . 1 `uc 1 . 1 0 :1:0 
+[s S743 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S740 . 1 `uc 1 . 1 0 :1:0 
+[s S746 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S743 . 1 `uc 1 . 1 0 :1:0 
+[s S749 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S746 . 1 `S716 1 . 1 0 `S719 1 . 1 0 `S723 1 . 1 0 `S731 1 . 1 0 `S734 1 . 1 0 `S737 1 . 1 0 `S740 1 . 1 0 `S743 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES746  1 e 1 @4034 ]
+[u S752 . 1 `S722 1 . 1 0 `S725 1 . 1 0 `S729 1 . 1 0 `S737 1 . 1 0 `S740 1 . 1 0 `S743 1 . 1 0 `S746 1 . 1 0 `S749 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES752  1 e 1 @4034 ]
 "13743
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "13763
@@ -427,63 +421,50 @@
 {
 "35
 } 0
-"120 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _gorevciyiBaslat gorevciyiBaslat `(v  1 e 1 0 ]
+"79 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvGorevciyiBaslat grvGorevciyiBaslat `(v  1 e 1 0 ]
 {
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"128
-[v gorevciyiBaslat@glo glo `*.39S388  1 a 2 9 ]
-"123
-[v gorevciyiBaslat@donus donus `uc  1 a 1 11 ]
-"122
-[v gorevciyiBaslat@s s `uc  1 a 1 12 ]
-"138
-} 0
-"80
-[v _listedenSil listedenSil `(v  1 s 1 listedenSil ]
-{
-"97
-[v listedenSil@k k `uc  1 a 1 18 ]
+"87
+[v grvGorevciyiBaslat@is is `*.37(uc  1 a 2 0 ]
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
 "83
-[v listedenSil@cSayim cSayim `Cuc  1 a 1 17 ]
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"80
-[v listedenSil@liste liste `*.30*.39S388  1 p 1 14 ]
+[v grvGorevciyiBaslat@gkb gkb `*.30S388  1 a 1 4 ]
+"91
+[v grvGorevciyiBaslat@durum durum `uc  1 a 1 3 ]
 "81
-[v listedenSil@sayim sayim `*.30uc  1 p 1 15 ]
-[v listedenSil@konum konum `Cuc  1 p 1 16 ]
-"106
+[v grvGorevciyiBaslat@s s `uc  1 a 1 2 ]
+"98
 } 0
 "285 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek3-normalkip/ornek3.c
 [v _gostergeGuncelle gostergeGuncelle `(uc  1 e 1 0 ]
 {
-[v gostergeGuncelle@tutucu tutucu `*.39v  1 p 2 0 ]
+[v gostergeGuncelle@tutucu tutucu `*.30v  1 p 1 21 ]
 "289
 [v gostergeGuncelle@BCDdenOrtakAnoda BCDdenOrtakAnoda `C[17]uc  1 s 17 BCDdenOrtakAnoda ]
-[s S489 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+[s S493 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
 "300
-[v gostergeGuncelle@s5 s5 `S489  1 s 4 s5 ]
+[v gostergeGuncelle@s5 s5 `S493  1 s 4 s5 ]
 "349
 } 0
 "240
 [v _gostergeDegeriGuncelle gostergeDegeriGuncelle `(uc  1 e 1 0 ]
 {
 "257
-[v gostergeDegeriGuncelle@olcekliDeger olcekliDeger `us  1 a 2 5 ]
+[v gostergeDegeriGuncelle@olcekliDeger olcekliDeger `us  1 a 2 25 ]
 "240
-[v gostergeDegeriGuncelle@tutucu tutucu `*.39v  1 p 2 0 ]
+[v gostergeDegeriGuncelle@tutucu tutucu `*.30v  1 p 1 21 ]
 "280
 } 0
 "190
 [v _karaSimsekHiziOkuma karaSimsekHiziOkuma `(uc  1 e 1 0 ]
 {
 "211
-[v karaSimsekHiziOkuma@sonuc sonuc `us  1 a 2 5 ]
+[v karaSimsekHiziOkuma@sonuc sonuc `us  1 a 2 25 ]
 "190
-[v karaSimsekHiziOkuma@tutucu tutucu `*.39v  1 p 2 0 ]
-[s S489 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+[v karaSimsekHiziOkuma@tutucu tutucu `*.30v  1 p 1 21 ]
+[s S493 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
 "194
-[v karaSimsekHiziOkuma@s4 s4 `S489  1 s 4 s4 ]
+[v karaSimsekHiziOkuma@s4 s4 `S493  1 s 4 s4 ]
 "195
 [v karaSimsekHiziOkuma@oncekiSonuc oncekiSonuc `us  1 s 2 oncekiSonuc ]
 "232
@@ -491,10 +472,10 @@
 "151
 [v _karaSimsek karaSimsek `(uc  1 e 1 0 ]
 {
-[v karaSimsek@tutucu tutucu `*.39v  1 p 2 0 ]
-[s S489 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+[v karaSimsek@tutucu tutucu `*.30v  1 p 1 21 ]
+[s S493 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
 "155
-[v karaSimsek@s3 s3 `S489  1 s 4 s3 ]
+[v karaSimsek@s3 s3 `S493  1 s 4 s3 ]
 "156
 [v karaSimsek@sola sola `a  1 s 1 sola ]
 "185
@@ -502,10 +483,10 @@
 "45
 [v _ledCakarlama1 ledCakarlama1 `(uc  1 e 1 0 ]
 {
-[v ledCakarlama1@tutucu tutucu `*.39v  1 p 2 0 ]
-[s S489 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+[v ledCakarlama1@tutucu tutucu `*.30v  1 p 1 21 ]
+[s S493 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
 "53
-[v ledCakarlama1@s1 s1 `S489  1 s 4 s1 ]
+[v ledCakarlama1@s1 s1 `S493  1 s 4 s1 ]
 "54
 [v ledCakarlama1@secici secici `uc  1 s 1 secici ]
 "55
@@ -517,18 +498,18 @@
 "106
 [v _ledCakarlama2 ledCakarlama2 `(uc  1 e 1 0 ]
 {
-[v ledCakarlama2@tutucu tutucu `*.39v  1 p 2 0 ]
-[s S489 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
+[v ledCakarlama2@tutucu tutucu `*.30v  1 p 1 21 ]
+[s S493 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
 "109
-[v ledCakarlama2@s2 s2 `S489  1 s 4 s2 ]
+[v ledCakarlama2@s2 s2 `S493  1 s 4 s2 ]
 "144
 } 0
-"148 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _tikSayiminiAl tikSayiminiAl `(ui  1 e 2 0 ]
+"109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvTikSayiminiAl grvTikSayiminiAl `(ui  1 e 2 0 ]
 {
-"149
-[v tikSayiminiAl@sayim sayim `ui  1 a 2 16 ]
-"156
+"110
+[v grvTikSayiminiAl@sayim sayim `ui  1 a 2 16 ]
+"117
 } 0
 "7 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -542,30 +523,18 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 16 ]
 "30
 } 0
-"70 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _gorevOlustur gorevOlustur `(*.39S388  1 e 2 0 ]
+"76 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/include/gorev.h
+[s S388 . 6 `uc 1 kimlik 1 0 `uc 1 durum 1 1 `ui 1 sn 2 2 `*.37(uc 1 is 2 4 ]
+"45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvOlustur grvOlustur `(*.39S388  1 e 2 0 ]
 {
-"110
-[v gorevOlustur@gkb gkb `*.30S388  1 a 1 0 ]
-"109
-[v gorevOlustur@is is `*.37(uc  1 p 2 20 ]
-"118
-} 0
-"68
-[v _listeyeEkle listeyeEkle `(v  1 s 1 listeyeEkle ]
-{
-"71
-[v listeyeEkle@cSayim cSayim `Cuc  1 a 1 19 ]
-[s S388 . 4 `ui 1 sn 2 0 `*.37(uc 1 is 2 2 ]
-"68
-[v listeyeEkle@liste liste `*.30*.39S388  1 p 1 14 ]
-"69
-[v listeyeEkle@sayim sayim `*.30uc  1 p 1 15 ]
-[v listeyeEkle@max max `uc  1 p 1 16 ]
-[v listeyeEkle@glo glo `*.39S388  1 p 2 17 ]
-"78
+"50
+[v grvOlustur@s s `uc  1 a 1 18 ]
+"46
+[v grvOlustur@gkb gkb `*.30S388  1 a 1 19 ]
+"45
+[v grvOlustur@is is `*.37(uc  1 p 2 14 ]
+"64
 } 0
 "50 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek3-normalkip/interrupt.c
 [v _interruptYonetici interruptYonetici `IIH(v  1 e 1 0 ]
@@ -577,10 +546,10 @@
 {
 "132
 } 0
-"161 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _sisTikKesmeIsleyici sisTikKesmeIsleyici `(v  1 e 1 0 ]
+"122 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvTikKesmeIsleyici grvTikKesmeIsleyici `(v  1 e 1 0 ]
 {
-"163
+"124
 } 0
 "121 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek3-normalkip/sistimer.c
 [v _sisTimerIsleyiciVarsayilan sisTimerIsleyiciVarsayilan `(v  1 e 1 0 ]

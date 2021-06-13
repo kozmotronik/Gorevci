@@ -37,10 +37,9 @@
 #include <stdbool.h>
 #include <xc.h>
 #include "devcfg.h"
-
 #include "osilator.h"
-#include "sistimer.h"
 #include "interrupt.h"
+#include "sistimer.h"
 #include "gorev.h"
 #include "port.h"
 
@@ -61,7 +60,7 @@ unsigned int karaSimsekHizi;
  */
 char ledCakarlama1(gorevTutucu_t tutucu) {
 	
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	
 	/*
 	 * Bir görev aynı anda yalnızca tek bir gecikme işleyebileceğinden tüm
@@ -104,15 +103,15 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
 		
 		PORTBbits.RB1 = !PORTBbits.RB1;
 		
-		GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+		grvGECIK_MS(tutucu, &s1, sureler[secici]);
 		
 		PORTBbits.RB1 = !PORTBbits.RB1;
 		
-		GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+		grvGECIK_MS(tutucu, &s1, sureler[secici]);
 		
 	}
 	
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -122,7 +121,7 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
  */
 char ledCakarlama2(gorevTutucu_t tutucu) {
 	
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	static sure_t s2;
 	
 	// RB5 ilkle
@@ -134,30 +133,30 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
 		
 		PORTBbits.RB5 = !PORTBbits.RB5;
 		
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
 		
 		PORTBbits.RB5 = !PORTBbits.RB5;
 		
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
 		
 		PORTBbits.RB5 = !PORTBbits.RB5;
 		
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
 		
 		PORTBbits.RB5 = !PORTBbits.RB5;
 		
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
 		
 		PORTBbits.RB5 = !PORTBbits.RB5;
 		
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
 		
 		PORTBbits.RB5 = !PORTBbits.RB5;
 		
-		GOREV_GECIK_MS(tutucu, &s2, 1000u);
+		grvGECIK_MS(tutucu, &s2, 1000u);
 	}
 	
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -169,7 +168,7 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
  */
 char karaSimsek(gorevTutucu_t tutucu) {
 	
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	
 	static sure_t s3;
 	static bool sola;
@@ -180,7 +179,7 @@ char karaSimsek(gorevTutucu_t tutucu) {
 	
 	for(;;) {
 		// Karaşimşeğin içeriği gösterilmiyorsa blokla
-		KOSUL_BEKLE(tutucu, icerik == KARASIMSEK);
+		grvKOSUL_BEKLE(tutucu, icerik == KARASIMSEK);
 		if(sola){
 			karasimsek <<= 1;
 			// Sol yönde son bite ulaştıysa yönü değiştir.
@@ -195,10 +194,10 @@ char karaSimsek(gorevTutucu_t tutucu) {
 		}
 		if(icerik == KARASIMSEK) icerikDegisti = 1;
 		
-		GOREV_GECIK_MS(tutucu, &s3, karaSimsekHizi);
+		grvGECIK_MS(tutucu, &s3, karaSimsekHizi);
 	}
 	
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -206,7 +205,7 @@ char karaSimsek(gorevTutucu_t tutucu) {
  */
 char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
 	
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	
 	static sure_t s4;
 	
@@ -222,7 +221,7 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
 		
 		ADCON0bits.GO = 1; // Dönüşümü başlat
 		// Dönüşümün bitmesini bekle (GO/DONE biti sıfır olana dek)
-		BU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
+		grvBU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
 		
 		uint16_t sonuc;
 		sonuc = 0;
@@ -239,23 +238,23 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
 		}
 		karasimsekHiziOkundu = 1; // Hesaplama için sinyal ver
 		
-		GOREV_GECIK_MS(tutucu, &s4, 500u);
+		grvGECIK_MS(tutucu, &s4, 500u);
 	}
 	
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 char gostergeDegeriHesapla(gorevTutucu_t tutucu){
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	while(1){
 		// Karaşimşek hızının seviye göstergesi gösterilmiyorsa blokla.
-		KOSUL_BEKLE(tutucu, icerik == GOSTERGE);
-		KOSUL_BEKLE(tutucu, karasimsekHiziOkundu == 1);
+		grvKOSUL_BEKLE(tutucu, icerik == GOSTERGE);
+		grvKOSUL_BEKLE(tutucu, karasimsekHiziOkundu == 1);
 		karasimsekHiziOkundu = 0;
 		karasimsekGostergeDegeri = (uint8_t) (gercekDeger / (uint8_t) OLCEKLEME_ORANI);
 		icerikDegisti = 1;
 	}
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 char icerikGuncelleyici(gorevTutucu_t tutucu){
@@ -268,7 +267,7 @@ char icerikGuncelleyici(gorevTutucu_t tutucu){
 	#define DUZEY_1 0x3
 	#define DUZEY_0 0x1
 	
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	
 	// PORTD ilkle
 	LATD = 0;
@@ -277,7 +276,7 @@ char icerikGuncelleyici(gorevTutucu_t tutucu){
 	LATD = 0x1; // İlk ledi yak
 	
 	while(1){
-		KOSUL_BEKLE(tutucu, icerikDegisti == 1);
+		grvKOSUL_BEKLE(tutucu, icerikDegisti == 1);
 		icerikDegisti = 0;
 		if(icerik == KARASIMSEK){
 			LATD = karasimsek;
@@ -295,13 +294,13 @@ char icerikGuncelleyici(gorevTutucu_t tutucu){
 		}
 	}
 	
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 char icerikDegistirici(gorevTutucu_t tutucu){
 	static sure_t s5;
 	
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
 	
 	// B4 ucunu giriş olarak ilkle
 	ANSELBbits.ANSB4 = 0;
@@ -309,8 +308,8 @@ char icerikDegistirici(gorevTutucu_t tutucu){
 	TRISBbits.TRISB4 = 1; // B4 ucu giriş
 	
 	while(1){
-		KOSUL_BEKLE(tutucu, PORTBbits.RB4 == 0); // Tuş basılı değilken blokla
-		GOREV_GECIK_MS(tutucu, &s5, 100u); // Arkı süz
+		grvKOSUL_BEKLE(tutucu, PORTBbits.RB4 == 0); // Tuş basılı değilken blokla
+		grvGECIK_MS(tutucu, &s5, 100u); // Arkı süz
 		/* Giriş kararsızsa yeniden örnekle */
 		if(PORTBbits.RB4 != 0) continue;
 		
@@ -320,10 +319,10 @@ char icerikDegistirici(gorevTutucu_t tutucu){
 		icerik = icerik == KARASIMSEK ? GOSTERGE : KARASIMSEK;
 		
 		/* İçeriğin sürekli değişmemesi için tuşun bırakılmasını bekle */
-		BU_KOSULDA_BEKLE(tutucu, PORTBbits.RB4 == 0);
+		grvBU_KOSULDA_BEKLE(tutucu, PORTBbits.RB4 == 0);
 	}
 	
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -335,7 +334,7 @@ void main(void) {
 	interruptIlkle();
 	
 	/* sysTikKesmeIsleyici gorev.h içerisinde tanımlıdır. */
-	sisTimerIlkle(sisTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
+	sisTimerIlkle(grvTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
 	
 	/* Kesmeleri etkinleştir */
 	portKESMELERI_ETKINLESTIR();
@@ -343,13 +342,13 @@ void main(void) {
     /* Çalışacak görevler için görev tutucuları oluştur ve görevleri ilkle */
     gorev_t lc1, lc2, ksmsk, kho, gdh, ig, id;
     
-    GOREV_ILKLE(&lc1);
-    GOREV_ILKLE(&lc2);
-    GOREV_ILKLE(&ksmsk);
-    GOREV_ILKLE(&kho);
-    GOREV_ILKLE(&gdh);
-    GOREV_ILKLE(&ig);
-    GOREV_ILKLE(&id);
+    grvILKLE(&lc1);
+    grvILKLE(&lc2);
+    grvILKLE(&ksmsk);
+    grvILKLE(&kho);
+    grvILKLE(&gdh);
+    grvILKLE(&ig);
+    grvILKLE(&id);
     
     // Görevleri çalıştır.
     while(1) {

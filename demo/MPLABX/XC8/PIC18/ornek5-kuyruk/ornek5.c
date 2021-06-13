@@ -27,14 +27,11 @@
 #include <stdbool.h>
 #include <xc.h>
 #include "devcfg.h"
-
-#include "sistimer.h"
-#include "interrupt.h"
-#include "port.h"
-#include "gorev.h"
 #include "osilator.h"
-#include "uckuyruk.h"
+#include "gorev.h"
 #include "bayrak.h"
+#include "port.h"
+#include "uckuyruk.h"
 
 unsigned char k1[8];
 uckuyruk_t kuyruk1;
@@ -57,29 +54,29 @@ char uretici1(gorevTutucu_t tutucu) {
 #define VERI1_KAP 4
     const unsigned char veri1[] = { 20, 30, 40, 50 };
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     for(;;) {
         
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukDolu(&kuyruk1));
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukDolu(&kuyruk1));
         /* Çoklu kuyruklama başarısızsa kuyrukta yer açılmasını bekle. */
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukCokluKuyrukla(&kuyruk1, veri1, VERI1_KAP) == 0);
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukCokluKuyrukla(&kuyruk1, veri1, VERI1_KAP) == 0);
         
         /* Kuyruk 2' nin kilidini al. */
-        BAYRAK_BEKLE(tutucu, &kuyruk2Erisim);
+        grvBAYRAK_BEKLE(tutucu, &kuyruk2Erisim);
         
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukDolu(&kuyruk2));
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukDolu(&kuyruk2));
         /* Çoklu kuyruklama başarısızsa kapasite açılmasını bekle. */
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukCokluKuyrukla(&kuyruk2, veri1, VERI1_KAP) == 0);
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukCokluKuyrukla(&kuyruk2, veri1, VERI1_KAP) == 0);
         
         /* Kuyruk 2' nin kilidini sal. */
-        BAYRAK_IMLE(&kuyruk2Erisim);
+        grvBAYRAK_IMLE(&kuyruk2Erisim);
         
         /* Başka görevlerin çalışması için kontrolü ver. */
-        GOREV_VAZGEC(tutucu);
+        grvVAZGEC(tutucu);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -94,33 +91,33 @@ char uretici1(gorevTutucu_t tutucu) {
 char uretici2(gorevTutucu_t tutucu) {
 #define VERI2_KAP 4
     unsigned char veri2[VERI2_KAP];
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     for(;;) {
         
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukBos(&kuyruk1));
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukBos(&kuyruk1));
         /* Kuyruk 1 de yeteri kadar veri olmasını bekle. */
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukCokluAl(&kuyruk1, veri2, VERI2_KAP) == 0);
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukCokluAl(&kuyruk1, veri2, VERI2_KAP) == 0);
         
         for(int s = 0; s < VERI2_KAP; s++) {
             veri2[s] = veri2[s] + 100;
         }
         
         /* Kuyruk 2' nin kilidini al. */
-        BAYRAK_BEKLE(tutucu, &kuyruk2Erisim);
+        grvBAYRAK_BEKLE(tutucu, &kuyruk2Erisim);
         
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukDolu(&kuyruk2));
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukDolu(&kuyruk2));
         /* Çoklu kuyruklama başarısızsa kuyrukta yer açılmasını bekle */
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukCokluKuyrukla(&kuyruk2, veri2, VERI2_KAP) == 0);
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukCokluKuyrukla(&kuyruk2, veri2, VERI2_KAP) == 0);
         
         /* Kuyruk 2' nin kilidini sal. */
-        BAYRAK_IMLE(&kuyruk2Erisim);
+        grvBAYRAK_IMLE(&kuyruk2Erisim);
         
         /* Başka görevlerin çalışması için kontrolü ver */
-        GOREV_VAZGEC(tutucu);
+        grvVAZGEC(tutucu);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -132,11 +129,11 @@ char uretici2(gorevTutucu_t tutucu) {
  */
 char gostergeDegerleriGuncelle(gorevTutucu_t tutucu) {
     
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     static sure_t s2;
     while(1){
-        BU_KOSULDA_BEKLE(tutucu, uckuyrukBos(&kuyruk2));
+        grvBU_KOSULDA_BEKLE(tutucu, uckuyrukBos(&kuyruk2));
         
         unsigned b = (unsigned) uckuyrukKuyruktanAl(&kuyruk2);
         
@@ -157,9 +154,9 @@ char gostergeDegerleriGuncelle(gorevTutucu_t tutucu) {
         }
         gosterge[0] = (char)(b & 0xFF);
         
-        GOREV_GECIK_MS(tutucu, &s2, 1000);
+        grvGECIK_MS(tutucu, &s2, 1000);
     }
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 /**
@@ -185,7 +182,7 @@ char gostergeTara(gorevTutucu_t tutucu) {
     
     static sure_t s5;
     
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     // PORTC ilkle
     LATC = 0;
@@ -202,14 +199,14 @@ char gostergeTara(gorevTutucu_t tutucu) {
         LATB &= 0xF0; // Denetim bitlerini sıfırla
         LATC = BCDdenOrtakAnoda[gosterge[0]];
         LATBbits.LATB0 = 1;
-        GOREV_GECIK_MS(tutucu, &s5, 5u);
+        grvGECIK_MS(tutucu, &s5, 5u);
         
         // Onlar hanesini güncelle
         if( (gosterge[3] != 0 || gosterge[2] != 0) || gosterge[1] != 0){
             LATB &= 0xF0; // Denetim bitlerini sıfırla
             LATC = BCDdenOrtakAnoda[gosterge[1]];
             LATBbits.LATB1 = 1;
-            GOREV_GECIK_MS(tutucu, &s5, 5u);
+            grvGECIK_MS(tutucu, &s5, 5u);
         }
         
         // Yüzler hanesini güncelle
@@ -217,7 +214,7 @@ char gostergeTara(gorevTutucu_t tutucu) {
             LATB &= 0xF0; // Denetim bitlerini sıfırla
             LATC = BCDdenOrtakAnoda[gosterge[2]];
             LATBbits.LATB2 = 1;
-            GOREV_GECIK_MS(tutucu, &s5, 5u);
+            grvGECIK_MS(tutucu, &s5, 5u);
         }
         
         // Binler hanesini güncelle
@@ -225,12 +222,12 @@ char gostergeTara(gorevTutucu_t tutucu) {
             LATB &= 0xF0; // Denetim bitlerini sıfırla
             LATC = BCDdenOrtakAnoda[gosterge[3]];
             LATBbits.LATB3 = 1;
-            GOREV_GECIK_MS(tutucu, &s5, 5u);
+            grvGECIK_MS(tutucu, &s5, 5u);
         }
         
     }
     
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 
@@ -243,7 +240,7 @@ void main(void) {
     
     /* Senkronizasyon bayrağını ilkle. */
     /* Aynı anda yalnızca bir görev erişebilir. */
-    BAYRAK_ILKLE(&kuyruk2Erisim, 1); 
+    grvBAYRAK_ILKLE(&kuyruk2Erisim, 1); 
     
     /* Çalışacak görevleri görevciye tanıt. Çalışacak görevlerin sayısı belli
      * olduktan sonra gorevciypl.h dosyasında "MAX_GOREV_SAYISI" bu görev sayısı
@@ -251,10 +248,10 @@ void main(void) {
      * takdirde görevci katmanı varsayılan olarak 8 görev tutacak bir görev
      * sayısı tanımlayacaktır.
      */
-    gorevOlustur(uretici1);
-    gorevOlustur(uretici2);
-    gorevOlustur(gostergeDegerleriGuncelle);
-    gorevOlustur(gostergeTara);
+    grvOlustur(uretici1);
+    grvOlustur(uretici2);
+    grvOlustur(gostergeDegerleriGuncelle);
+    grvOlustur(gostergeTara);
     
     // Görevciyi çalıştır, bu çağrıdan geri dönmemeli.
     portGorevciyiBaslat();

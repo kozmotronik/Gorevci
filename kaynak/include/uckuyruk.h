@@ -102,22 +102,27 @@
 #ifndef UC_KUYRUK_H
 #define UC_KUYRUK_H
 
+#ifndef NULL
+#define NULL ( (void*) 0 )
+#endif
+
+
 /**
- * \Ozet    @uckuyruk_t (unsigned char kuyruk) FIFO (İlk giren ilk çıkar)
- *          türünde bir kuyruk yapısıdır. Amacı statik olarak tanımlanmış 
- *          @unsigned char türünde bir diziye referans alıp düşük belleğe sahip 
- *          aygıtlarda basit bir FIFO kuyruğu yönetmektir.
- *          Kuyruk, @bas ve @sayim adında iki değişkenle yönetilir. 
- *          @bas, kuyruktan alınmayı bekleyen ilk öğenin konumunu tutar.
+ * \Ozet	@uckuyruk_t (unsigned char kuyruk) FIFO (İlk giren ilk çıkar)
+ *			türünde bir kuyruk yapısıdır. Amacı statik olarak tanımlanmış 
+ *			@unsigned char türünde bir diziye referans alıp düşük belleğe sahip 
+ *			aygıtlarda basit bir FIFO kuyruğu yönetmektir.
+ *			Kuyruk, @bas ve @sayim adında iki değişkenle yönetilir. 
+ *			@bas, kuyruktan alınmayı bekleyen ilk öğenin konumunu tutar.
  * 
- * \kapasite:   1 - 255 arası kapasite. Bu, kuyruğun sonunu bilmek için 
- *              gereklidir.
- * \sayim:  Kuyruğa yazılan verilerin sayımını tutar. Bir sonraki yazma konumunu
- *          hesaplamak için de kullanılır.
- * \bas:    Kuyrukta sıradaki okunmayı / alınmayı bekleyen verinin konumunu
- *          tutar.
- * \veri:   Uygulamada oluşturulan @unsigned char türünde bir diziye başvuru
- *          adresini tutan imci (pointer).
+ * \kapasite:	1 - 255 arası kapasite. Bu, kuyruğun sonunu bilmek için 
+ * 				gereklidir.
+ * \sayim:	Kuyruğa yazılan verilerin sayımını tutar. Bir sonraki yazma konumunu
+ *			hesaplamak için de kullanılır.
+ * \bas:	Kuyrukta sıradaki okunmayı / alınmayı bekleyen verinin konumunu
+ *			tutar.
+ * \veri:	Uygulamada oluşturulan @unsigned char türünde bir diziye başvuru
+ *			adresini tutan imci (pointer).
  */
 typedef struct {
 	unsigned char kapasite;
@@ -129,10 +134,10 @@ typedef struct {
 /**
  * \Ozet	@uckuyruk_t fifo kuyruğunu ilk kullanıma hazırlar.
  * 
- * \param kapasite: Kuyruğun 1 - 255 aralığında kapasitesi, sizeof ile 
- *                  verilebilir.
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
- * \param *veri:    Uygulamada tanımlanan bir unsigned char türünde dizi.
+ * \param kapasite:	Kuyruğun 1 - 255 aralığında kapasitesi, sizeof ile 
+ *					unsigned char türüne cast edilerek verilebilir.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *veri:	Uygulamada tanımlanan bir unsigned char türünde dizi.
  * 
  */
 void uckuyrukIlkle(const unsigned char, uckuyruk_t*, unsigned char*);
@@ -141,11 +146,11 @@ void uckuyrukIlkle(const unsigned char, uckuyruk_t*, unsigned char*);
 /**
  * \Ozet	Kuyruğa veri ekler.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
- * \param veri:     Kuyruğa alınacak @unsigned char türünde veri.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param veri:		Kuyruğa alınacak @unsigned char türünde veri.
  * 
- * \return donus:   Kuyruk doluysa veriyi kuyruğa almaz ve 0 döndürür.
- *                  Veriyi kuyruğa alırsa 1 döndürür.
+ * \return donus:	Kuyruk doluysa veriyi kuyruğa almaz ve 0 döndürür.
+ *					Veriyi kuyruğa alırsa 1 döndürür.
  * 
  */
 char uckuyrukKuyrukla(uckuyruk_t*, const unsigned char);
@@ -154,14 +159,14 @@ char uckuyrukKuyrukla(uckuyruk_t*, const unsigned char);
 /**
  * \Ozet	Kuyruğa belirtilen nicelikte veri ekler.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
- * \param *veri:    Veriyi içeren dizideki verinin başlangıç adresine referans.
- * \param kac:      Başlangıcı verilen veriden kaç tanesinin kuyruğa alınacağı.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *veri:	Veriyi içeren dizideki verinin başlangıç adresine referans.
+ * \param kac:		Başlangıcı verilen veriden kaç tanesinin kuyruğa alınacağı.
  * 
- * \return donus:   Kuyruk doluysa veya belirtilen nicelikteki verileri alacak
- *                  kadar boş yer yoksa verileri kuyruğa almaz ve 0 döndürür.
- *                  Verileri kuyruğa alırsa kuyruklanan verilerin niceliğini
- *                  döndürür.
+ * \return donus:	Kuyruk doluysa veya belirtilen nicelikteki verileri alacak
+ *					kadar boş yer yoksa verileri kuyruğa almaz ve 0 döndürür.
+ *					Verileri kuyruğa alırsa kuyruklanan verilerin niceliğini
+ *					döndürür.
  * 
  */
 char uckuyrukCokluKuyrukla(uckuyruk_t*, const unsigned char*, const unsigned char);
@@ -169,13 +174,13 @@ char uckuyrukCokluKuyrukla(uckuyruk_t*, const unsigned char*, const unsigned cha
 
 /**
  * \Ozet	Kuyrukta alınmayı bekleyen en baştaki öğeyi gösterir (peek eder).
- *          Öğe kuyruktan çıkarılmaz.
+ *			Öğe kuyruktan çıkarılmaz.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
  * 
- * \return donus:   Kuyrukta öğe varsa en baştaki öğe, yoksa 0 döndürür. 
- *                  0 değeri de unsigned char türünden kuyruklanabilir bir 
- *                  değerdir. Burada programcı dönen değerin ayrımını yapmalıdır.
+ * \return donus:	Kuyrukta öğe varsa en baştaki öğe, yoksa 0 döndürür. 
+ *					0 değeri de unsigned char türünden kuyruklanabilir bir 
+ *					değerdir. Burada programcı dönen değerin ayrımını yapmalıdır.
  * 
  */
 unsigned char uckuyrukBastakiOge(uckuyruk_t*);
@@ -183,13 +188,13 @@ unsigned char uckuyrukBastakiOge(uckuyruk_t*);
 
 /**
  * \Ozet	Kuyrukta alınmayı bekleyen en baştaki öğeyi kuyruktan alır.
- *          Kuyruktan alınan öğe kuyruktan çıkarılır.
+ *			Kuyruktan alınan öğe kuyruktan çıkarılır.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
  * 
- * \return donus:   Kuyrukta öğe varsa en baştaki öğe, yoksa 0 döndürür. 
- *                  0 değeri de unsigned char türünden kuyruklanabilir bir 
- *                  değerdir. Burada programcı dönen değerin ayrımını yapmalıdır.
+ * \return donus:	Kuyrukta öğe varsa en baştaki öğe, yoksa 0 döndürür. 
+ *					0 değeri de unsigned char türünden kuyruklanabilir bir 
+ *					değerdir. Burada programcı dönen değerin ayrımını yapmalıdır.
  * 
  */
 unsigned char uckuyrukKuyruktanAl(uckuyruk_t*);
@@ -197,18 +202,18 @@ unsigned char uckuyrukKuyruktanAl(uckuyruk_t*);
 
 /**
  * \Ozet	Kuyrukta alınmayı bekleyen öğelerden belirtilen nicelikte öğeyi
- *          parametre olarak sağlanan diziye alır. Kuyruktan alınan veriler
- *          kuyruktan çıkarılır. Programcı parametre olarak verilen dizinin 
- *          belirtilen nicelikte veriyi alacak kapasitesi olduğundan emin
- *          olmalıdır.
+ *			parametre olarak sağlanan diziye alır. Kuyruktan alınan veriler
+ *			kuyruktan çıkarılır. Programcı parametre olarak verilen dizinin 
+ *			belirtilen nicelikte veriyi alacak kapasitesi olduğundan emin
+ *			olmalıdır.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
- * \param *veri:    Kuyruktan alınan verilerin saklanmak istediği konuma referans.
- * \param kac:      Başlangıcı verilen veriden kaç tanesinin kuyruğa alınacağı.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *veri:	Kuyruktan alınan verilerin saklanmak istediği konuma referans.
+ * \param kac:		Başlangıcı verilen veriden kaç tanesinin kuyruğa alınacağı.
  * 
- * \return donus:   Kuyrukta alınmak istenen nicelik kadar öğe yoksa 0 döndürür.
- *                  Kuyruktan başarıyla çoklu alınırsa, alınan verilerin
- *                  niceliğini döndürür.
+ * \return donus:	Kuyrukta alınmak istenen nicelik kadar öğe yoksa 0 döndürür.
+ *					Kuyruktan başarıyla çoklu alınırsa, alınan verilerin
+ *					niceliğini döndürür.
  * 
  */
 char uckuyrukCokluAl(uckuyruk_t*, unsigned char*, const unsigned char);
@@ -217,9 +222,9 @@ char uckuyrukCokluAl(uckuyruk_t*, unsigned char*, const unsigned char);
 /**
  * \Ozet	Kuyrukta bekleyen öğe niceliğini döndürür.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
  * 
- * \return donus:   Kuyrukta bekleyen öğe niceliği.
+ * \return donus:	Kuyrukta bekleyen öğe niceliği.
  * 
  */
 unsigned char uckuyrukKacOgeVar(uckuyruk_t*);
@@ -228,9 +233,9 @@ unsigned char uckuyrukKacOgeVar(uckuyruk_t*);
 /**
  * \Ozet	Kuyruğun dolu olup olmadığını yoklar.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
  * 
- * \return donus:   Kuyruk doluysa 1 (@true), değilse 0 (@false) döndürür.
+ * \return donus:	Kuyruk doluysa 1 (@true), değilse 0 (@false) döndürür.
  * 
  */
 char uckuyrukDolu(uckuyruk_t*);
@@ -238,9 +243,9 @@ char uckuyrukDolu(uckuyruk_t*);
 
 /**
  * \Ozet	Kuyruğun kapasite niceliğini yani kuyruğun daha kaç öğe
- *          alabileceğinin sayısının bilgisini verir.
+ *			alabileceğinin sayısının bilgisini verir.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
  * 
  * 
  */
@@ -250,11 +255,11 @@ unsigned char uckuyrukKalanKapasite(uckuyruk_t*);
  * \Ozet	Kuyruğun boş olup olmadığını yoklar. @uckuyrukDolu() API' sine
  *          alternatiftir.
  * 
- * \param *kuyruk:  Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
+ * \param *kuyruk:	Uygulamada tanımlanan bir @uckuyruk_t yapısına referans.
  * 
- * \return donus:   Kuyruk boşsa 1 (@true), değilse 0 (@false) döndürür.
+ * \return donus:	Kuyruk boşsa 1 (@true), değilse 0 (@false) döndürür.
  * 
  */
 char uckuyrukBos(uckuyruk_t*);
 
-#endif /* BYTE_KUYRUGU_H */
+#endif /* UC_KUYRUK_H */

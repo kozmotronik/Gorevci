@@ -31,7 +31,7 @@ extern "C" {
 #endif
 
 /* Mikrosaniye türünden sistem tiki süresi. */
-#define SISTEM_TIK_SURESI_uS    1000u
+#define grvSISTEM_TIK_SURESI_uS    1000u
     
 /*
  * Uygulamada çalışacak maksimum görev sayısı.
@@ -40,7 +40,7 @@ extern "C" {
  * sayısıdır. Alternatif olarak oluşturulan görev sayısından bir fazla
  * olacak şekilde belirlenebilir.
  */
-#define MAX_GOREV_SAYISI        6
+#define grvMAX_GOREV_SAYISI        6
 
 
 

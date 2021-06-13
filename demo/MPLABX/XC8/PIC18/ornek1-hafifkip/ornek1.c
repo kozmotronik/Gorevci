@@ -27,12 +27,11 @@
 #include <stdbool.h>
 #include <xc.h>
 #include "devcfg.h"
-
-#include "sistimer.h"
+#include "osilator.h"
 #include "interrupt.h"
+#include "sistimer.h"
 #include "port.h"
 #include "gorev.h"
-#include "osilator.h"
 
 
 // Bu değişkene birden fazla görev erişeceği için global kapsamda tanımlandı.
@@ -44,7 +43,7 @@ unsigned int karaSimsekHizi;
  */
 char ledCakarlama1(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     /* Sistem gecikmesi kullanılacak her görevde @sure_t türünde bir süre
      * tutucu değişken tanımlanmalıdır. Görevci bu değişkeni süre takibini
@@ -91,16 +90,16 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
         PORTBbits.RB1 = !PORTBbits.RB1;
 
         /* Süre dolana dek bloklanır */
-        GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+        grvGECIK_MS(tutucu, &s1, sureler[secici]);
 
         PORTBbits.RB1 = !PORTBbits.RB1;
 
         /* Süre dolana dek bloklanır */
-        GOREV_GECIK_MS(tutucu, &s1, sureler[secici]);
+        grvGECIK_MS(tutucu, &s1, sureler[secici]);
         
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -110,7 +109,7 @@ char ledCakarlama1(gorevTutucu_t tutucu) {
  */
 char ledCakarlama2(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     /* Görevdeki gecikmeler için süre tutucu */
     static sure_t s2;
@@ -124,30 +123,30 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 50u);
+		grvGECIK_MS(tutucu, &s2, 50u);
        
         PORTBbits.RB5 = !PORTBbits.RB5;
             
-		GOREV_GECIK_MS(tutucu, &s2, 1000u);
+		grvGECIK_MS(tutucu, &s2, 1000u);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 
@@ -159,7 +158,7 @@ char ledCakarlama2(gorevTutucu_t tutucu) {
  */
 char karaSimsek(gorevTutucu_t tutucu) {
     
-	GOREV_BASLA(tutucu);
+	grvBASLA(tutucu);
     
     static sure_t s3;
     static bool sola;
@@ -190,10 +189,10 @@ char karaSimsek(gorevTutucu_t tutucu) {
         /* Bu görev burada karasimsekHizi içerisindeki milisaniye süre değeri
          * kadar sure bloklanacaktır.
          */
-		GOREV_GECIK_MS(tutucu, &s3, karaSimsekHizi);
+		grvGECIK_MS(tutucu, &s3, karaSimsekHizi);
 	}
     
-	GOREV_BITIR(tutucu);
+	grvBITIR(tutucu);
 }
 
 /**
@@ -202,7 +201,7 @@ char karaSimsek(gorevTutucu_t tutucu) {
  */
 char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
     
-    GOREV_BASLA(tutucu);
+    grvBASLA(tutucu);
     
     static sure_t s4;
     
@@ -220,7 +219,7 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
         /* Dönüşüm bitene dek (GO/DONE biti sıfır olana dek) görev bloklanır
          * Alternatif olarak ADIF bayrağı da yoklanabilir. Bu yapılırsa ADIF
          * bayrağı, yoklandıktan ve koşulu geçtikten sonra temizlenmelidir. */
-        BU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
+        grvBU_KOSULDA_BEKLE(tutucu, (ADCON0bits.GO));
         
         /* Dönüşüm bitti, dönüşüm değeriyle yeni animasyon hızını hesapla */
         uint16_t sonuc;
@@ -236,10 +235,10 @@ char karaSimsekHiziOkuma(gorevTutucu_t tutucu){
         /* Bir sonraki dönüştürme ve hesaplama 350ms sonra yapılacak. O zamana
          * dek görev bloklanır.
          */
-        GOREV_GECIK_MS(tutucu, &s4, 350);
+        grvGECIK_MS(tutucu, &s4, 350);
     }
     
-    GOREV_BITIR(tutucu);
+    grvBITIR(tutucu);
 }
 
 
@@ -251,7 +250,7 @@ void main(void) {
 	interruptIlkle();
 	
 	/* sysTikKesmeIsleyici gorev.h içerisinde tanımlıdır. */
-	sisTimerIlkle(sisTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
+	sisTimerIlkle(grvTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
 	
 	/* Kesmeleri etkinleştir */
 	portKESMELERI_ETKINLESTIR();
@@ -259,10 +258,10 @@ void main(void) {
     /* Çalışacak görevler için görev tutucuları oluştur ve görevleri ilkle */
     gorev_t lc1, lc2, ksmsk, kho;
     
-    GOREV_ILKLE(&lc1);
-    GOREV_ILKLE(&lc2);
-    GOREV_ILKLE(&ksmsk);
-    GOREV_ILKLE(&kho);
+    grvILKLE(&lc1);
+    grvILKLE(&lc2);
+    grvILKLE(&ksmsk);
+    grvILKLE(&kho);
     
     // Görevleri çalıştır.
     while(1) {

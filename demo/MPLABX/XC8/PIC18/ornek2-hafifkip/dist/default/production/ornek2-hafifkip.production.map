@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v2.31/pic/dat/en_msgs.txt -cn \
   -h+dist/default/production/ornek2-hafifkip.production.sym \
   --cmf=dist/default/production/ornek2-hafifkip.production.cmf -z \
-  -Q18F46K22 -o/tmp/xcXENPjfp --defsym=__MPLAB_BUILD=1 \
+  -Q18F46K22 -o/tmp/xcXkNpoDl --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ornek2-hafifkip.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=06Eh-0F37h -pstack=STACK \
   -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXkdjEjm.o dist/default/production/ornek2-hafifkip.production.o 
+  /tmp/xcXcooENL.o dist/default/production/ornek2-hafifkip.production.o 
 
 Object code version is 3.11
 
@@ -35,7 +35,7 @@ Machine type is 18F46K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXkdjEjm.o
+/tmp/xcXcooENL.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 B2       B2        4        4       0
@@ -46,29 +46,29 @@ dist/default/production/ornek2-hafifkip.production.o
                 config                           300000   300000        E        0       4
                 temp                                 4C       4C        1        1       1
                 smallconst                         1000     1000       22      800       0
-                text17                             1918     1918        2      811       0
-                text16                             190E     190E        6      811       0
-                text15                             18BC     18BC       1E      811       0
-                text13                             1802     1802       52      811       0
-                text12                             177A     177A       88      811       0
-                text11                             18DA     18DA       1C      811       0
-                text10                             1564     1564       CA      811       0
-                text9                              148E     148E       D6      811       0
-                text8                              1914     1914        4      811       0
-                text7                              162E     162E       C2      811       0
-                text6                              13A6     13A6       E8      811       0
-                text5                              126C     126C      13A      811       0
-                text4                              1022     1022      24A      811       0
-                text3                              18F6     18F6        E      811       0
-                text2                              1904     1904        A      811       0
-                text1                              1854     1854       40      811       0
-                text0                              16F0     16F0       8A      811       0
+                text17                             19A4     19A4        2      811       0
+                text16                             199A     199A        6      811       0
+                text15                             1948     1948       1E      811       0
+                text13                             188E     188E       52      811       0
+                text12                             1768     1768       9C      811       0
+                text11                             1966     1966       1C      811       0
+                text10                             15B4     15B4       DE      811       0
+                text9                              14CA     14CA       EA      811       0
+                text8                              19A0     19A0        4      811       0
+                text7                              1692     1692       D6      811       0
+                text6                              13CE     13CE       FC      811       0
+                text5                              1280     1280      14E      811       0
+                text4                              1022     1022      25E      811       0
+                text3                              1982     1982        E      811       0
+                text2                              1990     1990        A      811       0
+                text1                              18E0     18E0       40      811       0
+                text0                              1804     1804       8A      811       0
                 cstackCOMRAM                         30       30       1B        1       1
                 cstackBANK0                          60       60        E       60       1
                 dataCOMRAM                           4B       4B        1        1       1
                 bssCOMRAM                             1        1       2F        1       1
-                cinit                              1894     1894       28      811       0
-                idataCOMRAM                        191A     191A        1      811       0
+                cinit                              1920     1920       28      811       0
+                idataCOMRAM                        19A6     19A6        1      811       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -77,25 +77,25 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8       AA         0
                 init                                 B2       B2        4         0
                 reset_vec                             0        0        4         0
-                text17                             1918     1918        2         0
-                text16                             190E     190E        6         0
-                text15                             18BC     18BC       1E         0
-                text13                             1802     1802       52         0
-                text12                             177A     177A       88         0
-                text11                             18DA     18DA       1C         0
-                text10                             1564     1564       CA         0
-                text9                              148E     148E       D6         0
-                text8                              1914     1914        4         0
-                text7                              162E     162E       C2         0
-                text6                              13A6     13A6       E8         0
-                text5                              126C     126C      13A         0
-                text4                              1022     1022      24A         0
-                text3                              18F6     18F6        E         0
-                text2                              1904     1904        A         0
-                text1                              1854     1854       40         0
-                text0                              16F0     16F0       8A         0
-                cinit                              1894     1894       28         0
-                idataCOMRAM                        191A     191A        1         0
+                text17                             19A4     19A4        2         0
+                text16                             199A     199A        6         0
+                text15                             1948     1948       1E         0
+                text13                             188E     188E       52         0
+                text12                             1768     1768       9C         0
+                text11                             1966     1966       1C         0
+                text10                             15B4     15B4       DE         0
+                text9                              14CA     14CA       EA         0
+                text8                              19A0     19A0        4         0
+                text7                              1692     1692       D6         0
+                text6                              13CE     13CE       FC         0
+                text5                              1280     1280      14E         0
+                text4                              1022     1022      25E         0
+                text3                              1982     1982        E         0
+                text2                              1990     1990        A         0
+                text1                              18E0     18E0       40         0
+                text0                              1804     1804       8A         0
+                cinit                              1920     1920       28         0
+                idataCOMRAM                        19A6     19A6        1         0
 
         CLASS   CONST          
 
@@ -165,7 +165,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
-                text4                          001022  0008F9  00191B       811       0  CODE    
+                text4                          001022  000985  0019A7       811       0  CODE    
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 intcode                        000008  0000AE  0000B6         4       0  CODE    
                 smallconst                     001000  000022  001022       800       0  SMALLCON
@@ -196,22 +196,22 @@ UNUSED ADDRESS RANGES
                          00006E-000F37              ECA
         CODE             000004-000007                4
                          0000B6-000FFF              F4A
-                         00191B-00FFFF             E6E5
+                         0019A7-00FFFF             E659
         COMRAM           00004D-00005F               13
         CONST            000004-000007                4
                          0000B6-000FFF              F4A
-                         00191B-00FFFF             E6E5
+                         0019A7-00FFFF             E659
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      00191B-00FFFF             E6E5
+        MEDIUMCONST      0019A7-00FFFF             E659
         RAM              00006E-000F37              100
         SFR              000F38-000FFF               28
-        SMALLCONST       00191B-00FFFF              100
+        SMALLCONST       0019A7-00FFFF              100
         STACK            00006E-000F37              ECA
 
                                   Symbol Table
 
 ?___lwdiv                            cstackCOMRAM 00003E
-?_tikSayiminiAl                      cstackCOMRAM 00003E
+?_grvTikSayiminiAl                   cstackCOMRAM 00003E
 _ADCON0bits                          (abs)        000FC2
 _ADCON1                              (abs)        000FC1
 _ADCON2                              (abs)        000FC0
@@ -303,7 +303,7 @@ __Hreset_vec                         reset_vec    000004
 __Hrparam                            rparam       000000
 __Hsfr                               sfr          000000
 __Hsmallconst                        smallconst   001022
-__Hspace_0                           (abs)        00191B
+__Hspace_0                           (abs)        0019A7
 __Hspace_1                           (abs)        00006E
 __Hspace_2                           (abs)        000000
 __Hspace_4                           (abs)        60000E
@@ -418,14 +418,14 @@ __Ltext6                             text6        000000
 __Ltext7                             text7        000000
 __Ltext8                             text8        000000
 __Ltext9                             text9        000000
-__S0                                 (abs)        00191B
+__S0                                 (abs)        0019A7
 __S1                                 (abs)        00006E
 __S2                                 (abs)        000000
 __S4                                 (abs)        000000
 __S5                                 (abs)        000000
 ___inthi_sp                          stack        000000
 ___intlo_sp                          stack        000000
-___lwdiv                             text13       001802
+___lwdiv                             text13       00188E
 ___lwdiv@counter                     cstackCOMRAM 000042
 ___lwdiv@dividend                    cstackCOMRAM 00003E
 ___lwdiv@divisor                     cstackCOMRAM 000040
@@ -435,58 +435,60 @@ ___rparam_used                       (abs)        000001
 ___sp                                stack        000000
 __accesstop                          (abs)        000060
 __activetblptr                       (abs)        000003
-__end_of___lwdiv                     text13       001854
-__end_of__initialization             cinit        0018B2
-__end_of_gostergeDegeriHesapla       text12       001802
-__end_of_icerikDegistirici           text10       00162E
-__end_of_icerikGuncelleyici          text9        001564
-__end_of_interruptIlkle              text8        001918
+__end_of___lwdiv                     text13       0018E0
+__end_of__initialization             cinit        00193E
+__end_of_gostergeDegeriHesapla       text12       001804
+__end_of_grvTikKesmeIsleyici         text16       0019A0
+__end_of_grvTikSayiminiAl            text11       001982
+__end_of_icerikDegistirici           text10       001692
+__end_of_icerikGuncelleyici          text9        0015B4
+__end_of_interruptIlkle              text8        0019A4
 __end_of_interruptYonetici           intcode      0000B2
-__end_of_karaSimsek                  text7        0016F0
-__end_of_karaSimsekHiziOkuma         text6        00148E
-__end_of_ledCakarlama1               text5        0013A6
-__end_of_ledCakarlama2               text4        00126C
-__end_of_main                        text0        00177A
-__end_of_sisOsilatorIlkle            text3        001904
-__end_of_sisTikKesmeIsleyici         text16       001914
-__end_of_sisTimerIlkle               text1        001894
-__end_of_sisTimerIsleyiciVarsayilan  text17       00191A
-__end_of_sisTimerKesmeIsleyici       text15       0018DA
-__end_of_tikSayiminiAl               text11       0018F6
-__end_of_timer0KesmeIsleyiciKur      text2        00190E
+__end_of_karaSimsek                  text7        001768
+__end_of_karaSimsekHiziOkuma         text6        0014CA
+__end_of_ledCakarlama1               text5        0013CE
+__end_of_ledCakarlama2               text4        001280
+__end_of_main                        text0        00188E
+__end_of_sisOsilatorIlkle            text3        001990
+__end_of_sisTimerIlkle               text1        001920
+__end_of_sisTimerIsleyiciVarsayilan  text17       0019A6
+__end_of_sisTimerKesmeIsleyici       text15       001966
+__end_of_timer0KesmeIsleyiciKur      text2        00199A
 __end_ofledCakarlama1@sonSira        smallconst   001002
 __end_ofledCakarlama1@sureler        smallconst   001020
-__initialization                     cinit        001894
+__initialization                     cinit        001920
 __mediumconst                        mediumconst  000000
 __pbssCOMRAM                         bssCOMRAM    000001
-__pcinit                             cinit        001894
+__pcinit                             cinit        001920
 __pcstackBANK0                       cstackBANK0  000060
 __pcstackCOMRAM                      cstackCOMRAM 000030
 __pdataCOMRAM                        dataCOMRAM   00004B
-__pidataCOMRAM                       idataCOMRAM  00191A
+__pidataCOMRAM                       idataCOMRAM  0019A6
 __pintcode                           intcode      000008
 __psmallconst                        smallconst   001000
-__ptext0                             text0        0016F0
-__ptext1                             text1        001854
-__ptext10                            text10       001564
-__ptext11                            text11       0018DA
-__ptext12                            text12       00177A
-__ptext13                            text13       001802
-__ptext15                            text15       0018BC
-__ptext16                            text16       00190E
-__ptext17                            text17       001918
+__ptext0                             text0        001804
+__ptext1                             text1        0018E0
+__ptext10                            text10       0015B4
+__ptext11                            text11       001966
+__ptext12                            text12       001768
+__ptext13                            text13       00188E
+__ptext15                            text15       001948
+__ptext16                            text16       00199A
+__ptext17                            text17       0019A4
 __ptext18                            text18       000000
-__ptext2                             text2        001904
-__ptext3                             text3        0018F6
+__ptext2                             text2        001990
+__ptext3                             text3        001982
 __ptext4                             text4        001022
-__ptext5                             text5        00126C
-__ptext6                             text6        0013A6
-__ptext7                             text7        00162E
-__ptext8                             text8        001914
-__ptext9                             text9        00148E
+__ptext5                             text5        001280
+__ptext6                             text6        0013CE
+__ptext7                             text7        001692
+__ptext8                             text8        0019A0
+__ptext9                             text9        0014CA
 __ramtop                             ramtop       001000
 __size_of___lwdiv                    (abs)        000000
 __size_of_gostergeDegeriHesapla      (abs)        000000
+__size_of_grvTikKesmeIsleyici        (abs)        000000
+__size_of_grvTikSayiminiAl           (abs)        000000
 __size_of_icerikDegistirici          (abs)        000000
 __size_of_icerikGuncelleyici         (abs)        000000
 __size_of_interruptIlkle             (abs)        000000
@@ -497,49 +499,48 @@ __size_of_ledCakarlama1              (abs)        000000
 __size_of_ledCakarlama2              (abs)        000000
 __size_of_main                       (abs)        000000
 __size_of_sisOsilatorIlkle           (abs)        000000
-__size_of_sisTikKesmeIsleyici        (abs)        000000
 __size_of_sisTimerIlkle              (abs)        000000
 __size_of_sisTimerIsleyiciVarsayilan (abs)        000000
 __size_of_sisTimerKesmeIsleyici      (abs)        000000
-__size_of_tikSayiminiAl              (abs)        000000
 __size_of_timer0KesmeIsleyiciKur     (abs)        000000
 __smallconst                         smallconst   001000
 _gercekDeger                         bssCOMRAM    000017
-_gostergeDegeriHesapla               text12       00177A
+_gostergeDegeriHesapla               text12       001768
 _gostergeDegeriHesaplandi            bssCOMRAM    000026
+_grvTikKesmeIsleyici                 text16       00199A
+_grvTikSayiminiAl                    text11       001966
 _icerik                              dataCOMRAM   00004B
 _icerikDegisti                       bssCOMRAM    00002B
-_icerikDegistirici                   text10       001564
+_icerikDegistirici                   text10       0015B4
 _icerikDegistirici$907               cstackCOMRAM 000046
-_icerikGuncelleyici                  text9        00148E
+_icerikGuncelleyici                  text9        0014CA
 _intconYedek@portmacro$F371          bssCOMRAM    00002D
-_interruptIlkle                      text8        001914
+_interruptIlkle                      text8        0019A0
 _interruptYonetici                   intcode      000008
-_karaSimsek                          text7        00162E
+_karaSimsek                          text7        001692
 _karaSimsekHizi                      bssCOMRAM    000015
-_karaSimsekHiziOkuma                 text6        0013A6
+_karaSimsekHiziOkuma                 text6        0013CE
 _karasimsek                          bssCOMRAM    00002A
 _karasimsekGostergeDegeri            bssCOMRAM    000028
 _karasimsekHiziOkundu                bssCOMRAM    000027
-_ledCakarlama1                       text5        00126C
+_ledCakarlama1                       text5        001280
 _ledCakarlama2                       text4        001022
-_main                                text0        0016F0
-_sisOsilatorIlkle                    text3        0018F6
-_sisTikKesmeIsleyici                 text16       00190E
+_main                                text0        001804
+_sisOsilatorIlkle                    text3        001982
 _sisTimerDisIsleyici                 bssCOMRAM    00001B
-_sisTimerIlkle                       text1        001854
-_sisTimerIsleyiciVarsayilan          text17       001918
-_sisTimerKesmeIsleyici               text15       0018BC
+_sisTimerIlkle                       text1        0018E0
+_sisTimerIsleyiciVarsayilan          text17       0019A4
+_sisTimerKesmeIsleyici               text15       001948
 _tamponD                             bssCOMRAM    000029
 _tikSayimi                           bssCOMRAM    000019
-_tikSayiminiAl                       text11       0018DA
 _timer0KesmeIsleyici                 bssCOMRAM    000021
-_timer0KesmeIsleyiciKur              text2        001904
+_timer0KesmeIsleyiciKur              text2        001990
 _uartRxKesmeIsleyici                 bssCOMRAM    00001D
 _uartTxKesmeIsleyici                 bssCOMRAM    00001F
 btemp                                temp         00004C
-end_of_initialization                cinit        0018B2
+end_of_initialization                cinit        00193E
 gostergeDegeriHesapla@tutucu         cstackCOMRAM 000045
+grvTikSayiminiAl@sayim               cstackCOMRAM 000040
 icerikDegistirici@s5                 bssCOMRAM    000001
 icerikDegistirici@tutucu             cstackCOMRAM 000042
 icerikGuncelleyici@tutucu            cstackCOMRAM 00003E
@@ -572,8 +573,7 @@ sisTimerIlkle@isleyici               cstackCOMRAM 000040
 stackhi                              (abs)        000F37
 stacklo                              (abs)        00006E
 start                                init         0000B2
-start_initialization                 cinit        001894
-tikSayiminiAl@sayim                  cstackCOMRAM 000040
+start_initialization                 cinit        001920
 timer0KesmeIsleyiciKur@isleyici      cstackCOMRAM 00003E
 ttemp5                               temp         00004D
 ttemp6                               temp         000050
@@ -585,7 +585,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 330 in file "ornek2.c"
+		line 329 in file "ornek2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -632,7 +632,7 @@ Total ram usage:       14 bytes
 		line 134 in file "sistimer.c"
  Parameters:    Size  Location     Type
   isleyici        2   16[COMRAM] PTR FTN()void 
-		 -> sisTikKesmeIsleyici(1), 
+		 -> grvTikKesmeIsleyici(1), 
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
@@ -721,7 +721,7 @@ Total ram usage:        0 bytes
 
  *************** function _ledCakarlama2 *****************
  Defined at:
-		line 123 in file "ornek2.c"
+		line 122 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   18[COMRAM] PTR void 
 		 -> main@lc2(2), 
@@ -744,7 +744,7 @@ Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
-		_tikSayiminiAl
+		_grvTikSayiminiAl
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -752,7 +752,7 @@ Total ram usage:        4 bytes
 
  *************** function _ledCakarlama1 *****************
  Defined at:
-		line 62 in file "ornek2.c"
+		line 61 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   18[COMRAM] PTR void 
 		 -> main@lc1(2), 
@@ -775,7 +775,7 @@ Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
-		_tikSayiminiAl
+		_grvTikSayiminiAl
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -783,7 +783,7 @@ Total ram usage:        4 bytes
 
  *************** function _karaSimsekHiziOkuma *****************
  Defined at:
-		line 207 in file "ornek2.c"
+		line 206 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   21[COMRAM] PTR void 
 		 -> main@kho(2), 
@@ -808,7 +808,7 @@ Total ram usage:        6 bytes
  Hardware stack levels required when called:    4
  This function calls:
 		___lwdiv
-		_tikSayiminiAl
+		_grvTikSayiminiAl
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -816,7 +816,7 @@ Total ram usage:        6 bytes
 
  *************** function _karaSimsek *****************
  Defined at:
-		line 170 in file "ornek2.c"
+		line 169 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   18[COMRAM] PTR void 
 		 -> main@ksmsk(2), 
@@ -839,7 +839,7 @@ Total ram usage:        4 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
-		_tikSayiminiAl
+		_grvTikSayiminiAl
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -877,7 +877,7 @@ Total ram usage:        0 bytes
 
  *************** function _icerikGuncelleyici *****************
  Defined at:
-		line 261 in file "ornek2.c"
+		line 260 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   14[COMRAM] PTR void 
 		 -> main@ig(2), 
@@ -908,7 +908,7 @@ Total ram usage:        4 bytes
 
  *************** function _icerikDegistirici *****************
  Defined at:
-		line 301 in file "ornek2.c"
+		line 300 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   18[COMRAM] PTR void 
 		 -> main@id(2), 
@@ -931,15 +931,15 @@ Total ram usage:        6 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
-		_tikSayiminiAl
+		_grvTikSayiminiAl
  This function is called by:
 		_main
  This function uses a non-reentrant model
 
 
- *************** function _tikSayiminiAl *****************
+ *************** function _grvTikSayiminiAl *****************
  Defined at:
-		line 148 in file "../../../../../kaynak/gorev.c"
+		line 109 in file "../../../../../kaynak/gorev.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -973,7 +973,7 @@ Total ram usage:        4 bytes
 
  *************** function _gostergeDegeriHesapla *****************
  Defined at:
-		line 248 in file "ornek2.c"
+		line 247 in file "ornek2.c"
  Parameters:    Size  Location     Type
   tutucu          1   21[COMRAM] PTR void 
 		 -> main@gdh(2), 
@@ -1091,7 +1091,7 @@ Total ram usage:        0 bytes
  Hardware stack levels required when called:    1
  This function calls:
 		Absolute function
-		_sisTikKesmeIsleyici
+		_grvTikKesmeIsleyici
 		_sisTimerIsleyiciVarsayilan
  This function is called by:
 		_sisTimerIlkle
@@ -1099,9 +1099,9 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _sisTikKesmeIsleyici *****************
+ *************** function _grvTikKesmeIsleyici *****************
  Defined at:
-		line 161 in file "../../../../../kaynak/gorev.c"
+		line 122 in file "../../../../../kaynak/gorev.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1164,51 +1164,51 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 sistimer.c
-		_sisTimerIsleyiciVarsayilan		CODE           	1918	0000	2
-		_sisTimerKesmeIsleyici		CODE           	18BC	0000	30
-		_sisTimerIlkle 		CODE           	1854	0000	64
+		_sisTimerIsleyiciVarsayilan		CODE           	19A4	0000	2
+		_sisTimerKesmeIsleyici		CODE           	1948	0000	30
+		_sisTimerIlkle 		CODE           	18E0	0000	64
 
 sistimer.c estimated size: 96
 
 ornek2.c
-		_gostergeDegeriHesapla		CODE           	177A	0000	136
-		_main          		CODE           	16F0	0000	138
-		_icerikDegistirici		CODE           	1564	0000	202
-		_icerikGuncelleyici		CODE           	148E	0000	214
-		_karaSimsekHiziOkuma		CODE           	13A6	0000	232
-		_ledCakarlama1 		CODE           	126C	0000	314
-		_ledCakarlama2 		CODE           	1022	0000	586
-		_karaSimsek    		CODE           	162E	0000	194
+		_gostergeDegeriHesapla		CODE           	1768	0000	156
+		_main          		CODE           	1804	0000	138
+		_icerikDegistirici		CODE           	15B4	0000	222
+		_icerikGuncelleyici		CODE           	14CA	0000	234
+		_karaSimsekHiziOkuma		CODE           	13CE	0000	252
+		_ledCakarlama1 		CODE           	1280	0000	334
+		_ledCakarlama2 		CODE           	1022	0000	606
+		_karaSimsek    		CODE           	1692	0000	214
 
-ornek2.c estimated size: 2016
+ornek2.c estimated size: 2156
 
 osilator.c
-		_sisOsilatorIlkle		CODE           	18F6	0000	14
+		_sisOsilatorIlkle		CODE           	1982	0000	14
 
 osilator.c estimated size: 14
 
 ../../../../../kaynak/gorev.c
-		_sisTikKesmeIsleyici		CODE           	190E	0000	6
-		_tikSayiminiAl 		CODE           	18DA	0000	28
+		_grvTikKesmeIsleyici		CODE           	199A	0000	6
+		_grvTikSayiminiAl		CODE           	1966	0000	28
 
 ../../../../../kaynak/gorev.c estimated size: 34
 
 interrupt.c
-		_timer0KesmeIsleyiciKur		CODE           	1904	0000	10
+		_timer0KesmeIsleyiciKur		CODE           	1990	0000	10
 		_interruptYonetici		CODE           	0008	0000	170
-		_interruptIlkle		CODE           	1914	0000	4
+		_interruptIlkle		CODE           	19A0	0000	4
 
 interrupt.c estimated size: 184
 
 shared
 		ledCakarlama1@sonSira		SMALLCONST     	0000	0000	0
-		__initialization		CODE           	1894	0000	30
+		__initialization		CODE           	1920	0000	30
 		ledCakarlama1@sureler		SMALLCONST     	1002	0000	30
 
 shared estimated size: 60
 
 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
-		___lwdiv       		CODE           	1802	0000	82
+		___lwdiv       		CODE           	188E	0000	82
 
 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c estimated size: 82
 

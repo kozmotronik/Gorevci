@@ -3,10 +3,10 @@
 [d edition pro ]
 [d chip 18F46K22 ]
 [d frameptr 4065 ]
-"148 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _tikSayiminiAl tikSayiminiAl `(ui  1 e 2 0 ]
-"161
-[v _sisTikKesmeIsleyici sisTikKesmeIsleyici `(v  1 e 1 0 ]
+"109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvTikSayiminiAl grvTikSayiminiAl `(ui  1 e 2 0 ]
+"122
+[v _grvTikKesmeIsleyici grvTikKesmeIsleyici `(v  1 e 1 0 ]
 "4 /opt/microchip/xc8/v2.31/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 /opt/microchip/xc8/v2.31/pic/sources/c99/common/float.c
@@ -39,15 +39,15 @@
 [v _timer0KesmeIsleyiciKur timer0KesmeIsleyiciKur `(v  1 e 1 0 ]
 "50
 [v _interruptYonetici interruptYonetici `IIH(v  1 e 1 0 ]
-"45 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
+"44 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
 [v _ledCakarlama1 ledCakarlama1 `(uc  1 e 1 0 ]
-"111
+"110
 [v _ledCakarlama2 ledCakarlama2 `(uc  1 e 1 0 ]
-"160
+"159
 [v _karaSimsek karaSimsek `(uc  1 e 1 0 ]
-"203
+"202
 [v _karaSimsekHiziOkuma karaSimsekHiziOkuma `(uc  1 e 1 0 ]
-"246
+"245
 [v _main main `(v  1 e 1 0 ]
 "27 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/osilator.c
 [v _sisOsilatorIlkle sisOsilatorIlkle `(v  1 e 1 0 ]
@@ -68,7 +68,7 @@
 `uc 1 ANSB4 1 0 :1:4 
 `uc 1 ANSB5 1 0 :1:5 
 ]
-"112 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8/pic/include/proc/pic18f46k22.h
+"112 /opt/microchip/mplabx/v5.50/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8/pic/include/proc/pic18f46k22.h
 [u S429 . 1 `S422 1 . 1 0 ]
 [v _ANSELBbits ANSELBbits `VES429  1 e 1 @3897 ]
 "198
@@ -357,20 +357,20 @@
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
 "29 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/interrupt.c
 [v _timer0KesmeIsleyici timer0KesmeIsleyici `*.37(v  1 e 2 0 ]
-"39 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
+"38 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
 [v _karaSimsekHizi karaSimsekHizi `ui  1 e 2 0 ]
 "117 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/sistimer.c
 [v _sisTimerDisIsleyici sisTimerDisIsleyici `*.37(v  1 e 2 0 ]
-"246 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
+"245 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
 [v _main main `(v  1 e 1 0 ]
 {
 [s S600 . 2 `ui 1 sn 2 0 ]
-"260
+"259
 [v main@lc2 lc2 `S600  1 a 2 33 ]
 [v main@kho kho `S600  1 a 2 31 ]
 [v main@lc1 lc1 `S600  1 a 2 29 ]
 [v main@ksmsk ksmsk `S600  1 a 2 27 ]
-"276
+"275
 } 0
 "134 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/sistimer.c
 [v _sisTimerIlkle sisTimerIlkle `(v  1 e 1 0 ]
@@ -389,45 +389,45 @@
 {
 "34
 } 0
-"111 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
+"110 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
 [v _ledCakarlama2 ledCakarlama2 `(uc  1 e 1 0 ]
 {
 [v ledCakarlama2@tutucu tutucu `*.30v  1 p 1 18 ]
 [s S379 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
-"116
+"115
 [v ledCakarlama2@s2 s2 `S379  1 s 4 s2 ]
-"151
+"150
 } 0
-"45
+"44
 [v _ledCakarlama1 ledCakarlama1 `(uc  1 e 1 0 ]
 {
-"61
+"60
 [v ledCakarlama1@sureler sureler `C[15]ui  1 a 30 0 ]
-"66
+"65
 [v ledCakarlama1@sonSira sonSira `Cuc  1 a 1 31 ]
-"45
+"44
 [v ledCakarlama1@tutucu tutucu `*.30v  1 p 1 18 ]
 [s S379 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
-"55
+"54
 [v ledCakarlama1@s1 s1 `S379  1 s 4 s1 ]
-"57
+"56
 [v ledCakarlama1@secici secici `uc  1 s 1 secici ]
-"58
+"57
 [v ledCakarlama1@artir artir `a  1 s 1 artir ]
-[v ledCakarlama1@F6038 F6038 `C[15]ui  1 s 30 F6038 ]
-"104
+[v ledCakarlama1@F6039 F6039 `C[15]ui  1 s 30 F6039 ]
+"103
 } 0
-"203
+"202
 [v _karaSimsekHiziOkuma karaSimsekHiziOkuma `(uc  1 e 1 0 ]
 {
-"226
+"225
 [v karaSimsekHiziOkuma@sonuc sonuc `us  1 a 2 25 ]
-"203
+"202
 [v karaSimsekHiziOkuma@tutucu tutucu `*.30v  1 p 1 21 ]
 [s S379 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
-"207
+"206
 [v karaSimsekHiziOkuma@s4 s4 `S379  1 s 4 s4 ]
-"243
+"242
 } 0
 "7 /opt/microchip/xc8/v2.31/pic/sources/c99/common/lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -441,23 +441,23 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 16 ]
 "30
 } 0
-"160 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
+"159 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/ornek1.c
 [v _karaSimsek karaSimsek `(uc  1 e 1 0 ]
 {
 [v karaSimsek@tutucu tutucu `*.30v  1 p 1 18 ]
 [s S379 . 4 `ui 1 baslangic 2 0 `ui 1 kacTik 2 2 ]
-"164
+"163
 [v karaSimsek@s3 s3 `S379  1 s 4 s3 ]
-"165
+"164
 [v karaSimsek@sola sola `a  1 s 1 sola ]
-"197
+"196
 } 0
-"148 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _tikSayiminiAl tikSayiminiAl `(ui  1 e 2 0 ]
+"109 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvTikSayiminiAl grvTikSayiminiAl `(ui  1 e 2 0 ]
 {
-"149
-[v tikSayiminiAl@sayim sayim `ui  1 a 2 16 ]
-"156
+"110
+[v grvTikSayiminiAl@sayim sayim `ui  1 a 2 16 ]
+"117
 } 0
 "31 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/interrupt.c
 [v _interruptIlkle interruptIlkle `(v  1 e 1 0 ]
@@ -474,10 +474,10 @@
 {
 "132
 } 0
-"161 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
-[v _sisTikKesmeIsleyici sisTikKesmeIsleyici `(v  1 e 1 0 ]
+"122 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/kaynak/gorev.c
+[v _grvTikKesmeIsleyici grvTikKesmeIsleyici `(v  1 e 1 0 ]
 {
-"163
+"124
 } 0
 "121 /home/Kasa/projeler/gomulu/coklu-gorevleme/gorevci/gorevci/demo/MPLABX/XC8/PIC18/ornek1-hafifkip/sistimer.c
 [v _sisTimerIsleyiciVarsayilan sisTimerIsleyiciVarsayilan `(v  1 e 1 0 ]

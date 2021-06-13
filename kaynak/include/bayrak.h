@@ -43,33 +43,33 @@ typedef struct{
 } bayrak_t;
 
 /**
- * \Ozet    Bir bayrağı ilkler.
+ * \Ozet	Bir bayrağı ilkler.
  * 
- * \param *bayrak:  Bayrağa referans.
- * \param sayim:    Sayım, yani bir kaynağa aynı anda erişebilecek görev sayısı.
+ * \param *bayrak:	Bayrağa referans.
+ * \param sayim:	Sayım, yani bir kaynağa aynı anda erişebilecek görev sayısı.
  */
-#define	BAYRAK_ILKLE(b, s)	(b)->sayim = s
+#define	grvBAYRAK_ILKLE(b, s)	(b)->sayim = s
 
 /**
- * \Ozet    Bir bayrağı bekler. RTOS veya birçok işletim sistemindeki
- *          @semaphore @wait veya @take türünde işlevlere eşdeğerdir.
+ * \Ozet	Bir bayrağı bekler. RTOS veya birçok işletim sistemindeki
+ *			@semaphore @wait veya @take türünde işlevlere eşdeğerdir.
  * 
- * \param *gorev:   Bayrağı alan görev tutucu.
- * \param *bayrak:  Bayrağa referans
+ * \param *gorev:	Bayrağı alan görev tutucu.
+ * \param *bayrak:	Bayrağa referans
  */
-#define	BAYRAK_BEKLE(g, b)				\
+#define	grvBAYRAK_BEKLE(g, b)				\
 	do{									\
-		KOSUL_BEKLE(g, (b)->sayim > 0); \
+		grvKOSUL_BEKLE(g, (b)->sayim > 0); \
 		--(b)->sayim;					\
 	} while(0)
 
 /**
- * \Ozet    Bir bayrağı imler. RTOS veya birçok işletim sistemindeki
- *          @semaphore @signal veya @give türünde işlevlere eşdeğerdir.
+ * \Ozet	Bir bayrağı imler. RTOS veya birçok işletim sistemindeki
+ *			 @semaphore @signal veya @give türünde işlevlere eşdeğerdir.
  * 
- * \param *bayrak:  Bayrağaa referans.
+ * \param *bayrak:	Bayrağaa referans.
  * 
  */
-#define BAYRAK_IMLE(b)	++(b)->sayim;
+#define grvBAYRAK_IMLE(b)	++(b)->sayim;
 
 #endif

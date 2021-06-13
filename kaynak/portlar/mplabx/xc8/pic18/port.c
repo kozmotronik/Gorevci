@@ -40,7 +40,7 @@
  ********************************************************************
  */
 
-#if CALISMA_KIPI == 1
+#if grvCALISMA_KIPI == 1
 /*
  * Sistem tikini işlemek için kesme servisi
  */
@@ -49,13 +49,13 @@ void portGorevciyiBaslat() {
 	interruptIlkle();
 	
 	/* sysTikKesmeIsleyici gorev.h içerisinde tanımlıdır. */
-	sisTimerIlkle(sisTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
+	sisTimerIlkle(grvTikKesmeIsleyici); // systimer modülüne kesme işleyiciyi ver.
 	
 	/* Kesmeleri etkinleştir */
 	portKESMELERI_ETKINLESTIR();
 	
 	/* Görevciyi başlat, buradan asla çıkmamalı */
-	gorevciyiBaslat();
+	grvGorevciyiBaslat();
 	
 }
 #endif

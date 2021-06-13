@@ -39,10 +39,10 @@ extern "C" {
  * #define CALISMA_KIPI 0 // Hafif kip
  * #define CALISMA_KIPI 1 // Normal kip
  */
-#define CALISMA_KIPI 0
+#define grvCALISMA_KIPI 0
 
 /* Mikrosaniye türünden sistem tiki süresi. */
-#define SISTEM_TIK_SURESI_uS    1000u
+#define grvSISTEM_TIK_SURESI_uS    1000u
 
 
 #ifdef	__cplusplus
