@@ -1,28 +1,33 @@
-
 /**
  * Görevci v1.0.0
- * Copyright (C) 2021 İsmail Sahillioğlu (aka Kozmotronik). Tüm Hakları Saklıdır.
- * Hiçbir ücret talep edilmeden burada işbu* yazılımın bir kopyasını ve belgelendirme
- * dosyalarını (“Yazılım”) elde eden herkese verilen izin; kullanma, kopyalama,
- * değiştirme, birleştirme, yayımlama, dağıtma, alt lisanslama, ve/veya yazılımın
- * kopyalarını satma eylemleri de dahil olmak üzere ve bununla kısıtlama olmaksızın,
- * yazılımın sınırlama olmadan ticaretini yapmak için verilmiş olup, bunları yapmaları
- * için yazılımın sağlandığı kişilere aşağıdakileri yapmak koşuluyla sunulur:
- * 
- * Yukarıdaki telif hakkı bildirimi ve işbu izin bildirimi yazılımın tüm kopyalarına
- * veya önemli parçalarına eklenmelidir.
- * 
- * YAZILIM “HİÇBİR DEĞİŞİKLİK YAPILMADAN” ESASINA BAĞLI OLARAK, TİCARETE ELVERİŞLİLİK,
- * ÖZEL BİR AMACA UYGUNLUK VE İHLAL OLMAMASI DA DAHİL VE BUNUNLA KISITLI OLMAKSIZIN
- * AÇIKÇA VEYA ÜSTÜ KAPALI OLARAK HİÇBİR TEMİNAT OLMAKSIZIN SUNULMUŞTUR. HİÇBİR KOŞULDA
- * YAZARLAR VEYA TELİF HAKKI SAHİPLERİ HERHANGİ BİR İDDİAYA, HASARA VEYA DİĞER
- * YÜKÜMLÜLÜKLERE KARŞI, YAZILIMLA VEYA KULLANIMLA VEYA YAZILIMIN BAŞKA BAĞLANTILARIYLA
- * İLGİLİ, BUNLARDAN KAYNAKLANAN VE BUNLARIN SONUCU BİR SÖZLEŞME DAVASI, HAKSIZ FİİL
- * VEYA DİĞER EYLEMLERDEN SORUMLU DEĞİLDİR.
- ***************************************************************************************
- * 
- * Bu modül sayıcı bayrakları görevlerin üzerine gerçekler.
- * Bayraklar bir iki işlem sağlayan bir senkronizasyon ilkelleridir:
+ * Copyright (C) 2021 İsmail Sahillioğlu (aka Kozmotronik). Tüm Hakları
+ * Saklıdır. Hiçbir ücret talep edilmeden burada işbu* yazılımın bir kopyasını
+ * ve belgelendirme dosyalarını (“Yazılım”) elde eden herkese verilen izin;
+ * kullanma, kopyalama, değiştirme, birleştirme, yayımlama, dağıtma, alt
+ * lisanslama, ve/veya yazılımın kopyalarını satma eylemleri de dahil olmak
+ * üzere ve bununla kısıtlama olmaksızın, yazılımın sınırlama olmadan
+ * ticaretini yapmak için verilmiş olup, bunları yapmaları için yazılımın
+ * sağlandığı kişilere aşağıdakileri yapmak koşuluyla sunulur:
+ *
+ * Yukarıdaki telif hakkı bildirimi ve işbu izin bildirimi yazılımın tüm
+ * kopyalarına veya önemli parçalarına eklenmelidir.
+ *
+ * YAZILIM “HİÇBİR DEĞİŞİKLİK YAPILMADAN” ESASINA BAĞLI OLARAK, TİCARETE
+ * ELVERİŞLİLİK, ÖZEL BİR AMACA UYGUNLUK VE İHLAL OLMAMASI DA DAHİL VE BUNUNLA
+ * KISITLI OLMAKSIZIN AÇIKÇA VEYA ÜSTÜ KAPALI OLARAK HİÇBİR TEMİNAT OLMAKSIZIN
+ * SUNULMUŞTUR. HİÇBİR KOŞULDA YAZARLAR VEYA TELİF HAKKI SAHİPLERİ HERHANGİ BİR
+ * İDDİAYA, HASARA VEYA DİĞER YÜKÜMLÜLÜKLERE KARŞI, YAZILIMLA VEYA KULLANIMLA
+ * VEYA YAZILIMIN BAŞKA BAĞLANTILARIYLA İLGİLİ, BUNLARDAN KAYNAKLANAN VE
+ * BUNLARIN SONUCU BİR SÖZLEŞME DAVASI, HAKSIZ FİİL VEYA DİĞER EYLEMLERDEN
+ * SORUMLU DEĞİLDİR.
+ */
+
+/**
+ * \ingroup gorev
+ * @{
+ *
+ * Bu modül sayıcı bayrakları görevlerin üzerinde gerçekler.
+ * Bayraklar birkaç işlem sağlayan bir senkronizasyon ilkelleridir:
  * "bekle" ve "imle" (wait and signal). Bekleme işlemi bayrak sayıcısını
  * yoklar ve sıfırsa görevi bloklar. İmleme işlemi bayrak sayıcısını
  * arttırır ama görevi bloklamaz. Başka bir görev imlenen bayrağı beklemek
@@ -38,38 +43,99 @@
 
 #include "gorev.h"
 
-typedef struct{
-	unsigned char sayim;
-} bayrak_t;
 
 /**
- * \Ozet	Bir bayrağı ilkler.
- * 
- * \param *bayrak:	Bayrağa referans.
- * \param sayim:	Sayım, yani bir kaynağa aynı anda erişebilecek görev sayısı.
+ * Görevlerin veri kaynaklara erişiminin senkronizasyonu için kullanılır.
+ *
+ * Bir kaynak veya veri birden fazla koşut (paralel) çalışan görev tarafından
+ * kullanıldığında veya değiştirildiğinde, veri bütünlüğünü korumak zor bir
+ * iştir. Bayrak (semaphore) APIsi bu zor işi yüklenir, görevlerin kaynak veya
+ * verilere erişimini senkronize eder.
  */
-#define	grvBAYRAK_ILKLE(b, s)	(b)->sayim = s
+struct Bayrak {
+    unsigned char sinir; ///< En çok erişim miktarı.
+    unsigned char kalan; ///< Kalan erişim hakkı.
+};
+
+typedef Bayrak bayrak_t;
 
 /**
- * \Ozet	Bir bayrağı bekler. RTOS veya birçok işletim sistemindeki
- *			@semaphore @wait veya @take türünde işlevlere eşdeğerdir.
+ * Bir bayrağı ilkler.
  * 
- * \param *gorev:	Bayrağı alan görev tutucu.
- * \param *bayrak:	Bayrağa referans
+ * Bayraklar kullanılmadan önce ilklenmelidirler. İlklenmeyen bayraklar
+ * belirsiz veya beklenmeyen sonuçlara neden olabilir. Bir bayrak basitçe
+ * şöyle ilklenir:
+ * \code
+ * bayrak_t bayrak;
+ * //...
+ * // main döngüsünde veya uygun bir yerde ilkleme yapılır.
+ * grvBAYRAK_ILKLE(&bayrak, 1);
+ * \endcode
+ *
+ * \param b Bayrağa referans.
+ * \param s Sayım, yani bir kaynağa aynı anda erişebilecek görev sayısı.
+ * \hideinitializer
  */
-#define	grvBAYRAK_BEKLE(g, b)				\
-	do{									\
-		grvKOSUL_BEKLE(g, (b)->sayim > 0); \
-		--(b)->sayim;					\
-	} while(0)
+#define grvBAYRAK_ILKLE(b, s)   \
+    ((bayrak_t*) b)->sinir = s; \
+    ((bayrak_t*) b)->kalan = s;
 
 /**
- * \Ozet	Bir bayrağı imler. RTOS veya birçok işletim sistemindeki
- *			 @semaphore @signal veya @give türünde işlevlere eşdeğerdir.
+ * Bir bayrağı bekler.
+ *
+ * Koşut (paralel) çalışan birden fazla görevden bir kaynağa erişirken;
+ * bayrak ilklenirken belirlenen erişim sayısına bağlı olarak erişimi
+ * ilk alan görev veya görevler kaynağa veya veriye erişim sağlarken, erişim
+ * sınırı dolduktan sonra erişen görev veya görevler bloklanacak, ilk erişim
+ * alan görevler erişimi grvBAYRAK_IMLE() ile saldıktan sonra bloklanan
+ * görevler artan erişim sınırı kadar kaynağa veya veriye erişebilecektir.
+ * Kullanımı basitçe şöyledir:
+ * \code
+ * bayrak_t bayrak;
+ * char korunanKaynak;
+ * //...
+ * // Erişimi almaya çalış; alamazsa bloklanır.
+ * grvBAYRAK_BEKLE(gorevTutucu, &bayrak);
+ * // Kaynağa erişim sağlandı, artık değiştirilebilir.
+ * korunanKaynak = 'A';
+ * // İşlem bitince diğer görevlerin erişebilmesi için erişimi sal.
+ * grvBAYRAK_IMLE(gorevTutucu, &bayrak);
+ * \endcode
  * 
- * \param *bayrak:	Bayrağaa referans.
- * 
+ * \param g Bayrağı alan görevin tutucusu.
+ * \param b Bayrağa referans.
+ * \hideinitializer
  */
-#define grvBAYRAK_IMLE(b)	++(b)->sayim;
+#define grvBAYRAK_BEKLE(g, b)                           \
+        grvKOSUL_BEKLE(g, ((bayrak_t*) b)->kalan > 0);  \
+        --((bayrak_t*) b)->kalan;
+
+/**
+ * Bir bayrağı imler.
+ *
+ * Birçok işletim sistemindeki signal veya give gibi işlevlere benzer.
+ * Bir görev eriştiği kaynakla işlem yapmayı bitirince, başka görevlerin de
+ * bu kaynağa erişebilmesi için bu makroyu çalıştırarak erişimi salar.
+ * Kullanımı basitçe şöyledir:
+ * \code
+ * bayrak_t bayrak;
+ * char korunanKaynak;
+ * //...
+ * // Erişimi almaya çalış; alamazsa bloklanır.
+ * grvBAYRAK_BEKLE(gorevTutucu, &bayrak);
+ * // Kaynağa erişim sağlandı, artık değiştirilebilir.
+ * korunanKaynak = 'A';
+ * // İşlem bitince diğer görevlerin erişebilmesi için erişimi sal.
+ * grvBAYRAK_IMLE(gorevTutucu, &bayrak);
+ * \endcode
+ * 
+ * \param b Bayrağa referans.
+ * \hideinitializer
+ */
+#define grvBAYRAK_IMLE(b)                                   \
+    if(((bayrak_t*) b)->kalan < ((bayrak_t*) b)->sinir) {   \
+        ++((bayrak_t*) b)->kalan;                           \
+    }
 
 #endif
+/// @}
