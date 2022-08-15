@@ -1,37 +1,23 @@
 /**
- * Görevci v1.0.0
- * Copyright (C) 2021 İsmail Sahillioğlu (aka Kozmotronik). Tüm Hakları
- * Saklıdır. Hiçbir ücret talep edilmeden burada işbu* yazılımın bir kopyasını
- * ve belgelendirme dosyalarını (“Yazılım”) elde eden herkese verilen izin;
- * kullanma, kopyalama, değiştirme, birleştirme, yayımlama, dağıtma, alt
- * lisanslama, ve/veya yazılımın kopyalarını satma eylemleri de dahil olmak
- * üzere ve bununla kısıtlama olmaksızın, yazılımın sınırlama olmadan
- * ticaretini yapmak için verilmiş olup, bunları yapmaları için yazılımın
- * sağlandığı kişilere aşağıdakileri yapmak koşuluyla sunulur:
+ * \file
+ * \author İsmail Sahillioğlu (Kozmotronik)
+ * \copyright \ref lisans "MIT Lisansı"
  * 
- * Yukarıdaki telif hakkı bildirimi ve işbu izin bildirimi yazılımın tüm
- * kopyalarına veya önemli parçalarına eklenmelidir.
- * 
- * YAZILIM “HİÇBİR DEĞİŞİKLİK YAPILMADAN” ESASINA BAĞLI OLARAK, TİCARETE
- * ELVERİŞLİLİK, ÖZEL BİR AMACA UYGUNLUK VE İHLAL OLMAMASI DA DAHİL VE BUNUNLA
- * KISITLI OLMAKSIZIN AÇIKÇA VEYA ÜSTÜ KAPALI OLARAK HİÇBİR TEMİNAT OLMAKSIZIN
- * SUNULMUŞTUR. HİÇBİR KOŞULDA YAZARLAR VEYA TELİF HAKKI SAHİPLERİ HERHANGİ BİR
- * İDDİAYA, HASARA VEYA DİĞER YÜKÜMLÜLÜKLERE KARŞI, YAZILIMLA VEYA KULLANIMLA
- * VEYA YAZILIMIN BAŞKA BAĞLANTILARIYLA İLGİLİ, BUNLARDAN KAYNAKLANAN VE
- * BUNLARIN SONUCU BİR SÖZLEŞME DAVASI, HAKSIZ FİİL VEYA DİĞER EYLEMLERDEN
- * SORUMLU DEĞİLDİR.
- */
-
-/**
- * \defgroup gorev Görevci
- * \ingroup gorev
+ * \defgroup gorev Görev Yönetimi
+ * \ingroup gorevci
  * @{
+ * 
+ * Görevlerin yönetimini gerçekleştiren API. 
  */
 
 #ifndef GOREV_H
 #define GOREV_H
 
 #ifndef NULL
+/**
+ * include sorunlarına önlem olarak NULL tanımlaması.
+ * \hideinitializer
+ */
 #define NULL ( (void*) 0 )
 #endif
 
@@ -41,70 +27,98 @@
 #include "portmacro.h"
 #include "gorevciypl.h"
 
-// Görev yöneticisi kullanılsın?
 #ifndef grvCALISMA_KIPI
+/// Görev çalışma kipi tanımlanmamışsa varsayılan normal kip.
 #define grvCALISMA_KIPI 1
 #endif
 
-// Varsayılan tik süresi 1 ms.
 #ifndef grvSISTEM_TIK_SURESI_uS
-#define grvTIK_SURESI_uS	1000u
+/// Varsayılan tik süresi 1 ms.
+#define grvTIK_SURESI_uS    1000u
 #else
-#define grvTIK_SURESI_uS	grvSISTEM_TIK_SURESI_uS
+#define grvTIK_SURESI_uS    grvSISTEM_TIK_SURESI_uS
 #endif
 
-#define grvTIK_SURESI_MS	(grvTIK_SURESI_uS / 1000u)
+/// Tik süresinin milisaniye türünden değeri.
+#define grvTIK_SURESI_MS    (grvTIK_SURESI_uS / 1000u)
 
-// Süre - tik - süre dönüşümleri
-#define grvuS_TIK_CEVIR(us)		(us / grvTIK_SURESI_uS)
-#define grvMS_TIK_CEVIR(ms)		(ms / grvTIK_SURESI_MS)
-#define grvTIK_uS_CEVIR(tik)	(tik * grvTIK_SURESI_uS)
-#define grvTIK_MS_CEVIR(tik)	(tik * grvTIK_SURESI_MS)
+/**
+ * \name Süre Birimi Dönüştürücüleri
+ * @{
+ * Mikrosaniye <-> tik; milisaniye <-> tik süre dönüşümleri
+ */
+/// Mikrosaniye süre değerini tik süre değerine dönüştürür.
+#define grvuS_TIK_CEVIR(us)     (us / grvTIK_SURESI_uS)
+/// Milisaniye süre değerini tik süre değerine dönüştürür.
+#define grvMS_TIK_CEVIR(ms)     (ms / grvTIK_SURESI_MS)
+/// Tik süre değerini mikrosaniye süre değerine dönüştürür.
+#define grvTIK_uS_CEVIR(tik)    (tik * grvTIK_SURESI_uS)
+/// Tik süre değerini milisaniye süre değerine dönüştürür.
+#define grvTIK_MS_CEVIR(tik)    (tik * grvTIK_SURESI_MS)
+/// @}
 
-// Görev durumları.
-#define	grvBEKLIYOR	0
-#define	grvCIKTI	1
-#define	grvBITTI	2
-#define	grvVAZGECTI	3
+/**
+ * \name Görev Durum Kodları
+ * @{
+ * Görevlerin işletimdeki durumlarını belirten kodlardır.
+ */
+/// Görev bir olayın gerçekleşmesini bekliyor.
+#define grvBEKLIYOR 0
+/// Görev işlemin herhangi bir noktasında çıktı (çalışmasını sonlandırdı).
+#define grvCIKTI    1
+/// Görev işlemi tamamlayarak bitti.
+#define grvBITTI    2
+/// Görev işlemin herhangi bir noktasında gönüllü olarak vazgeçti.
+#define grvVAZGECTI 3
+/// @}
 
+/// Görevin işlevinin kendisine referansı (handle for function).
 typedef void *gorevTutucu_t;
+/// Görevin işlev türü (function pointer type).
 typedef char (*is_t)(gorevTutucu_t);
 
 /**
  * Görev Kontrol Bloğu.
- * @kimlik	Görevi yönetmek için bir kimlik bilgisi tutar.
- * @durum	Görevin çalışma durumu bilgisini tutar.
- * @sn	Görevin bir sonraki çalışmasında kaldığı yerden sürmesini sağlamak için
- *		sürdürme noktası tutucu.
- * @is	Görevin/işlevin referansını tutan işlev gösterici (function pointer).
+ * 
+ * Görev Kontrol Bloğu (GKB) görevlerin yönetimi için; göreve ait gerekli
+ * bilgileri barındırmak için kullanılır.
  */
-#if grvCALISMA_KIPI == 1
-typedef struct{
-	unsigned char kimlik;
-	char durum;
-	sn_t sn;
+struct GorevKontrolBlogu {
+    /// Görevin kaldığı yerden devam edebilmesi için sürdürme noktasını tutar.
+    sn_t sn;
+#if grvCALISMA_KIPI == 1 // Normal kip için diğer alanları da kullan.
+    /// Görevi yönetmek için bir kimlik bilgisi tutar.
+    unsigned char kimlik;
+    /// Görevin çalışma durumu bilgisini tutar.
+    char durum;
+    /// Görevin işlevinin referansını tutan işlev gösterici (function pointer).
     is_t is;
-} gorev_t;
-#else
-typedef struct{
-	sn_t sn;
-} gorev_t;
 #endif
+};
 
+/// Kolaylık sağlamak için GorevKontrolBlogu tür tanımı.
+typedef GorevKontrolBlogu gorev_t;
+
+/// GKB için referans türü (pointer).
 typedef gorev_t *pgkb_t;
 
 /**
- * Görevleri geciktirmek için süre tutucu yapısı.
+ * Görevleri geciktirmek için süre kontrol bloğu.
  */
-typedef struct{
-	/// Gecikme istendiği anki sistem tiki sayımını tutar.
-	unsigned int baslangic;
-	/// GOREV_GECIK_MS makrosuna parametre olarak verilen milisaniye
-	/// türnden süre değerinin sistem tiki türünden karşılığını tutar.
-	unsigned int kacTik;
-} sure_t;
+struct SureKontrolBlogu {
+    /// Gecikme istendiği anki sistem tiki sayımını tutar.
+    unsigned int baslangic;
+    /// Geciktirme API'lerine parametre olarak verilen milisaniye
+    /// türünden süre değerinin sistem tiki türünden karşılığını tutar.
+    unsigned int kacTik;
+};
+
+/// Kolaylık sağlamak için SureKontrolBlogu tür tanımı.
+typedef SureKontrolBlogu sure_t;
 
 /**
+ * Anlık sistem tiki değerini verir.
+ * 
  * Normalde Görevci tarafından süre takibi yapmak için kullanılır. Nitekim
  * istendiği takdirde bu başlık dosyasını ekleme koşulu ile uygulama
  * içinden de anlık sistem tiki sayımını almak için kullanılabilir.
@@ -114,7 +128,7 @@ typedef struct{
  * Diğer bir deyişle sistemin kalp atışının sayısıdır. Ancak mikrosaniye ve 
  * milisaniye birimlerine kolayca dönüştürülebilir. 
  * 
- * \return Anlık sistem tiki sayımı
+ * \return Anlık sistem tiki değeri.
  */
 unsigned int grvTikSayiminiAl(void);
 
@@ -244,7 +258,7 @@ unsigned int grvTikSayiminiAl(void);
 /**
  * Koşul gerçekleşene dek görevi bloklar.
  * 
- * Her görevin parametresi olan @gorevTutucu_t parametresi ve koşul ifadesi
+ * Her görevin parametresi olan gorevTutucu_t parametresi ve koşul ifadesi
  * verilerek çağrılır:
  * \code
  * int miktar = 0;
@@ -259,7 +273,7 @@ unsigned int grvTikSayiminiAl(void);
  */
 #define grvKOSUL_BEKLE(g, kosul)    \
     SN_KUR(( (gorev_t*) g )->sn);   \
-    if(!(kosul)){                   \
+    if(!(kosul)) {                  \
         return grvBEKLIYOR;         \
     }
 
@@ -289,7 +303,7 @@ unsigned int grvTikSayiminiAl(void);
  */
 #define grvBU_KOSULDA_BEKLE(g, kosul)   \
     SN_KUR(( (gorev_t*) g )->sn);       \
-    if((kosul)){                        \
+    if((kosul)) {                       \
         return grvBEKLIYOR;             \
     }
 
@@ -319,7 +333,7 @@ unsigned int grvTikSayiminiAl(void);
  * Bir kez çıkış yapıldı mı artık bu görev çalıştırılmak için çağrılmaz.
  * Yeniden çağrılması için görevin gorevOlustur() API'si ile yeniden çalışacak
  * görevler listesine eklenmesi gerekir.
- * Her görevin parametresi olan @gorevTutucu_t parametresi ve koşul ifadesi
+ * Her görevin parametresi olan gorevTutucu_t parametresi ve koşul ifadesi
  * verilerek çağrılır:
  * \code
  * grvCIK(gorevTutucu);
@@ -353,7 +367,7 @@ unsigned int grvTikSayiminiAl(void);
 #define grvVAZGEC(g)                \
     VAZGECIS_BAYRAGI = 0;           \
     SN_KUR(( (gorev_t*) g )->sn);   \
-    if(VAZGECIS_BAYRAGI == 0){      \
+    if(VAZGECIS_BAYRAGI == 0) {     \
         return grvVAZGECTI;         \
     }
 
@@ -374,12 +388,13 @@ unsigned int grvTikSayiminiAl(void);
  *
  * \param g gorevTutucu_t türünde bir tutucu (handle) alır. Bu, görev kontrol
  * bloğuna bir başvurudur.
+ * \param kosul Sağlanması gereken koşul ifadesi.
  * \hideinitializer
  */
 #define grvKOSULA_DEK_VAZGEC(g, kosul)          \
     VAZGECIS_BAYRAGI = 0;                       \
     SN_KUR(( (gorev_t*) g )->sn)                \
-    if((VAZGECIS_BAYRAGI) == 0 || !(kosul)){    \
+    if((VAZGECIS_BAYRAGI) == 0 || !(kosul)) {   \
         return grvVAZGECTI;                     \
     }
 
@@ -400,7 +415,7 @@ void grvTikKesmeIsleyici(void);
  * görevler listesine ekler. Görevler uygulamanın main bölümünde bu
  * işlev kullanılarak oluşturulmalıdır.
  * 
- * \param[in] is_t işi yapacak görev kodu bloğu (bir function pointer).
+ * \param[in] is İşi yapacak görev kodu bloğu (bir function pointer).
  * \return gorev_t türünde görev kontrol bloğuna referans, yoksa NULL.
  */
 pgkb_t grvOlustur(is_t is);
