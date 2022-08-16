@@ -97,7 +97,7 @@ struct GorevKontrolBlogu {
 };
 
 /// Kolaylık sağlamak için GorevKontrolBlogu tür tanımı.
-typedef GorevKontrolBlogu gorev_t;
+typedef struct GorevKontrolBlogu gorev_t;
 
 /// GKB için referans türü (pointer).
 typedef gorev_t *pgkb_t;
@@ -114,7 +114,7 @@ struct SureKontrolBlogu {
 };
 
 /// Kolaylık sağlamak için SureKontrolBlogu tür tanımı.
-typedef SureKontrolBlogu sure_t;
+typedef struct SureKontrolBlogu sure_t;
 
 /**
  * Anlık sistem tiki değerini verir.
