@@ -7,7 +7,7 @@
  * \ingroup veri
  * @{
  *
- * Görevci için bir ardışıl FIFO modelinde bir kuyruk kütüphanesi.
+ * Görevci için ardışıl (serial) FIFO modelinde bir kuyruk kütüphanesi.
  *
  * uckuyruk unsigned char kuyruk kısaltması olarak kullanılmıştır.
  * Bu modülün amacı statik olarak tanımlanacak unsigned char türünde bir
@@ -130,15 +130,16 @@ struct UCKuyruk {
 };
 
 /// Kolaylık sağlaması için UCKuyruk tür tanımı.
-typedef UCKuyruk uckuyruk_t;
+typedef struct UCKuyruk uckuyruk_t;
 
 /// uckuyruk_t yapısı için başvuru türü (okunaklılığı iyileştirmek için)
 typedef uckuyruk_t *puck_t;
 
 
 /**
- * Bir kuyruğu ilk kullanıma hazırlar. kuyruk veya tampon parametrelerinin biri
- * NULL ise işlem sürdürülmez.
+ * Bir kuyruğu ilk kullanıma hazırlar.
+ * 
+ * Kuyruk veya tampon parametrelerinin biri NULL ise işlem sürdürülmez.
  * 
  * \param[in] kapasite Kuyruğun 1 - 255 aralığında kapasitesi, sizeof ile
  * unsigned char türüne cast edilerek verilebilir.
@@ -220,7 +221,6 @@ unsigned char uckuyrukBastakiOge(puck_t kuyruk);
  */
 unsigned char uckuyrukKuyruktanAl(puck_t kuyruk);
 
-
 /**
  * Bir kuyruktan istenen nicelikte veri alır.
  *
@@ -245,6 +245,102 @@ unsigned char uckuyrukKuyruktanAl(puck_t kuyruk);
 unsigned char uckuyrukCokluAl(
     puck_t kuyruk, unsigned char* hedef, const unsigned char nicelik);
 
+/**
+ * Kaynak kuyruğun başındaki ögeyi hedef kuyruğa kuyruklar.
+ * 
+ * Kuyruktan kuyruğa bir öge aktarımı başarılı olursa 1 değeri döndürülür.
+ * Kaynak veya hedef kuyrukların referanslarının herhangi birinin NULL olması
+ * durumunda işlem sürdürülmez ve 0 değeri döndürülür.
+ * Kaynak kuyrukta hiçbir öge yoksa işlem sürdürülmez ve 0 değeri döndürülür.
+ * Hedef kuyrukta 1 öge alacak kadar yer yoksa işlem sürdürülmez ve 0 değeri
+ * döndürülür.
+ * 
+ * \param[in] kaynak Kaynak kuyruğa referans.
+ * \param[in,out] hedef Hedef kuyruğa referans.
+ * \return Aktarma başarılıysa \b 1, değilse \b 0.
+ * 
+ * \sa uckuyrukKuyrugaCokluAktar(), uckuyrukKuyrugaKopyala().
+ */
+char uckuyrukKuyrugaAktar(puck_t kaynak, puck_t hedef);
+
+/**
+ * Kaynak kuyruktan hedef kuyruğa birden çok öge aktarır.
+ * 
+ * Kuyruktan kuyruğa aktarım başarılı olursa aktarılan ögelerin sayımı
+ * döndürülür.
+ * Kaynak veya hedef kuyrukların referanslarının herhangi birinin NULL olması
+ * durumunda işlem sürdürülmez ve 0 değeri döndürülür.
+ * Kaynak kuyrukta aktarılmak istenen nicelik kadar öge yoksa işlem sürdürülmez
+ * ve 0 değeri döndürülür.
+ * Hedef kuyrukta aktarılmak istenen nicelik kadar öge yoksa işlem sürdürülmez
+ * ve 0 değeri döndürülür.
+ * Aktarılmak istenen nicelik değeri 0 verilirse işlem sürdürülmez ve 0 değeri
+ * döndürülür.
+ * 
+ * \param[in] kaynak Kaynak kuyruğa referans.
+ * \param[in,out] hedef Hedef kuyruğa referans.
+ * \param[in] nicelik Aktarılmak istenen öge sayısı.
+ * \return Aktarma başarılıysa aktarılan öge sayımı, değilse \b 0.
+ * 
+ * \sa uckuyrukKuyrugaAktar(), uckuyrukKuyrugaCokluKopyala().
+ */
+unsigned char uckuyrukKuyrugaCokluAktar(
+    puck_t kaynak, puck_t hedef, const unsigned char nicelik);
+
+/**
+ * Kaynak kuyruğun başındaki ögeyi hedef kuyruğa kopyalar.
+ * 
+ * uckuyrukKuyrugaAktar() İşlevinden farkı kaynak kuyruktan hedef kuyruğa
+ * kopyalanan ögenin kaynak kuyruktan silinmemesidir. Böylece aynı öge hem
+ * kaynak kuyrukta hem de hedef kuyrukta bulunur. Kopyalama işlemi başarılı
+ * olursa hedef kuyruğun sayımı bir artarken, öge kaynak kuyruktan
+ * çıkarılmadığı için kaynak kuyruğun sayımı olduğu gibi kalır ve baştaki
+ * öge değişmez.
+ * Kuyruktan kuyruğa bir öge kopyalama başarılı olursa 1 değeri döndürülür.
+ * Kaynak veya hedef kuyrukların referanslarının herhangi birinin NULL olması
+ * durumunda işlem sürdürülmez ve 0 değeri döndürülür.
+ * Kaynak kuyrukta hiçbir öge yoksa işlem sürdürülmez ve 0 değeri döndürülür.
+ * Hedef kuyrukta 1 öge alacak kadar yer yoksa işlem sürdürülmez ve 0 değeri
+ * döndürülür.
+ * 
+ * \param[in] kaynak Kaynak kuyruğa referans.
+ * \param[in,out] hedef Hedef kuyruğa referans.
+ * \return Aktarma başarılıysa \b 1, değilse \b 0.
+ * 
+ * \sa uckuyrukKuyrugaCokluKopyala(), uckuyrukKuyrugaAktar().
+ */
+char uckuyrukKuyrugaKopyala(puck_t kaynak, puck_t hedef);
+
+/**
+ * Kaynak kuyruğun başından itibaren nicelik kadar ögeyi hedefe kopyalar.
+ * 
+ * uckuyrukKuyrugaCokluAktar() İşlevinden farkı kaynak kuyruktan hedef kuyruğa
+ * kopyalanan ögelerin kaynak kuyruktan silinmemesidir. Böylece aynı ögeler hem
+ * kaynak kuyrukta hem de hedef kuyrukta bulunur. Kopyalama işlemi başarılı
+ * olursa hedef kuyruğun sayımı nicelik kadar (kopyalanan ögeler kadar)
+ * artarken, ögeler kaynak kuyruktan çıkarılmadığı için kaynak kuyruğun sayımı
+ * olduğu gibi kalır ve baştaki öge değişmez.
+ * Kuyruktan kuyruğa aktarım başarılı olursa aktarılan ögelerin sayımı
+ * döndürülür.
+ * Kaynak veya hedef kuyrukların referanslarının herhangi birinin NULL olması
+ * durumunda işlem sürdürülmez ve 0 değeri döndürülür.
+ * Kaynak kuyrukta aktarılmak istenen nicelik kadar öge yoksa işlem sürdürülmez
+ * ve 0 değeri döndürülür.
+ * Hedef kuyrukta aktarılmak istenen nicelik kadar öge yoksa işlem sürdürülmez
+ * ve 0 değeri döndürülür.
+ * Aktarılmak istenen nicelik değeri 0 verilirse işlem sürdürülmez ve 0 değeri
+ * döndürülür.
+ * 
+ * \param[in] kaynak Kaynak kuyruğa referans.
+ * \param[in,out] hedef Hedef kuyruğa referans.
+ * \param[in] nicelik Aktarılmak istenen öge sayısı.
+ * \return Aktarma başarılıysa aktarılan öge sayımı, değilse \b 0.
+ * 
+ * \sa uckuyrukKuyrugaKopyala(), uckuyrukKuyrugaCokluAktar().
+ */
+unsigned char uckuyrukKuyrugaCokluKopyala(
+    puck_t kaynak, puck_t hedef, const unsigned char nicelik);
+
 
 /**
  * Bir kuyruğu tamamen boşaltır (flush).
@@ -253,15 +349,32 @@ unsigned char uckuyrukCokluAl(
  * değişkenlerini sıfırlar.
  * 
  * \param[in] kuyruk Uygulamada tanımlanan bir uckuyruk_t yapısına referans.
+ * 
+ * \sa uckuyrukNBosalt().
  */
 void uckuyrukBosalt(puck_t kuyruk);
 
+/**
+ * Bir kuyruktan n kadar veriyi boşaltır.
+ * 
+ * Boialtılmak istenen miktar n parametresi ile verilir. Boşaltma işlemi
+ * başarılı olursa; en baştaki ögeden itibaren n kadar öge kuyruktan silinir,
+ * silinen ögelerin konumları 0 değeri ile doldurulur.
+ * Kuyruk parametresi NULL ise veya kuyrukta silinmek istenenden daha az öge
+ * varsa veya n değeri 0 verilirse işlem sürdürülmez.
+ * 
+ * \param[in,out] kuyruk İşlem yapılacak kuyruğa referans.
+ * \param[in] n Boşaltma miktarı.
+ * 
+ * \sa uckuyrukBosalt().
+ */
+void uckuyrukNBosalt(puck_t kuyruk, unsigned char n);
 
 /**
  * Bir kuyruğu belirtilen sayıda aynı veri ile doldurur.
  * 
  * İşlem başarılıysa kuyruğa doldurulan nicelik döndürülür. kuyruk NULL ise
- * veya kuyrukta doldurulacak nicelikte yer yoksa veya niceli 1'den küçükse hep
+ * veya kuyrukta doldurulacak nicelikte yer yoksa veya nicelik 1'den küçükse hep
  * 0 değeri döndürülür.
  *
  * \param[in,out] kuyruk Uygulamada tanımlanan bir uckuyruk_t yapısına
