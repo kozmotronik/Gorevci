@@ -239,7 +239,7 @@ unsigned char uckuyrukDoldur(
     return nicelik;
 }
 
-unsigned char uckuyrukKacOgeVar(puck_t kuyruk) {
+unsigned char uckuyrukOgeSayimi(puck_t kuyruk) {
     return kuyruk == NULL ? 0 : kuyruk->sayim;
 }
 

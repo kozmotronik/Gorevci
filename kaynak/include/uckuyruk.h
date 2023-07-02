@@ -394,7 +394,7 @@ unsigned char uckuyrukDoldur(
  * \param[in] kuyruk Uygulamada tanımlanan bir uckuyruk_t yapısına referans.
  * \return Kuyrukta bekleyen öğe niceliği, kuyruk NULL ise her zaman \b 0.
  */
-unsigned char uckuyrukKacOgeVar(puck_t kuyruk);
+unsigned char uckuyrukOgeSayimi(puck_t kuyruk);
 
 /**
  * Bir kuyruğun dolu olup olmadığını yoklar.
