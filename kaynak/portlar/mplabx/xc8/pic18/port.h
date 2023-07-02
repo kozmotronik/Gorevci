@@ -6,6 +6,10 @@
  * \defgroup mplab_xc8_pic18 MPLAB XC8 PIC18 Portu
  * \ingroup port
  * @{
+ *
+ * Görevci tarafından kullanılacak sistem donanımları burada ilklenir. Herbir
+ * portun görevcisi kendi port.c dosyasında gerçeklenmiş olan
+ * portGorevciyiBaslat() işlevini çağırarak başlatılır.
  */
 
 
