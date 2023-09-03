@@ -9,6 +9,7 @@
 
 
 #include "gorev.h"
+#include "portlar/mplabx/xc8/pic18/port.h"
 #include "portmacro.h"
 #include "gorevciypl.h"
 
@@ -95,10 +96,10 @@ pgkb_t grvKimlikIleGorevBlogunuAl(const unsigned char kimlik) {
 unsigned int grvTikSayiminiAl() {
     unsigned int sayim;
     // Atomik bölge giriş
-    portKRITIK_BOLUM_GIRISI();
+    portKritikBolumGirisi();
     sayim = tikSayimi;
     // Atomik bölge çıkış
-    portKRITIK_BOLUM_CIKISI();
+    portKritikBolumCikisi();
     return sayim;
 }
 
