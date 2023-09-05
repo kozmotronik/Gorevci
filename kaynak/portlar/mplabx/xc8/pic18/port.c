@@ -7,18 +7,11 @@
  * @{
  */
 
-#include "gorev.h"
 #include <xc.h>
-
-/* MPLAB kütüphanesi başlık dosyaları */
-#include "interrupt.h" // Görevci için sistem kesmeleri buradan borulanır
-#include "sistimer.h" // Sistem tiki üretmek için ilgili portun timer kütüphanesi
+#include "gorev.h"
 
 #if grvCALISMA_KIPI == 1
 void portGorevciyiBaslat() {
-  /* grvTikKesmeIsleyici gorev.h içerisinde tanımlıdır. */
-  sisTimerIlkle(grvTikKesmeIsleyici);
-
   /* Kesmeleri etkinleştir */
   portGLOBAL_KESME_AC();
 
