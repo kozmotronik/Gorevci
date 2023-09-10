@@ -130,8 +130,7 @@ typedef struct SureKontrolBlogu sure_t;
  * 
  * \return Anlık sistem tiki değeri.
  */
-unsigned int grvTikSayiminiAl(void);
-
+unsigned int grvTikSayimi(void);
 
 /**
  * Görevleri ilkler, ilk kullanım için hazırlar.
