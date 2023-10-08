@@ -31,11 +31,10 @@
  * @{
  */
 
-
 #include "gorev.h"
-#include "portlar/mplabx/xc8/pic18/port.h"
-#include "portmacro.h"
 #include "gorevciypl.h"
+#include "port.h"
+#include "portmacro.h"
 
 static unsigned int tikSayimi=0;
 
