@@ -62,7 +62,7 @@ struct Bayrak {
 };
 
 /// Kolaylık sağlamak için Bayrak tür tanımlaması.
-typedef Bayrak bayrak_t;
+typedef struct Bayrak bayrak_t;
 
 
 /**

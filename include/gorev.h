@@ -235,8 +235,8 @@ unsigned int grvTikSayimi(void);
  */
 #define grvGECIK_MS(g, s, gecikme)                                          \
     ( (sure_t*) s )->kacTik = grvMS_TIK_CEVIR(gecikme);                     \
-    ( (sure_t*) s )->baslangic = grvTikSayiminiAl();                        \
-    grvKOSUL_BEKLE( g, ( (grvTikSayiminiAl() - ((sure_t*) s )->baslangic)   \
+    ( (sure_t*) s )->baslangic = grvTikSayimi();                        \
+    grvKOSUL_BEKLE( g, ( (grvTikSayimi() - ((sure_t*) s )->baslangic)   \
         >= ( (sure_t*) s )->kacTik ) )
 
 
@@ -274,8 +274,8 @@ unsigned int grvTikSayimi(void);
  */
 #define grvKOSULLU_GECIK_MS(g, s, gecikme, kosul)                           \
     ( (sure_t*) s )->kacTik = grvMS_TIK_CEVIR(gecikme);                     \
-    ( (sure_t*) s )->baslangic = grvTikSayiminiAl();                        \
-    grvKOSUL_BEKLE( g, ( (grvTikSayiminiAl() - ( (sure_t*) s )->baslangic)  \
+    ( (sure_t*) s )->baslangic = grvTikSayimi();                        \
+    grvKOSUL_BEKLE( g, ( (grvTikSayimi() - ( (sure_t*) s )->baslangic)  \
         >= ( (sure_t*) s )->kacTik ) || !(kosul))
 
 /**

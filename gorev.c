@@ -116,7 +116,7 @@ pgkb_t grvKimlikIleGorevBlogunuAl(const unsigned char kimlik) {
 
 #endif
 
-unsigned int grvTikSayimini() {
+unsigned int grvTikSayimi() {
     unsigned int sayim;
     // Atomik bölge giriş
     portKritikBolumGirisi();
