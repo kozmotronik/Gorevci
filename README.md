@@ -1,6 +1,6 @@
 <h3 align="center">
   <a href="https://kozmotronik.github.io/Gorevci-Docs/" target="_blank">
-  <img src="https://kozmotronik.github.io/Gorevci-Docs/docs/assets/yazili-simge-indigo.png" alt="Görevci Logo" width="500">
+  <img src="https://github.com/kozmotronik/Gorevci-Docs/blob/41ca0fef8178a79f6ecc211b0d6333a0d62f48d0/docs/assets/yazili-simge-indigo.png" alt="Görevci Logo" width="500">
   </a>
 </h3>
 
