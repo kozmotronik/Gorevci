@@ -1,5 +1,7 @@
 <h3 align="center">
-  <img src="assets/yazili-simge-indigo.png" alt="Görevci logo" width="500">
+  <a href="https://kozmotronik.github.io/Gorevci-Docs/" target="_blank">
+  <img src="https://github.com/kozmotronik/Gorevci-Docs/blob/41ca0fef8178a79f6ecc211b0d6333a0d62f48d0/docs/assets/yazili-simge-indigo.png" alt="Görevci Logo" width="500">
+  </a>
 </h3>
 
 Küçük ölçekli mikrodenetleyiciler için geliştirilen gömülü projelerin 
@@ -29,8 +31,8 @@ eklemektir.
 Lütfen lisans metnini dikkatlice okuyun ama lisansa çok takılmayın. Bu lisansın 
 özeti şöyle:  
 *Burada sağlanan kaynak kodlarını arzuladığınız gibi kullanın. Ancak sağlanan 
-üründe için hiçbir teminat verilmemekle birlikte, kullanımdan doğacak hiçbir 
-sorumluluk da kabul edilmemektedir.*
+ürün için hiçbir teminat verilmemekle birlikte, kullanımdan doğacak hiçbir 
+sorumluluk da kabul edilmemektedir.
 * [MIT](LICENSE) - Orijinal metin.
 * [MIT-TR](LISANS_tr.md) - Lisans metninin Türkçe sürümü.
 
@@ -54,9 +56,15 @@ bölümünden bildirerek bu projenin gelişmesine katkı sağlayın.
 Bir özellik istemeden önce bu projenin küçük ölçekli aygıtlar için 
 geliştirildiğini göz önünde bulundurunuz.
 
+## Görevci Wiki
+Daha ayrıntılı bilgiler için aşağıdaki kaynaklara başvurabilirsiniz:
+* [Görevci Wiki][4]
+* [Görevci Belgelendirme][5]
+* [Görevci Makaleleri][6]
 
 [1]: https://github.com/kozmotronik/Gorevci/issues
 [2]: https://github.com/kozmotronik/Gorevci/wiki/Genel-%C3%96zellikler
 [3]: https://github.com/kozmotronik/Gorevci/wiki/Minimum-Sistem-Gereksinimleri
-[4]: https://github.com/kozmotronik/Gorevci/wiki
+[4]: https://github.com/kozmotronik/Gorevci/wiki/G%C3%B6revci-Wiki
 [5]: https://kozmotronik.github.io/Gorevci-Docs/
+[6]: https://kozmotronik.com.tr/tags/gorevci/

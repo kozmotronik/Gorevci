@@ -1,7 +1,0 @@
-# Örneklerdeki IDEye has dizin ve dosyaları izleme
-build/
-dist/
-nbproject/
-/build
-/dist
-/nbproject
