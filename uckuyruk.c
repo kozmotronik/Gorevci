@@ -99,7 +99,7 @@ unsigned char uckuyrukCokluAl(
     unsigned char sayac;
     if(kuyruk == NULL || hedef == NULL || nicelik < 1) return 0;
     /* Kuyrukta @nicelik kadar öğe var mı? */
-    if(uckuyrukKacOgeVar(kuyruk) < nicelik) return 0;
+    if(uckuyrukOgeSayimi(kuyruk) < nicelik) return 0;
 
     const unsigned char kap = kuyruk->kapasite;
     const unsigned char *kaynak = kuyruk->tampon;
@@ -119,7 +119,7 @@ unsigned char uckuyrukCokluAl(
 
 char uckuyrukKuyrugaAktar(puck_t kaynak, puck_t hedef) {
     if(kaynak == NULL || hedef == NULL
-        || uckuyrukKacOgeVar(kaynak) < 1 || uckuyrukKalanKapasite(hedef) < 1) {
+        || uckuyrukOgeSayimi(kaynak) < 1 || uckuyrukKalanKapasite(hedef) < 1) {
         // NULL veya sınır ihlali
         return 0;
     }
@@ -139,7 +139,7 @@ char uckuyrukKuyrugaAktar(puck_t kaynak, puck_t hedef) {
 unsigned char uckuyrukKuyrugaCokluAktar(
     puck_t kaynak, puck_t hedef, const unsigned char nicelik) {
     if(kaynak == NULL || hedef == NULL || nicelik == 0
-        || uckuyrukKacOgeVar(kaynak) < nicelik
+        || uckuyrukOgeSayimi(kaynak) < nicelik
         || uckuyrukKalanKapasite(hedef) < nicelik) {
         // NULL veya sınır ihlali veya nicelik 0
         return 0;
@@ -169,7 +169,7 @@ unsigned char uckuyrukKuyrugaCokluAktar(
 
 char uckuyrukKuyrugaKopyala(puck_t kaynak, puck_t hedef) {
     if(kaynak == NULL || hedef == NULL
-        || uckuyrukKacOgeVar(kaynak) < 1 || uckuyrukKalanKapasite(hedef) < 1) {
+        || uckuyrukOgeSayimi(kaynak) < 1 || uckuyrukKalanKapasite(hedef) < 1) {
         // NULL veya sınır ihlali
         return 0;
     }
@@ -188,7 +188,7 @@ char uckuyrukKuyrugaKopyala(puck_t kaynak, puck_t hedef) {
 unsigned char uckuyrukKuyrugaCokluKopyala(
     puck_t kaynak, puck_t hedef, const unsigned char nicelik) {
     if(kaynak == NULL || hedef == NULL || nicelik == 0
-        || uckuyrukKacOgeVar(kaynak) < nicelik
+        || uckuyrukOgeSayimi(kaynak) < nicelik
         || uckuyrukKalanKapasite(hedef) < nicelik) {
         // NULL veya sınır ihlali veya nicelik 0
         return 0;
@@ -223,7 +223,7 @@ void uckuyrukBosalt(puck_t kuyruk) {
 }
 
 void uckuyrukNBosalt(puck_t kuyruk, unsigned char n) {
-    if(kuyruk == NULL || n > uckuyrukKacOgeVar(kuyruk) || n == 0) return;
+    if(kuyruk == NULL || n > uckuyrukOgeSayimi(kuyruk) || n == 0) return;
     if(n == 1) {
         *((kuyruk->tampon) + kuyruk->bas++) = 0;
         kuyruk->sayim--;

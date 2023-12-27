@@ -34,6 +34,8 @@
 #include <xc.h>
 #include "gorev.h"
 
+unsigned char intconYedek;
+
 #if grvCALISMA_KIPI == 1
 void portGorevciyiBaslat() {
   /* Kesmeleri etkinleştir */
